@@ -2,7 +2,7 @@ import  { useState } from 'react'
 import { Button, Card, CardActions, CardContent, CardHeader, Divider, TextField, Typography } from '@mui/material'
 import './Login.css'
 import { blue, green } from '@mui/material/colors'
-import { login } from '../../Services/accountService
+import { login } from '../../Services/accountService.js'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -14,6 +14,9 @@ const Login = () => {
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
     
+    console.log(email)
+    console.log(password)
+
 
      async function onLogin() {
         try {
