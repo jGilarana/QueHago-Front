@@ -9,20 +9,27 @@ import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
 
-
+  const userData = {
+    firstName: "Jorge",
+    lastName: "Gil de Arana",
+    birthDate: "1998-11-13",
+    password: "Reboot123!",
+    telephone: 600115770,
+    email: "sajor9798@gmail.com",
+  }
     const navigate = useNavigate()
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
     
-    console.log(email)
-    console.log(password)
+
 
 
      async function onLogin() {
         try {
           const loginResponse = await login({email, password})
           localStorage.setItem('token', loginResponse.data.token)
-          localStorage.setItem('role', response.data.role)
+          localStorage.setItem('role', loginResponse.data.role)
+          console.log(loginResponse)
           navigate('/home')      
         } catch (error) {
           console.error('Error al iniciar sesión:', error);
