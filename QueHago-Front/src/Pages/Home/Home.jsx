@@ -3,7 +3,7 @@ import { getAllEvents } from '../../Services/eventService'
 
 const Home = () => {
 
-const [event, setEvent] = useState()
+const [event, setEvent] = useState([])
 
 const getEvents = async() => {
 
@@ -19,7 +19,7 @@ useEffect(() => {
 
   return (
     <>
-      <h1>Hola, soy el precioso Home</h1>
+     {event.map((em, i) => (<h1 key={i}>{em.title}</h1>))}
     </>
   )
 }
