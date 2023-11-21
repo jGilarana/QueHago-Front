@@ -1,3 +1,4 @@
+import './Home.css'
 import  { React, useEffect, useState } from 'react'
 import { getAllEvents } from '../../Services/eventService'
 import { Button } from '@mui/material'
@@ -30,10 +31,10 @@ useEffect(() => {
 
   return (
     <>
-    <h1>TENDRE FOTO?</h1>
+    <h1>FOTO DE PERFIL</h1>
     <div>
       Profile 
-      <img src={photo}></img>
+      <img className='profilePhoto' src={photo}></img>
     </div>
      <Link to={'/login'}><Button sx={{backgroundColor: green[600]}} color="success">
               Login
