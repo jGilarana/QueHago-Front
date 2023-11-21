@@ -18,6 +18,20 @@ export async function getProfile() {
     },
 })
 
-  console.log(response)
   return response
+}
+
+
+export async function postPhoto(image) {
+    const response = await api.put('users/post-main-profile', {
+      headers: {
+        'Cache-Control' : 'no-cache',
+        'Authorization' : localStorage.getItem('token')
+      },
+      body: JSON.stringify({
+        image : image
+      })
+    })
+   
+    return response
 }

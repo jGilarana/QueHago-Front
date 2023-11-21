@@ -4,15 +4,21 @@ import { getAllEvents } from "../../Services/eventService"
 import { Button } from "@mui/material"
 import { green, red } from "@mui/material/colors"
 import { Link } from "react-router-dom"
-import { getProfile } from "../../Services/accountService"
+import { getProfile, postPhoto } from "../../Services/accountService"
 
 const Home = () => {
   const [event, setEvent] = useState([])
   const [photo, setPhoto] = useState()
+  const [file, setFile] = useState();
+
+  function handleChange(e) {
+    console.log(e.target.files);
+    setFile((e.target.files[0].name));
+}
+
 
   const getPhoto = async () => {
     const { data } = await getProfile()
-    console.log(data)
     setPhoto(data.image)
     return data
   }
@@ -22,13 +28,24 @@ const Home = () => {
     setEvent(data)
   }
 
+
+  // const updateProphilePhoto = async() => {
+  // const data = await postPhoto(file)
+  // setFile(data)
+  // }
+
   useEffect(() => {
     getEvents(), getPhoto()
   }, [])
 
+
+
+
   return (
     <>
-      <h1>FOTO DE PERFIL</h1>       
+      <h1>FOTO DE PERFIL</h1>      
+      <input type="file" onChange={handleChange}></input> 
+      <button>ACTUALIZAR IMAGEN</button>
         <img className="profilePhoto" src={photo}></img>      
       <Link to={"/login"}>
         <Button sx={{margin:'20px', backgroundColor: green[600] }} color="success">

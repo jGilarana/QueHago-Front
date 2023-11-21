@@ -31,7 +31,6 @@ const Login = () => {
           localStorage.setItem('token', loginResponse.data.token)
           localStorage.setItem('role', loginResponse.data.role)
           
-          console.log(loginResponse)
           navigate('/home')      
         } catch (error) {
           console.error('Error al iniciar sesión:', error);
