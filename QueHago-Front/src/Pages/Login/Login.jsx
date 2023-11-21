@@ -20,6 +20,7 @@ const Login = () => {
     const navigate = useNavigate()
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
+    const [profilePhoto, setProfilePhoto] = useState('')
     
 
 
@@ -29,6 +30,7 @@ const Login = () => {
           const loginResponse = await login({email, password})
           localStorage.setItem('token', loginResponse.data.token)
           localStorage.setItem('role', loginResponse.data.role)
+          
           console.log(loginResponse)
           navigate('/home')      
         } catch (error) {
