@@ -23,10 +23,12 @@ useEffect(() => {
      <Link to={'/login'}><Button sx={{backgroundColor: green[600]}} color="success">
               Login
             </Button></Link>
+            {event.map((em, i) => (<><h1 key={i}>{em.title}</h1><img src={em.image}></img></>))}
+            
             <Link to={'/signup'}><Button sx={{backgroundColor: red[600]}} color="success">
               SignUp
             </Button></Link>
-     {event.map((em, i) => (<h1 key={i}>{em.title}</h1>))}
+     
      
     </>
   )
