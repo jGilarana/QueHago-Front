@@ -1,29 +1,38 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-const UploadWidget = () => {
+const UploadWidget = ({url, setUrl}) => {
 
     const cloudinaryRef = useRef()
     const widgetRef = useRef()
 
     useEffect (() => {
-        cloudinaryRef.current = window.cloudinary
-        
-        widgetRef.current.createUploadWidget(
+        cloudinaryRef.current = window.cloudinary;     
+        widgetRef.current = cloudinaryRef.current.createUploadWidget(
             {
                 cloudName: 'djpdopxfy',
-                uploadPreset: 'cpsku1eh'
+                uploadPreset: 'cpsku1eh',
+                sources: ['local', 'url', 'camera', 'instagram'],
+                folder: 'QueHago',
             },
             (error, result) => {
-                if (!error && result && result.event === "success") {
+                ;
+                if (result.event === "success") {
+                    setUrl(result.info.url)
                     console.log('Done! Here is the image info: ', result.info.url);
                 }
             }
-        );
+        ); 
     },[])
+
+    
     return (
         <>
-        <h1>Upload</h1>
-        <button onClick={widgetRef.current.open()}>Upload</button>
+        <div>
+
+        <h1>Holi</h1>
+        <img className="profilePhoto" src={url}></img>
+        <button onClick={() => widgetRef.current.open()}>Upload</button> 
+        </div>
         </>
     )
 }

@@ -11,12 +11,9 @@ import UploadWidget from "../../Components/UploadWidget/UploadWidget.jsx"
 const Home = () => {
   const [event, setEvent] = useState([])
   const [photo, setPhoto] = useState()
-  const [file, setFile] = useState();
+  const [file, setFile] = useState('');
 
-  function handleChange(e) {
-    console.log(e.target.files);
-    setFile((e.target.files[0].name));
-}
+
 
 
   const getPhoto = async () => {
@@ -31,11 +28,6 @@ const Home = () => {
   }
 
 
- /*  const updateProphilePhoto = async() => {
-   const data = await postPhoto(file)
-  setFile(data)
-  } */
-
 
   useEffect(() => {
     getEvents(), getPhoto()
@@ -47,10 +39,8 @@ const Home = () => {
   return (
     <>
       <h1>FOTO DE PERFIL</h1>      
-      <input type="file" onChange={handleChange}></input> 
-      <UploadWidget/>     
-        <img className="profilePhoto" src={photo}></img>
-         
+      <UploadWidget setUrl={setPhoto} url={photo}/>     
+       
       <Link to={"/login"}>
         <Button sx={{margin:'20px', backgroundColor: green[600] }} color="success">
           Login
