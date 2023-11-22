@@ -5,6 +5,8 @@ import { Button } from "@mui/material"
 import { green, red } from "@mui/material/colors"
 import { Link } from "react-router-dom"
 import { getProfile, postPhoto } from "../../Services/accountService"
+import UploadWidget from "../../Components/UploadWidget/UploadWidget.jsx"
+
 
 const Home = () => {
   const [event, setEvent] = useState([])
@@ -29,10 +31,11 @@ const Home = () => {
   }
 
 
-  // const updateProphilePhoto = async() => {
-  // const data = await postPhoto(file)
-  // setFile(data)
-  // }
+ /*  const updateProphilePhoto = async() => {
+   const data = await postPhoto(file)
+  setFile(data)
+  } */
+
 
   useEffect(() => {
     getEvents(), getPhoto()
@@ -45,8 +48,9 @@ const Home = () => {
     <>
       <h1>FOTO DE PERFIL</h1>      
       <input type="file" onChange={handleChange}></input> 
-      <button>ACTUALIZAR IMAGEN</button>
-        <img className="profilePhoto" src={photo}></img>      
+      <UploadWidget/>     
+        <img className="profilePhoto" src={photo}></img>
+         
       <Link to={"/login"}>
         <Button sx={{margin:'20px', backgroundColor: green[600] }} color="success">
           Login

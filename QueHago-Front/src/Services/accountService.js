@@ -23,6 +23,7 @@ export async function getProfile() {
 
 
 export async function postPhoto(image) {
+  
     const response = await api.put('users/post-main-profile', {
       headers: {
         'Cache-Control' : 'no-cache',
