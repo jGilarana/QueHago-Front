@@ -1,5 +1,4 @@
-.login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.loginBackground {
+    width: 75%;
+    height: 100vh;
 }

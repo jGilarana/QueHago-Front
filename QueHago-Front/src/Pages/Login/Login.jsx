@@ -37,15 +37,22 @@ const Login = () => {
       }
     
       return (
-        <div className='login'>
+        <>
+          <img className="loginBackground" src={'https://res.cloudinary.com/djpdopxfy/image/upload/v1700780199/1700748592773_psb91d.jpg'}>
+          </img>
         <Card sx={{
-          backgroundColor: blue[400],
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          padding: '20px',
-          
+          backgroundColor: '#1A759F',
+          position: 'fixed',
+          top: '0',
+          right: '0',
+          width: '30vw',
+          height: '100vh',         
+          borderRadius: '12px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'space-evenly',
+          textAlign: 'center',
         }}>
           <CardHeader  title= 'login'/>
           <CardContent>
@@ -54,6 +61,7 @@ const Login = () => {
             label='Email'
             variant='filled'
             fullWidth={true}
+            color='success'
             sx={{marginBottom:'20px'}}
           />
              <TextField
@@ -61,17 +69,19 @@ const Login = () => {
             label='Password'
             variant='filled'
             type='password'
+            color='success'
             fullWidth={true}
           />
           </CardContent>
-          <Divider />
+          <p>He olvidado mi contraseña</p>
+          <p>Recordarme</p>
           <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Button sx={{backgroundColor: green[600]}} onClick={() => onLogin()} color="success">
               Login
             </Button>
           </CardActions>
         </Card>
-        </div>
+        </>
       )
     }
 

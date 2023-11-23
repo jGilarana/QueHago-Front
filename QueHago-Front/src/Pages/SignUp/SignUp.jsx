@@ -1,4 +1,5 @@
 import { useState } from "react"
+import './SignUp.css'
 import {
   Button,
   Card,
@@ -40,7 +41,28 @@ const [birthDate, setBirthDate] = useState()
   }
 
   return (
-    <Card sx={{ backgroundColor: blue[400] }}>
+    <>
+    <div>
+          <img className="signupBackground" src={'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg'}>
+  
+          </img>
+    </div>
+    <Card sx={{ 
+      backgroundColor: '#00008B',
+      position:'absolute',
+      right:'0',
+      width: '30vw',
+      height: '100vh', 
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      display: 'flex',
+      flexDirection: 'column',
+      borderRadius: '12px',
+      textAlign: 'center',
+      overflow:'auto',
+      textAlign:'left'
+    
+    }}>
       <CardHeader title="signup" />
       <CardContent>
         <TextField
@@ -48,7 +70,7 @@ const [birthDate, setBirthDate] = useState()
           label="Nombre"
           variant="filled"
           fullWidth={true}
-          sx={{ marginBottom: "20px" }}
+          sx={{ marginBottom: "20px", color: "white" }}
         />
         <TextField
           onChange={(e) => setLastName(e.target.value)}
@@ -73,7 +95,7 @@ const [birthDate, setBirthDate] = useState()
 
           sx={{ marginBottom: "20px" }}
         />
-        <p>Cumpleaños :</p>
+        <p>Fecha de nacimiento :</p>
         <TextField
           onChange={(e) => setBirthDate(e.target.value)}
           variant="filled"
@@ -88,25 +110,21 @@ const [birthDate, setBirthDate] = useState()
           type="password"
           fullWidth={true}
         />
-         {/* <TextField
-          onChange={(e) => setPassword(e.target.value)}
-          label="Repite tu Contraseña"
-          variant="filled"
-          type="password"
-          fullWidth={true}
-        /> */}
+        
       </CardContent>
-      <Divider />
-      <CardActions sx={{ display: "flex", justifyContent: "flex-end" }}>
+      <Divider/>
+      <CardActions>
         <Button
-          sx={{ backgroundColor: green[600] }}
+          sx={{ backgroundColor: '#917800', '&:hover': { backgroundColor: 'white' } }} 
           onClick={() => onSignup()}
-          color="success"
+          color="secondary"
         >
           signup
         </Button>
       </CardActions>
     </Card>
+    </>
+    
   )
 }
 

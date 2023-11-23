@@ -4,7 +4,7 @@ import UploadWidget from '../UploadWidget/UploadWidget'
 import { getProfile, postPhoto } from '../../Services/accountService'
 import { Link } from "react-router-dom"
 import { Box, Button } from '@mui/material'
-import { green } from '@mui/material/colors'
+import { blueGrey, green } from '@mui/material/colors'
 
 
 const Header = () => {
@@ -31,7 +31,10 @@ useEffect(() => {
     <img className='logo' src='https://res.cloudinary.com/djpdopxfy/image/upload/v1700734298/QueHago_logo_1_dlxtrk.png'></img>
     <button onClick={updatePhoto}>SUBETE Y ACTUALIZA POR FAVOR</button>  
     <Link to={"/login"}><Button sx={{margin:'20px', backgroundColor: green[600] }} color="success">
-          Login
+                   Login
+        </Button></Link>
+        <Link to={"/signup"}><Button sx={{margin:'20px', backgroundColor: blueGrey[600] }} color="secondary">
+          Sign Up
         </Button></Link>
     <UploadWidget setUrl={setPhoto} url={photo}/>
     </Box>
