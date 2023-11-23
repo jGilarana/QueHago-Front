@@ -23,7 +23,8 @@ const HomeComponent = ({event}) => {
 
         '@media (min-width: 600px) and (max-width: 1080px)': {
           width: '30vw',
-          height: '30vh',},
+          height: '30vh',
+        },
 
         '@media (max-width: 600px)': {
           width: '42vw',

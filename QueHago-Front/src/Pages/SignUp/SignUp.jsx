@@ -32,7 +32,7 @@ const [birthDate, setBirthDate] = useState()
       localStorage.setItem("token", signupResponse.data.token)
     //   localStorage.setItem("role", response.data.role)
       console.log(signupResponse)
-      navigate("/home")
+      navigate("/")
     } catch (error) {
         console.log(signupResponse.data)
       console.error("Error al crear cuenta:", error)

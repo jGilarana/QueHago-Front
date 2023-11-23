@@ -4,6 +4,8 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   background-color: #404040;
   border-radius: 15px;
   background-image: url("../../../../Assets/QueHaagoBackgroundImg.png");
