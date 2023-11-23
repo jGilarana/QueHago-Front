@@ -13,11 +13,13 @@
 }
 
 .logo {
-    background-size: 20%;
-    width: 14vh;
+    width: 13vh;
+    height: 13vh;
     border-radius: 100%;
 }
 
-.logo:hover {
-    filter: drop-shadow(0 0 2em #f2f2f3aa);
+.profilePhoto {
+    width: 13vh;
+    height: 13vh;
+    border-radius: 100%;  
 }

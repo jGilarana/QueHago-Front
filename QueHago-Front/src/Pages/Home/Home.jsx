@@ -17,7 +17,6 @@ const Home = () => {
     setEvent(data)
   }
 
-
   useEffect(() => {
     getEvents()
   }, [])
@@ -25,13 +24,7 @@ const Home = () => {
 
   return (
     <div className="home">
-        <Link to={"/login"}>
-        <Button sx={{margin:'20px', backgroundColor: green[600] }} color="success">
-          Login
-        </Button>
-      </Link>
        <HomeComponent event={event}/>
-      <Link to={"/signup"}></Link>
     </div>
   )
 }

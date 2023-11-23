@@ -14,15 +14,15 @@ const HomeComponent = ({event}) => {
         width: '13vw',
         height: '40vh', 
         alignItems: 'center',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         display: 'flex',
         flexDirection: 'column',
         borderRadius: '12px',
         textAlign: 'center'
         }}>
           <h3 key={em.id}>{em.title}</h3>
-          <img className='event' key={i} src={em.image}></img>
-          <Link to={'/login'}><p>See more info</p></Link>
+          <img className='event' key={i} src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700734298/QueHago_logo_1_dlxtrk.png' : (em.image)}></img>
+          <Link to={'/login'}><p className='moreInfo'>See more info</p></Link>
      </Card>
       ))}
     </div>
