@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-
+import './UploadWidget.css'
 const UploadWidget = ({url, setUrl}) => {
 
     const cloudinaryRef = useRef()
@@ -25,15 +25,11 @@ const UploadWidget = ({url, setUrl}) => {
     },[])
 
     
-    return (
-        <>
+    return (  
         <div>
-
-        <h1>Holi</h1>
+         <button onClick={() => widgetRef.current.open()}>Upload</button>
         <img className="profilePhoto" src={url}></img>
-        <button onClick={() => widgetRef.current.open()}>Upload</button> 
         </div>
-        </>
     )
 }
 
