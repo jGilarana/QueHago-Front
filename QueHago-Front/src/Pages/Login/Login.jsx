@@ -37,8 +37,16 @@ const Login = () => {
       }
     
       return (
-        <div>
-        <Card sx={{backgroundColor: blue[400]}}>
+        <div className='login'>
+        <Card sx={{
+          backgroundColor: blue[400],
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          padding: '20px',
+          
+        }}>
           <CardHeader  title= 'login'/>
           <CardContent>
           <TextField

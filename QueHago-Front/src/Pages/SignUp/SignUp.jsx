@@ -77,7 +77,7 @@ const [birthDate, setBirthDate] = useState()
         <TextField
           onChange={(e) => setBirthDate(e.target.value)}
           variant="filled"
-        //   type="date"
+          type="date"
           fullWidth={true}
           sx={{ marginBottom: "20px" }}
         />
