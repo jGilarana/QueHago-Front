@@ -23,16 +23,19 @@ export async function getProfile() {
 
 
 export async function postPhoto(image) {
-  
-    const response = await api.put('users/post-main-profile', {
+  try {
+    const response = await api.put('users/postprofile', {
+      image: image
+    }, {
       headers: {
-        'Cache-Control' : 'no-cache',
-        'Authorization' : localStorage.getItem('token')
-      },
-      body: JSON.stringify({
-        image : image
-      })
-    })
-   
-    return response
+        'Cache-Control': 'no-cache',
+        'Authorization': localStorage.getItem('token')
+      }
+    });
+
+    return response.data; // Devolvemos solo los datos de la respuesta, no toda la respuesta
+  } catch (error) {
+    console.error('Error al enviar la foto:', error);
+    throw error; // Rechazamos la promesa para que el error se propague
+  }
 }

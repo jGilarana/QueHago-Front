@@ -12,6 +12,7 @@ const Home = () => {
   const [event, setEvent] = useState([])
   const [photo, setPhoto] = useState()
   const [file, setFile] = useState('');
+  console.log(photo)
 
 
 
@@ -28,6 +29,12 @@ const Home = () => {
   }
 
 
+  const updatePhoto = async() => {
+    const data = await postPhoto(photo)
+    console.log('photo uploaded')
+    return data
+  }
+
 
   useEffect(() => {
     getEvents(), getPhoto()
@@ -40,7 +47,7 @@ const Home = () => {
     <>
       <h1>FOTO DE PERFIL</h1>      
       <UploadWidget setUrl={setPhoto} url={photo}/>     
-       
+       <button onClick={updatePhoto}>SUBETE Y ACTUALIZA POR FAVOR</button>
       <Link to={"/login"}>
         <Button sx={{margin:'20px', backgroundColor: green[600] }} color="success">
           Login
