@@ -9,7 +9,7 @@ const HomeComponent = ({event}) => {
     <div className='events-container'>
      {event.map((em, i) => (
      <Card sx={{ 
-        backgroundColor: blue[400],
+        backgroundColor: '#131313',
         margin: '2vw',
         width: '13vw',
         height: '40vh', 
@@ -21,7 +21,7 @@ const HomeComponent = ({event}) => {
         textAlign: 'center'
         }}>
           <h3 key={em.id}>{em.title}</h3>
-          <img className='event' key={i} src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700734298/QueHago_logo_1_dlxtrk.png' : (em.image)}></img>
+          <img className='event' key={i} src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}></img>
           <Link to={'/login'}><p className='moreInfo'>See more info</p></Link>
      </Card>
       ))}
