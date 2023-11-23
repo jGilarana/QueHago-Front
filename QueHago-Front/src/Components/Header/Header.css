@@ -1,10 +1,10 @@
 .header-container {
     position: fixed;
     top: 0;
-    background-color: transparent;
+    background-color:#131313;
     backdrop-filter: blur(30px);
     width: 100vw;
-    height: 15vh;
+    height: 9vh;
     text-align: center;
     display: flex;
     justify-content: space-around;
@@ -12,14 +12,31 @@
     flex-direction: row;
 }
 
+
+@media screen and (max-width: 600px) {
+    .header-container {
+        background-color: aliceblue;
+    }
+}
+
+@media screen and (min-width : 600px) and (max-width: 1080px) {
+    .header-container {
+        background-color: red;
+    }
+}
+
+.header-container:hover {
+    background-color: #393737;
+}
+
 .logo {
-    width: 13vh;
-    height: 13vh;
+    width: 7vh;
+    height: 7vh;
     border-radius: 100%;
 }
 
 .profilePhoto {
-    width: 13vh;
-    height: 13vh;
+    width: 7vh;
+    height: 7vh;
     border-radius: 100%;  
 }

@@ -8,10 +8,9 @@ import { getProfile, postPhoto } from "../../Services/accountService"
 import UploadWidget from "../../Components/UploadWidget/UploadWidget.jsx"
 import HomeComponent from "./HomeComponent/HomeComponent.jsx"
 
-
 const Home = () => {
   const [event, setEvent] = useState([])
-  
+
   const getEvents = async () => {
     const data = await getAllEvents()
     setEvent(data)
@@ -21,10 +20,9 @@ const Home = () => {
     getEvents()
   }, [])
 
-
   return (
     <div className="home">
-       <HomeComponent event={event}/>
+      <HomeComponent event={event} />
     </div>
   )
 }

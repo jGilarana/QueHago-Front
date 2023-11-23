@@ -18,7 +18,15 @@ const HomeComponent = ({event}) => {
         display: 'flex',
         flexDirection: 'column',
         borderRadius: '12px',
-        textAlign: 'center'
+        textAlign: 'center',
+
+        '@media (min-width: 600px) and (max-width: 1080px)': {
+          width: '30vw',
+          height: '30vh',},
+
+        '@media (max-width: 600px)': {
+          width: '42vw',
+          height: '30vh',}
         }}>
           <h3 key={em.id}>{em.title}</h3>
           <img className='event' key={i} src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}></img>
