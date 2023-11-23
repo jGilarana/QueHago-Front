@@ -37,6 +37,7 @@ const Login = () => {
       }
     
       return (
+        <div>
         <Card sx={{backgroundColor: blue[400]}}>
           <CardHeader  title= 'login'/>
           <CardContent>
@@ -62,6 +63,7 @@ const Login = () => {
             </Button>
           </CardActions>
         </Card>
+        </div>
       )
     }
 

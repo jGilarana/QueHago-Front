@@ -1,8 +1,8 @@
 .header-container {
     position: fixed;
     top: 0;
-    background-color:#131313;
-    backdrop-filter: blur(30px);
+    background-color:transparent;
+    backdrop-filter: blur(15px);
     width: 100vw;
     height: 9vh;
     text-align: center;
@@ -26,7 +26,7 @@
 }
 
 .header-container:hover {
-    background-color: #393737;
+    background-color: #1d1c1c;
 }
 
 .logo {
