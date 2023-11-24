@@ -24,9 +24,6 @@ const Login = () => {
     const [email, setEmail] = useState(userData.email)
     
     
-
-
-
      async function onLogin() {
         try {
           const loginResponse = await login({email, password})

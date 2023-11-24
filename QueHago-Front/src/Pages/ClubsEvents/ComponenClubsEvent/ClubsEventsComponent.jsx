@@ -39,7 +39,21 @@ const ClubsEventsComponent = ({events}) => {
         }}>
           <h3>Crear evento</h3>
           <img className='event' src={ 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg'}></img>
-          <Link to={'/login'}><p className='moreInfo'>Ver más</p></Link>
+          <Button onClick={handleOpen}>Open modal</Button>
+<Modal
+  open={open}
+  onClose={handleClose}
+  aria-labelledby="parent-modal-title"
+  aria-describedby="parent-modal-description"
+>
+  <Box sx={{ ...style, width: 400 }}>
+    <h2 id="parent-modal-title">Text in a modal</h2>
+    <p id="parent-modal-description">
+      Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+    </p>
+    <ChildModal />
+  </Box>
+</Modal>
      </Card>
      {events.map((em, i) => (
      <Card sx={{ 

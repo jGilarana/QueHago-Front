@@ -10,3 +10,15 @@ export const getClubsEvents = async () => {
     })
     return data
 }
+
+export const createClubsEvents = async() => {
+    const { data } = await api.post('/clubs/create', {
+        headers: {
+            'Cache-Control' : 'no-cache',
+            'Authorization' : localStorage.getItem('token')
+        },
+    })
+    return data
+}
+
+// NO OLVIDARSE DEL CHECK ROLE
