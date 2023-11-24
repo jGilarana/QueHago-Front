@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import './UploadWidget.css'
+import { Button } from '@mui/material'
 const UploadWidget = ({updatePhoto, setUrl}) => {
 
     const cloudinaryRef = useRef()
@@ -19,8 +20,14 @@ const UploadWidget = ({updatePhoto, setUrl}) => {
                
                 if (result.event === "success") {
                     setUrl(result.info.url)
-                    updatePhoto(result.info.url)
-                    console.log('Done! Here is the image info: ', result.info.url);
+
+                    const role = localStorage.getItem('role');
+
+                    if (role) {
+                      updatePhoto(result.info.url);
+                    } else {
+                      console.log('Ya puedes ir creando la función');
+                    }
                 }
             }
         ); 
@@ -29,7 +36,7 @@ const UploadWidget = ({updatePhoto, setUrl}) => {
     
     return (  
         <div>
-         <button onClick={() => widgetRef.current.open()}>Upload</button>
+         <Button sx={{backgroundColor:'#4d425f'}} onClick={() => widgetRef.current.open()}>Upload</Button>
         
         </div>
     )

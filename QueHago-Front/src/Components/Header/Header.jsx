@@ -29,13 +29,13 @@ useEffect(() => {
   return (
     <Box className='header-container'>
     <Link to={'/'}><img className='logo' src='https://res.cloudinary.com/djpdopxfy/image/upload/v1700734298/QueHago_logo_1_dlxtrk.png'></img></Link>
-    <Link to={"/login"}><Button sx={{margin:'20px', backgroundColor: green[600], color:'white' }} color="primary">
+    <Link to={"/login"}><Button sx={{margin:'20px', backgroundColor:'#792350', color:'white' }} color="primary">
                    Login
         </Button></Link>
-        <Link to={"/signup"}><Button sx={{margin:'20px', backgroundColor: blueGrey[600], color:'white' }} color="secondary">
+        <Link to={"/signup"}><Button sx={{margin:'20px', backgroundColor: green[600], color:'white' }} color="success">
           Sign Up
         </Button></Link>
-        <Link to={"/bussiness/login"}><Button sx={{margin:'20px', backgroundColor: green[600], color:'white' }} color="success">
+        <Link to={"/bussiness/login"}><Button sx={{margin:'20px', backgroundColor: '#792350', color:'white' }} color="success">
                    Login Bussiness
         </Button></Link>
         <Link to={"/bussiness/login"}><Button sx={{margin:'20px', backgroundColor: green[600], color:'white' }} color="success">
