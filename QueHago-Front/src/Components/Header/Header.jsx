@@ -16,13 +16,13 @@ const Header = () => {
     return data
   }
 
-  const updatePhoto = async() => {
-    const data = await postPhoto(photo)
+  const updatePhoto = async(newPhoto) => {
+    const data = await postPhoto(newPhoto)
     console.log('photo uploaded')
     return data
   }
 useEffect(() => {
-  getPhoto(), updatePhoto()
+  getPhoto()
 }, [])
 
 
@@ -36,7 +36,8 @@ useEffect(() => {
         <Link to={"/signup"}><Button sx={{margin:'20px', backgroundColor: blueGrey[600] }} color="secondary">
           Sign Up
         </Button></Link>
-    <UploadWidget setUrl={setPhoto} url={photo}/>
+        <img className="profilePhoto" src={photo}></img>
+    <UploadWidget setUrl={setPhoto} updatePhoto={updatePhoto}/>
     </Box>
   )
 }
