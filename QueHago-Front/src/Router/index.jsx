@@ -3,7 +3,7 @@ import Home from "../Pages/Home/Home";
 import Root from "../Layouts/Root";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
-import clubsEvents from "../Pages/clubsEvents/clubsEvents";
+import ClubsEvents from "../Pages/ClubsEvents/ClubsEvents.jsx";
 
 const router = createBrowserRouter([
     {
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
             }, 
             {
                 path:'/bussiness',
-                element: <clubsEvents/>
+                element: <ClubsEvents/>
             }
         ]
     }

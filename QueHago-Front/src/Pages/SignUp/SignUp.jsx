@@ -31,7 +31,7 @@ const [birthDate, setBirthDate] = useState()
     try {
       const signupResponse = await signup({ email, password,telephone,firstName,lastName,birthDate })
       localStorage.setItem("token", signupResponse.data.token)
-    //   localStorage.setItem("role", response.data.role)
+    //localStorage.setItem("role", response.data.role)
       console.log(signupResponse)
       navigate("/")
     } catch (error) {
