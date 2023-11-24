@@ -4,7 +4,7 @@ import { getClubsEvents } from '../../Services/clubService.js'
 
 const  ClubsEvents = () => {
 
-  const [events, setEvents] = useState()
+  const [events, setEvents] = useState([])
 
   const seeEvents = async () => {
     const events = await getClubsEvents()
@@ -19,7 +19,7 @@ useEffect(() => {
   return (
 
 <>
-<ClubsEventsComponent/>
+<ClubsEventsComponent events={events}/>
 </>
    
     

@@ -18,12 +18,22 @@ import { useNavigate } from "react-router-dom"
 const SignUp = () => {
   const navigate = useNavigate()
 
-const [password, setPassword] = useState()
-const [email, setEmail] = useState()
-const [telephone, setTelephone] = useState()
-const [firstName, setFirstName] = useState()
-const [lastName, setLastName] = useState()
-const [birthDate, setBirthDate] = useState()
+
+  const userData = {
+    firstName: "Jorge",
+    lastName: "Gil de Arana",
+    birthDate: "1998-11-13",
+    password: "Reboot123!",
+    telephone: 600115770,
+    email: "sajor9798@gmail.com",
+  }
+
+const [password, setPassword] = useState(userData.password)
+const [email, setEmail] = useState(userData.email)
+const [telephone, setTelephone] = useState(userData.telephone)
+const [firstName, setFirstName] = useState(userData.firstName)
+const [lastName, setLastName] = useState(userData.lastName)
+const [birthDate, setBirthDate] = useState(userData.birthDate)
 
 
 
@@ -48,7 +58,7 @@ const [birthDate, setBirthDate] = useState()
           </img>
     </div>
     <Card sx={{ 
-      backgroundColor: '#00008B',
+      backgroundColor: blue[400],
       position:'absolute',
       right:'0',
       width: '30vw',

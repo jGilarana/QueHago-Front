@@ -35,6 +35,9 @@ useEffect(() => {
         <Link to={"/signup"}><Button sx={{margin:'20px', backgroundColor: blueGrey[600] }} color="secondary">
           Sign Up
         </Button></Link>
+        <Link to={"/bussiness/login"}><Button sx={{margin:'20px', backgroundColor: green[600] }} color="success">
+                   Login Bussiness
+        </Button></Link>
         <div>
          <img className="profilePhoto" src={photo}></img>
          <UploadWidget setUrl={setPhoto} updatePhoto={updatePhoto}/>
