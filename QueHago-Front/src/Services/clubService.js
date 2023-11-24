@@ -11,14 +11,18 @@ export const getClubsEvents = async () => {
     return data
 }
 
-export const createClubsEvents = async() => {
-    const { data } = await api.post('/clubs/create', {
-        headers: {
-            'Cache-Control' : 'no-cache',
-            'Authorization' : localStorage.getItem('token')
-        },
-    })
-    return data
+export const createClubsEvents = async(eventData) => {
+ try {
+   const data = await api.post('clubs/create', eventData, {
+    headers: {
+        'Cache-Control' : 'no-cache',
+        'Authorization' : localStorage.getItem('token')
+    },
+} )
+   console.log(data)
+   return data
+ } catch (error) {
+   console.log(error.message)
+ }
 }
-
 // NO OLVIDARSE DEL CHECK ROLE

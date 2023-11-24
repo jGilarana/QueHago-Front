@@ -1,19 +1,72 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom"
 import './ClubsEventsComponent.css'
-import { Card } from '@mui/material'
+import { Box, Card, Modal, Button, TextField } from '@mui/material'
+import { blue } from '@mui/material/colors'
 
 
 
-const ClubsEventsComponent = ({events}) => {
 
-
+const ClubsEventsComponent = ({setTitle, setGenre, setAddress, setRooms, setDate, setMinimumAge, setImage, events, updateEvent}) => {
+const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => setOpen(false);
+  
 
   return (
 
 
     
     <div className='clubsEventsContainer'>
+      <Modal sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}
+  open={open}
+  onClose={handleClose}
+  aria-labelledby="parent-modal-title"
+  aria-describedby="parent-modal-description"
+>
+  <Box sx={{ overflow:'auto' ,width: '30vw', height: '60vh', backgroundColor:'blue', display:'flex', alignContent: 'center', justifyContent: 'center', flexDirection: 'column', borderRadius: '12px' }}>
+<TextField 
+  onChange={(e) => setTitle(e.target.value)}
+  label='title'
+  variant='filled'
+  color='success'
+  sx={{marginBottom:'20px', width:'80%', alignSelf: 'center'}}></TextField>
+   <TextField 
+   onChange={(e) => setGenre(e.target.value)}
+  label='genre'
+  variant='filled'
+  color='success'
+  sx={{marginBottom:'20px', width:'80%', alignSelf: 'center'}}></TextField>
+  <TextField 
+  onChange={(e) => setAddress(e.target.value)}
+  label='address'
+  variant='filled'
+  color='success'
+  sx={{marginBottom:'20px', width:'80%', alignSelf: 'center'}}></TextField>
+  <TextField 
+   onChange={(e) => setDate(e.target.value)}
+  variant="filled"
+  type='date'
+  color='success'
+  sx={{marginBottom:'20px', width:'80%', alignSelf: 'center'}}></TextField>
+  <TextField 
+   onChange={(e) => setRooms(e.target.value)}
+  label='Rooms'
+  variant='filled'
+  color='success'
+  type='number'
+  sx={{marginBottom:'20px', width:'80%', alignSelf: 'center'}}></TextField>
+   <TextField 
+    onChange={(e) => setImage(e.target.value)}
+  label='Image'
+  variant='filled'
+  color='success'
+  sx={{marginBottom:'20px', width:'80%', alignSelf: 'center'}}></TextField>
+  <Button onClick={updateEvent} sx={{alignSelf: 'center', backgroundColor:blue[300],'&:hover':{backgroundColor: blue[500]}}}>Upload</Button>
+  </Box>
+</Modal>
        <Card sx={{ 
         backgroundColor: '#131313',
         margin: '2vw',
@@ -40,20 +93,7 @@ const ClubsEventsComponent = ({events}) => {
           <h3>Crear evento</h3>
           <img className='event' src={ 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg'}></img>
           <Button onClick={handleOpen}>Open modal</Button>
-<Modal
-  open={open}
-  onClose={handleClose}
-  aria-labelledby="parent-modal-title"
-  aria-describedby="parent-modal-description"
->
-  <Box sx={{ ...style, width: 400 }}>
-    <h2 id="parent-modal-title">Text in a modal</h2>
-    <p id="parent-modal-description">
-      Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-    </p>
-    <ChildModal />
-  </Box>
-</Modal>
+
      </Card>
      {events.map((em, i) => (
      <Card sx={{ 
