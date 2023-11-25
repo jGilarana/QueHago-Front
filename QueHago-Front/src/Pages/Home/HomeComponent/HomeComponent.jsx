@@ -8,7 +8,7 @@ const HomeComponent = ({event}) => {
   return (
     <div className='events-container'>
      {event.map((em, i) => (
-     <Card sx={{ 
+     <Card key={em.id} sx={{ 
         backgroundColor: '#131313',
         margin: '2vw',
         width: '14vw',
@@ -32,7 +32,7 @@ const HomeComponent = ({event}) => {
         }}>
           <h3 key={em.id}>{em.title}</h3>
           <img className='event' key={i} src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}></img>
-          <Link to={'/login'}><p className='moreInfo'>Ver más</p></Link>
+          <Link to={`/event/${em.id}`}><p className='moreInfo'>Ver más</p></Link>
      </Card>
       ))}
     </div>

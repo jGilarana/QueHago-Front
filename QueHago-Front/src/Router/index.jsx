@@ -5,6 +5,8 @@ import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import ClubsEvents from "../Pages/ClubsEvents/ClubsEvents.jsx";
 import LoginClub from "../Pages/Login/LoginClub.jsx";
+import SignUpClub from "../Pages/SignUp/SignUpClub/SignUpClub.jsx";
+import SingleEvent from "../Pages/SingleEvent/SingleEvent.jsx";
 
 const router = createBrowserRouter([
     {
@@ -13,7 +15,7 @@ const router = createBrowserRouter([
     },
     {
         path:'/bussiness/signup',
-        element: <Login/>
+        element: <SignUpClub/>
     },
     {
         path:'/login',
@@ -34,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path:'/bussiness',
                 element: <ClubsEvents/>
+            }, 
+            {
+                path: '/event/:eventId',
+                element : <SingleEvent/>
             }
         ]
     }

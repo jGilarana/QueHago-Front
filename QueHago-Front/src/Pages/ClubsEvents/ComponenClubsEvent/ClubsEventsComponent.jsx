@@ -16,9 +16,9 @@ const ClubsEventsComponent = ({
   events,
   updateEvent,
 }) => {
-
-
-  const [eventImg,setEventImg] = useState("https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg")
+  const [eventImg, setEventImg] = useState(
+    "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg"
+  )
   const [open, setOpen] = useState(false)
   const handleOpen = () => {
     setOpen(true)
@@ -97,6 +97,14 @@ const ClubsEventsComponent = ({
             type="number"
             sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
           ></TextField>
+             <TextField
+            onChange={(e) => setMinimumAge(e.target.value)}
+            label="Minimum Age"
+            variant="filled"
+            color="success"
+            type="number"
+            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+          ></TextField>
           <TextField
             onChange={(e) => setImage(e.target.value)}
             label="Image"
@@ -110,7 +118,7 @@ const ClubsEventsComponent = ({
             sx={{
               alignSelf: "center",
               backgroundColor: blue[300],
-              "&:hover": { backgroundColor: blue[500] },
+              "&:hover": { backgroundColor: blue[500] }  
             }}
           >
             Upload
@@ -144,14 +152,11 @@ const ClubsEventsComponent = ({
         }}
       >
         <h3>Crear evento</h3>
-        <img
-          className="event"
-          src={eventImg}
-        ></img>
+        <img className="event" src={eventImg}></img>
         <Button onClick={handleOpen}>Open modal</Button>
       </Card>
       {events.map((em, i) => (
-        <Card
+        <Card key={em.id}
           sx={{
             backgroundColor: "#131313",
             margin: "2vw",
@@ -164,6 +169,7 @@ const ClubsEventsComponent = ({
             borderRadius: "12px",
             textAlign: "center",
             overflow: "hidden",
+            color: "white",
 
             "@media (min-width: 600px) and (max-width: 1080px)": {
               width: "30vw",
@@ -176,10 +182,9 @@ const ClubsEventsComponent = ({
             },
           }}
         >
-          <h3 key={em.id}>{em.title}</h3>
+          <h3>{em.title}</h3>
           <img
             className="event"
-            key={i}
             src={
               em.image === null
                 ? "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg"
@@ -195,4 +200,6 @@ const ClubsEventsComponent = ({
   )
 }
 
+
+// CONSEGUIR QUE LOS EVENTOS EN BUSSINESS APAREZCAN 9 POR PÁGINA
 export default ClubsEventsComponent
