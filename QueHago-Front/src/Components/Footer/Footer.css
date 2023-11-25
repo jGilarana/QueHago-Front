@@ -1,5 +1,5 @@
 .footer-container {
-    position: fixed;
+    position: relative;
     bottom: 0;
     background-color:#393737;
     backdrop-filter: blur(30px);

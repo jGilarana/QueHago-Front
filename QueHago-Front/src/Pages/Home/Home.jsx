@@ -7,6 +7,7 @@ import { Link } from "react-router-dom"
 import { getProfile, postPhoto } from "../../Services/accountService"
 import UploadWidget from "../../Components/UploadWidget/UploadWidget.jsx"
 import HomeComponent from "./HomeComponent/HomeComponent.jsx"
+import Map from "../../Components/Map/Map.jsx"
 
 const Home = () => {
   const [event, setEvent] = useState([])
@@ -22,6 +23,7 @@ const Home = () => {
 
   return (
     <div className="home">
+      <Map/>
       <HomeComponent event={event} />
     </div>
   )
