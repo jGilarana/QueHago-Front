@@ -9,7 +9,7 @@ import { blueGrey, green } from '@mui/material/colors'
 
 const Header = () => {
 
-  const [photo, setPhoto] = useState()
+  const [photo, setPhoto] = useState("https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg")
   const getPhoto = async () => {
     const { data } = await getProfile()
     setPhoto(data.image)

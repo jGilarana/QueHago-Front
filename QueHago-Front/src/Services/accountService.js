@@ -17,7 +17,9 @@ export async function getProfile() {
         'Authorization' : localStorage.getItem('token')
     },
 })
-
+  if (!localStorage.getItem('token')) {
+    console.log('You must be logged in to see your own profile')
+  }
   return response
 }
 
