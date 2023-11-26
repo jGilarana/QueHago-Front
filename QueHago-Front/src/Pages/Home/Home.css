@@ -1,11 +1,10 @@
 .home {
     margin-top: 18vh;
     margin-bottom: 10vh;
-    margin-right: 3vw;
     min-width: 100%;
     min-height: 100%;
-   display: grid;
-   grid-template-columns: 3fr 9fr;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
 }
 
 @media screen and (max-width: 600px) {

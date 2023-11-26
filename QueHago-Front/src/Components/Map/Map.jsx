@@ -22,7 +22,7 @@ const Map = () => {
   }, [])
 
   return (
-    <Box sx={{ width: "25vw", height: "35vh", backgroundColor: blue[300], display: "flex", justifyContent: "center", alignItems: "center", margin:'20px', zIndex:'1' }}>
+    <Box sx={{ width: "22vw", height: "35vh", backgroundColor: blue[300], display: "flex", justifyContent: "center", alignItems: "center", margin:'35px', marginRight:'42px', zIndex:'1' }}>
       <MapContainer center={myPos && myPos} zoom={13} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
