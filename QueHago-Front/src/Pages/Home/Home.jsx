@@ -11,12 +11,21 @@ import Map from "../../Components/Map/Map.jsx"
 
 const Home = () => {
   const [event, setEvent] = useState([])
+  const [filteredEvent, setFilteredEvent] = useState({})
 
   const getEvents = async () => {
     const data = await getAllEvents()
     setEvent(data)
   }
 
+  const filterEvent = async () => {
+    const data = await getAllEvents()
+    const filteredData = data.filter((event) => event.genre === ("Concierto"))
+    setFilteredEvent(filteredData)
+    setEvent(data)
+  }
+
+  
   useEffect(() => {
     getEvents()
   }, [])

@@ -56,14 +56,13 @@ const SignUp = () => {
 
   return (
     <>
-      <div>
-        <img
-          className="signupBackground"
-          src={
-            "https://res.cloudinary.com/djpdopxfy/image/upload/v1700937728/SignUp_Wallpaper_ae4c7e.png"
-          }
-        ></img>
-      </div>
+      <img
+        className="signupBackground"
+        src={
+          "https://res.cloudinary.com/djpdopxfy/image/upload/v1700937728/SignUp_Wallpaper_ae4c7e.png"
+        }
+      ></img>
+
       <Card
         sx={{
           backgroundColor: "#792350",

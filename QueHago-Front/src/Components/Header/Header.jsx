@@ -42,7 +42,7 @@ function onLogout() {
         <Link to={"/bussiness/login"}><Button sx={{margin:'20px', backgroundColor: '#792350', color:'white' }} color="success">
                    Login Bussiness
         </Button></Link>
-        <Link to={"/bussiness/login"}><Button sx={{margin:'20px', backgroundColor: green[600], color:'white' }} color="success">
+        <Link to={"/bussiness/signup"}><Button sx={{margin:'20px', backgroundColor: green[600], color:'white' }} color="success">
                    SignUp Bussiness
         </Button></Link>
         <Link><Button onClick={() => onLogout()}>Logout</Button></Link>
