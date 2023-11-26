@@ -10,6 +10,8 @@
   border-radius: 15px;
   background-repeat:repeat;
   background-size: 55%;
+  position: relative;
+  right: 0;
 }
 
 .events-container h3 {
