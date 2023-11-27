@@ -32,7 +32,6 @@ const ClubsEventsComponent = ({
     setOpen(true)
   }
   const handleClose = () => setOpen(false)
-  console.log(events)
 
   return (
     <div className="clubsEventsContainer">

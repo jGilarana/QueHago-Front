@@ -27,7 +27,6 @@ const LoginClub = () => {
         try {
           const loginResponse = await login({email, password})
           localStorage.setItem('token', loginResponse.data.token)
-          localStorage.setItem('role', loginResponse.data.role)
           localStorage.setItem('subscriptionStatus', loginResponse.data.subscriptionStatus)
           navigate('/bussiness')      
         } catch (error) {
