@@ -20,10 +20,19 @@ const ClubsEventsComponent = ({
     "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg"
   )
   const [open, setOpen] = useState(false)
+  const [hovered, setHovered] = useState(false)
+  const handleMouseEnter = () => {
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
   const handleOpen = () => {
     setOpen(true)
   }
   const handleClose = () => setOpen(false)
+  console.log(events)
 
   return (
     <div className="clubsEventsContainer">
@@ -125,14 +134,17 @@ const ClubsEventsComponent = ({
           </Button>
         </Box>
       </Modal>
-      <Card
+      <Card onClick={handleOpen} 
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="hoverCard"
         sx={{
           backgroundColor: "#131313",
           margin: "2vw",
           width: "14vw",
           height: "50vh",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent: "space-around",
           display: "flex",
           flexDirection: "column",
           borderRadius: "12px",
@@ -151,9 +163,12 @@ const ClubsEventsComponent = ({
           },
         }}
       >
-        <h3>Crear evento</h3>
-        <img className="event" src={eventImg}></img>
-        <Button onClick={handleOpen}>Open modal</Button>
+        <h3>Crear nuevo evento</h3>
+        <div>
+          
+        </div>
+        <img onClick={handleOpen} className={hovered ? "newEvent" : "clubsEvent"} src={hovered ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1701078519/Dise%C3%B1o_sin_t%C3%ADtulo_1_pdvujw.png' : eventImg}></img>
+        <p onClick={handleOpen}>Haz Click para crear nuevo evento</p>
       </Card>
       {events.map((em, i) => (
         <Card key={em.id}
@@ -191,7 +206,7 @@ const ClubsEventsComponent = ({
                 : em.image
             }
           ></img>
-          <Link to={"/login"}>
+          <Link to={`/event/${em.id}`}>
             <p className="moreInfo">Ver más</p>
           </Link>
         </Card>

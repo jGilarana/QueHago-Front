@@ -28,6 +28,7 @@ const LoginClub = () => {
           const loginResponse = await login({email, password})
           localStorage.setItem('token', loginResponse.data.token)
           localStorage.setItem('role', loginResponse.data.role)
+          localStorage.setItem('subscriptionStatus', loginResponse.data.subscriptionStatus)
           navigate('/bussiness')      
         } catch (error) {
           console.error('Error al iniciar sesión:', error);

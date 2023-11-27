@@ -28,7 +28,7 @@ const Map = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={myPos && myPos} />
+        <Marker position={myPos && myPos} ><Popup><h1>Hola mundo</h1></Popup></Marker>
       </MapContainer>
     </Box>
   )

@@ -64,8 +64,9 @@ const SignUp = () => {
       ></img>
 
       <Card
+  
         sx={{
-          backgroundColor: "#792350",
+          backgroundColor: "#8f7600",
           opacity: "98.5%",
           position: "fixed",
           right: "0",
@@ -78,6 +79,7 @@ const SignUp = () => {
           borderRadius: "12px",
           textAlign: "center",
           overflow: "auto",
+          color:'white'
         }}
       >
         <CardHeader title="signup" />
@@ -97,11 +99,12 @@ const SignUp = () => {
             sx={{ marginBottom: "20px" }}
           />
           <TextField
+          color="success"
             onChange={(e) => setEmail(e.target.value)}
             label="Tu mejor email"
             variant="filled"
             fullWidth={true}
-            sx={{ marginBottom: "20px" }}
+            sx={{ marginBottom: "20px", color: '#500041' }}
           />
           <TextField
             onChange={(e) => setTelephone(e.target.value)}

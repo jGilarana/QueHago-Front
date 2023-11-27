@@ -24,6 +24,7 @@ const UploadWidget = ({updatePhoto, setUrl}) => {
                     const role = localStorage.getItem('role');
 
                     if (role) {
+                        console.log(result)
                       updatePhoto(result.info.url);
                     } else {
                       console.log('Ya puedes ir creando la función');

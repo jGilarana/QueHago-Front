@@ -16,8 +16,13 @@ const  ClubsEvents = () => {
   
 
   const seeEvents = async () => {
+    if (localStorage.getItem('subscriptionStatus') === null) {
+      console.log('You are not logged in')
+      return null
+    } else {
     const events = await getClubsEvents()
     setEvents(events)
+    }
   }
 
   const postEvents = async() =>  {
