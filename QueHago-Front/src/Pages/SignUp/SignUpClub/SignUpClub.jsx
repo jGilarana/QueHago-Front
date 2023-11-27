@@ -42,8 +42,8 @@ const SignUp = () => {
         address,
       })
       localStorage.setItem("token", signupResponse.data.token)
-      //localStorage.setItem("role", response.data.role)
-      console.log(signupResponse)
+      localStorage.setItem("subscriptionStatus", signupResponse.data.role)
+    
       navigate("/")
     } catch (error) {
       console.error("Error al crear cuenta:", error)

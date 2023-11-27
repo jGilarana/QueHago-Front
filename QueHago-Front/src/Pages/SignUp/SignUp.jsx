@@ -45,8 +45,8 @@ const SignUp = () => {
         birthDate,
       })
       localStorage.setItem("token", signupResponse.data.token)
-      //localStorage.setItem("role", response.data.role)
-      console.log(signupResponse)
+      localStorage.setItem("role", "user")
+     // REVISAR 
       navigate("/")
     } catch (error) {
       console.log(signupResponse.data)
