@@ -41,3 +41,18 @@ export async function postPhoto(image) {
     throw error; // Rechazamos la promesa para que el error se propague
   }
 }
+
+export async function postProfile(data) {
+  try {
+    const response = await api.put('users/postprofile',data, {
+      headers: {
+        'Cache-Control': 'no-cache',
+        'Authorization': localStorage.getItem('token')
+      }
+    });
+    return response.data; // Devolvemos solo los datos de la respuesta, no toda la respuesta
+  } catch (error) {
+    console.error('Error al enviar la foto:', error);
+    throw error; // Rechazamos la promesa para que el error se propague
+  }
+}
