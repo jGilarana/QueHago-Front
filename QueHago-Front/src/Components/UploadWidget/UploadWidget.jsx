@@ -21,9 +21,9 @@ const UploadWidget = ({updatePhoto, setUrl}) => {
                 if (result.event === "success") {
                     setUrl(result.info.url)
 
-                    const role = localStorage.getItem('role');
+                    const token = localStorage.getItem('token');
 
-                    if (role) {
+                    if (token) {
                         console.log(result)
                       updatePhoto(result.info.url);
                     } else {

@@ -9,7 +9,7 @@ import {
 import { Link, Navigate, redirect, useNavigate } from "react-router-dom";
 import { Box, Button, MenuItem, Modal, TextField } from "@mui/material";
 import { blueGrey, green } from "@mui/material/colors";
-import { getOwnClub } from "../../Services/clubService";
+import { getOwnClub, postClubPhoto } from "../../Services/clubService";
 
 const Header = () => {
   const navigation = useNavigate();
@@ -80,11 +80,18 @@ const Header = () => {
         email,
         telephone,
         address,
+        photo
       });
     } catch (error) {
       console.log(signupResponse.data);
       console.error("Error al actualizar usuario:", error);
     }
+  };
+
+  const updateClubPhoto = async (newPhoto) => {
+    const data = await postClubPhoto(newPhoto);
+    console.log("Club photo uploaded");
+    return data;
   };
 
   useEffect(() => {
@@ -117,6 +124,8 @@ const Header = () => {
 
   return (
     <Box className="header-container">
+
+      {/* /////////////////////////////////////////////// USER MODAL /////////////////////////////////////////////////////////////////////// */}
       <Modal
         sx={{
           display: "flex",
@@ -184,6 +193,8 @@ const Header = () => {
           <Button onClick={() => updateUserProfile()}>Update</Button>
         </Box>
       </Modal>
+      {/* /////////////////////////////////////////////// CLUB MODAL /////////////////////////////////////////////////////////////////////// */}
+
       <Modal
         sx={{
           display: "flex",
@@ -215,7 +226,14 @@ const Header = () => {
             zIndex: "2",
           }}
         >
-          <UploadWidget setUrl={setPhoto} updatePhoto={updatePhoto} />
+            <TextField
+            onChange={(e) => setLastName(e.target.value)}
+            label="Apellidos"
+            variant="filled"
+            fullWidth={true}
+            sx={{ marginBottom: "20px" }}
+          />
+          <UploadWidget setUrl={setPhoto} updatePhoto={updateClubPhoto} />
           <Button onClick={() => updateUserProfile()}>Update</Button>
         </Box>
       </Modal>

@@ -58,5 +58,22 @@ export const updateOwnCLub = async (clubData) => {
 }
 
 
+export async function postClubPhoto(image) {
+  try {
+    const response = await api.put('clubs/profile', {
+      image: image
+    }, {
+      headers: {
+        'Cache-Control': 'no-cache',
+        'Authorization': localStorage.getItem('token')
+      }
+    });
+
+    return response.data; // Devolvemos solo los datos de la respuesta, no toda la respuesta
+  } catch (error) {
+    console.error('Error al enviar la foto:', error);
+    throw error; // Rechazamos la promesa para que el error se propague
+  }
+}
 
 // NO OLVIDARSE DEL CHECK ROLE
