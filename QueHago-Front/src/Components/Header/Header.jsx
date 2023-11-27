@@ -107,6 +107,8 @@ const Header = () => {
 
   function onLogout() {
     localStorage.removeItem("token");
+    localStorage.removeItem("role");
+    localStorage.removeItem("subscriptionStatus");
     if (location === "/") {
       window.location.reload();
     }
