@@ -14,7 +14,7 @@ const HomeComponent = ({event}) => {
        backgroundColor: '#131313',
        margin: '2vw',
        width: '10vw',
-       height: '40vh',  // Aumenté la altura de la tarjeta
+       height: '40vh', 
        alignItems: 'center',
        justifyContent: 'space-between',
        display: 'flex',
@@ -24,13 +24,13 @@ const HomeComponent = ({event}) => {
        overflow: 'hidden',
    
        '@media (min-width: 600px) and (max-width: 1080px)': {
-         width: '30vw',
-         height: '40vh',  // Ajusta la altura para la vista de pantalla mediana
+         width: '20vw',
+         height: '40vh', 
        },
    
        '@media (max-width: 600px)': {
          width: '42vw',
-         height: '40vh',  // Ajusta la altura para la vista de pantalla pequeña
+         height: '40vh', 
        }
      }}
    >

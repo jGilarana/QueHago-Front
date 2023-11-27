@@ -7,9 +7,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: rgb(29, 29, 87);
+    background-color: rgb(34, 34, 35);
     border-radius: 15px;
     background-repeat:repeat;
     background-size: 55%;
     overflow: auto;
+    margin-left:5vw;        
+    border: solid white 2px;
 }
