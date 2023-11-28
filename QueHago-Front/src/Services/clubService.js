@@ -51,8 +51,6 @@ export const updateOwnCLub = async (clubData) => {
         Authorization: localStorage.getItem("token"),
       },
     })
-    console.log(data)
-    console.log(clubData)
     return data
   } catch (error) {
     console.log(error.message)

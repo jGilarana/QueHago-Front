@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import ClubsEventsComponent from './ComponenClubsEvent/ClubsEventsComponent.jsx'
 import { createClubsEvents, getClubsEvents } from '../../Services/clubService.js'
+import { updateClubsEvent } from '../../Services/eventService.js'
 
 const  ClubsEvents = () => {
 
   const [events, setEvents] = useState([])
-
   const [title, setTitle] = useState()
   const [genre, setGenre] = useState()
   const [address, setAddress] = useState()
@@ -14,7 +14,10 @@ const  ClubsEvents = () => {
   const [minimumAge, setMinimumAge] = useState()
   const [image, setImage] = useState()
   
-
+  const updateEvent = async(id) => {
+    const response = await updateClubsEvent(id, {title, genre, address, rooms, date, minimumAge, image})
+    console.log(response)
+  }
   const seeEvents = async () => {
     if (localStorage.getItem('subscriptionStatus') === null) {
       console.log('You are not logged in')
@@ -38,7 +41,7 @@ useEffect(() => {
   return (
 
 <>
-<ClubsEventsComponent setTitle={setTitle} setGenre={setGenre} setAddress={setAddress} setRooms={setRooms} setDate={setDate} setMinimumAge={setMinimumAge} setImage={setImage} updateEvent={postEvents} events={events}/>
+<ClubsEventsComponent setTitle={setTitle} setGenre={setGenre} setAddress={setAddress} setRooms={setRooms} setDate={setDate} setMinimumAge={setMinimumAge} setImage={setImage} createEvent={postEvents} updateEvent={updateEvent} events={events}/>
 </>
   )
 }
