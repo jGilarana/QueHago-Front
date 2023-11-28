@@ -13,7 +13,9 @@ export const getUsersFavorites = async() => {
 }
 
 export const userSetsFavorite = async(id) => {
-    const {response} = await api.post('/users/addfav',  {
+    const {response} = await api.post('/users/addfav', {
+        eventId : id
+    }, {
         headers : {
             'Cache-Control' : 'no-cache',
             'Authorization' : localStorage.getItem('token')

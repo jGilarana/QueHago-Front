@@ -8,6 +8,7 @@ import { getProfile, postPhoto } from "../../Services/accountService"
 import UploadWidget from "../../Components/UploadWidget/UploadWidget.jsx"
 import HomeComponent from "./HomeComponent/HomeComponent.jsx"
 import Map from "../../Components/Map/Map.jsx"
+import { userSetsFavorite } from "../../Services/favoriteService.js"
 
 const Home = () => {
   const [genre,setGenre] = useState('')
@@ -15,6 +16,7 @@ const Home = () => {
   const [filteredEvent, setFilteredEvent] = useState({})
 
 
+ 
   const handleChangeGenre= (e) => {
     setGenre(e.target.value);
   };
