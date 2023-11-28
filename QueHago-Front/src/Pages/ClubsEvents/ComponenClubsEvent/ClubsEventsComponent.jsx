@@ -150,6 +150,7 @@ const ClubsEventsComponent = ({
           textAlign: "center",
           overflow: "hidden",
           color: "white",
+          transition:'0.5s',
 
           "@media (min-width: 600px) and (max-width: 1080px)": {
             width: "30vw",

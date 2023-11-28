@@ -122,7 +122,6 @@ const Header = () => {
         ? await getProfile()
         : await getOwnClub();
       setPhoto(data.image);
-      console.log(data)
       return data;
     }
   };
