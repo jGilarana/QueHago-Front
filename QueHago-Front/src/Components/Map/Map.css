@@ -1,8 +1,8 @@
 .leaflet-container {
-    width: 18vw;
+    width: 12vw;
     height: 30vh;
+    margin: 2vw;
     background-color: aliceblue; 
-    margin: 0;
     padding: 0;
     left: 2px;
 }
