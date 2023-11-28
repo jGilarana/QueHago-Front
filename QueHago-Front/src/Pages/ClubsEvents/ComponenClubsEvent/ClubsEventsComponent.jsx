@@ -297,15 +297,10 @@ const ClubsEventsComponent = ({
             },
           }}
         >
-          <h3>{em.title}</h3>
-          <img
-            className="event"
-            src={
-              em.image === null
-                ? "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg"
-                : em.image
-            }
-          ></img>
+          <h3 key={em.id}>{em.title}</h3>
+          <img className='event' key={i} src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}></img>
+          <h4>{em.genre}</h4>
+          <h4>{em.address}</h4>
           <Link to={`/event/${em.id}`}>
             <p className="moreInfo">Ver más</p>
           </Link>
