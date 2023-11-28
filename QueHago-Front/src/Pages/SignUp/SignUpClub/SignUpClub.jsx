@@ -15,7 +15,7 @@ import { blue, green, purple } from "@mui/material/colors"
 import { useNavigate } from "react-router-dom"
 import { signupClub } from "../../../Services/clubService.js"
 
-const SignUp = () => {
+const SignUpClub = () => {
   const navigate = useNavigate()
 
   const userData = {
@@ -42,9 +42,9 @@ const SignUp = () => {
         address,
       })
       localStorage.setItem("token", signupResponse.data.token)
-      localStorage.setItem("subscriptionStatus", signupResponse.data.role)
-    
-      navigate("/")
+      localStorage.setItem("subscriptionStatus", true)
+    ///IMPORTANTE MIRAR
+      navigate("/bussiness")
     } catch (error) {
       console.error("Error al crear cuenta:", error)
     }
@@ -139,4 +139,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default SignUpClub

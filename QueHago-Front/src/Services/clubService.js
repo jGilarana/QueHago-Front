@@ -31,7 +31,7 @@ export const createClubsEvents = async (eventData) => {
 }
 
 export const getOwnClub = async () => {
-  console.log("hola ownClub")
+
   const data = await api.get("/clubs/ownclub", {
     headers: {
       "Cache-Control": "no-cache",
@@ -45,12 +45,14 @@ export const getOwnClub = async () => {
 export const updateOwnCLub = async (clubData) => {
   try {
     const data = await api.put("clubs/profile", clubData, {
+     
       headers: {
         "Cache-Control": "no-cache",
         Authorization: localStorage.getItem("token"),
       },
     })
     console.log(data)
+    console.log(clubData)
     return data
   } catch (error) {
     console.log(error.message)

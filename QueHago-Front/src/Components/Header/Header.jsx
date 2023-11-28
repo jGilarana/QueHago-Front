@@ -12,6 +12,8 @@ import { blueGrey, green } from "@mui/material/colors";
 import { getOwnClub, postClubPhoto } from "../../Services/clubService";
 
 const Header = () => {
+
+
   const navigation = useNavigate();
 
   const [password, setPassword] = useState();
@@ -23,6 +25,10 @@ const Header = () => {
   const [photo, setPhoto] = useState(
     "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg"
   );
+
+  const [companyName, setCompanyName] = useState();
+  const [address, setAddress] = useState();
+
   const [open, setOpen] = useState(false);
   const [openClub, setOpenClub] = useState(false);
 
@@ -66,12 +72,19 @@ const Header = () => {
         firstName,
         lastName,
         birthDate,
+        photo
       });
+      handleClose()
+      onLogout()
+      return updateResponse
     } catch (error) {
-      console.log(signupResponse.data);
+      
       console.error("Error al actualizar usuario:", error);
     }
   };
+
+
+  
 
   const updateClubProfile = async () => {
     try {
@@ -80,8 +93,12 @@ const Header = () => {
         email,
         telephone,
         address,
-        photo
+        photo,
+        
       });
+      handleClose()
+      onLogout()
+      return updateResponse
     } catch (error) {
       console.log(signupResponse.data);
       console.error("Error al actualizar usuario:", error);
@@ -103,11 +120,11 @@ const Header = () => {
       console.log("You are not logged in");
       return null;
     } else {
-      const { data } = localStorage.getItem("role")
+      const  {data}  = localStorage.getItem("role") 
         ? await getProfile()
         : await getOwnClub();
-      console.log(data);
       setPhoto(data.image);
+      console.log(data)
       return data;
     }
   };
@@ -175,6 +192,7 @@ const Header = () => {
             fullWidth={true}
             sx={{ marginBottom: "20px", color: "#500041" }}
           />
+          <p>Si camias el email o la contraseña, tendrás que iniciar sesión nuevamente</p>
           <TextField
             onChange={(e) => setTelephone(e.target.value)}
             label="Teléfono"
@@ -202,7 +220,7 @@ const Header = () => {
           alignItems: "center",
           width: "100vw",
           height: "100vh",
-          backgroundColor: "black",
+          backgroundColor: "transparent",
           position: "fixed",
         }}
         open={openClub}
@@ -214,27 +232,56 @@ const Header = () => {
           sx={{
             overflow: "auto",
             width: "30vw",
-            height: "60vh",
+            height: "80%",
             display: "flex",
             alignContent: "center",
             justifyContent: "center",
             flexDirection: "column",
             borderRadius: "12px",
             backgroundColor: "#9294ff",
-            opacity: "85%",
+            opacity: "90%",
             backdropFilter: "blur(800px)",
             zIndex: "2",
           }}
         >
             <TextField
-            onChange={(e) => setLastName(e.target.value)}
-            label="Apellidos"
+            onChange={(e) => setCompanyName(e.target.value)}
+            label="¿Has cambiado el nombre de tu compañía?"
+            variant="filled"
+            fullWidth={true}
+            sx={{ marginBottom: "20px" }}
+          />
+             <TextField
+            onChange={(e) => setEmail(e.target.value)}
+            label="¿Tu email es el mismo o lo has actualizado?"
+            variant="filled"
+            fullWidth={true}
+            sx={{ marginBottom: "20px" }}
+          />
+          <p>Si camias el email o la contraseña, tendrás que iniciar sesión nuevamente</p>
+             <TextField
+            onChange={(e) => setTelephone(e.target.value)}
+            label="¿Has actualizado tu telefono?"
+            variant="filled"
+            fullWidth={true}
+            sx={{ marginBottom: "20px" }}
+          />
+            <TextField
+            onChange={(e) => setPassword(e.target.value)}
+            label="Aquí puedes cambiar tu contraseña"
+            variant="filled"
+            fullWidth={true}
+            sx={{ marginBottom: "20px" }}
+          />
+            <TextField
+            onChange={(e) => setAddress(e.target.value)}
+            label="¿Cual es la dirección del evento?"
             variant="filled"
             fullWidth={true}
             sx={{ marginBottom: "20px" }}
           />
           <UploadWidget setUrl={setPhoto} updatePhoto={updateClubPhoto} />
-          <Button onClick={() => updateUserProfile()}>Update</Button>
+          <Button onClick={() => updateClubProfile()}>Update</Button>
         </Box>
       </Modal>
 

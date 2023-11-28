@@ -44,15 +44,31 @@ export async function postPhoto(image) {
 
 export async function postProfile(data) {
   try {
-    const response = await api.put('users/postprofile',data, {
+    const response = await api.put('users/postprofile', data, {
       headers: {
+        
         'Cache-Control': 'no-cache',
         'Authorization': localStorage.getItem('token')
       }
     });
-    return response.data; // Devolvemos solo los datos de la respuesta, no toda la respuesta
+    const token = (localStorage.getItem('token'));
+    console.log('Token:', token);
+    return response.data;
   } catch (error) {
-    console.error('Error al enviar la foto:', error);
-    throw error; // Rechazamos la promesa para que el error se propague
+    const token = (localStorage.getItem('token'));
+    console.log('Token:', token);
+    console.error('Error al actualizar Usuario', error);
+    if (error.response) {
+      // El servidor devolvió una respuesta de error
+      console.error('Respuesta de error del servidor:', error.response.data);
+      console.error('Código de estado:', error.response.status);
+    } else if (error.request) {
+      // La solicitud fue realizada pero no se recibió respuesta
+      console.error('No se recibió respuesta del servidor');
+    } else {
+      // Ocurrió un error antes de enviar la solicitud
+      console.error('Error al procesar la solicitud:', error.message);
+    }
+    throw error;
   }
 }

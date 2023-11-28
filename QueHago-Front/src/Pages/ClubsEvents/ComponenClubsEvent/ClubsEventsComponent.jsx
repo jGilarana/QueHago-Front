@@ -57,7 +57,7 @@ const ClubsEventsComponent = ({
           sx={{
             overflow: "auto",
             width: "30vw",
-            height: "60vh",
+            height: "80vh",
             display: "flex",
             alignContent: "center",
             justifyContent: "center",
