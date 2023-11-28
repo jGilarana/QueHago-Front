@@ -9,7 +9,7 @@ import {
 import { Link, Navigate, redirect, useNavigate } from "react-router-dom";
 import { Box, Button, MenuItem, Modal, TextField } from "@mui/material";
 import { blueGrey, green } from "@mui/material/colors";
-import { getOwnClub, postClubPhoto } from "../../Services/clubService";
+import { getOwnClub, postClubPhoto, updateOwnCLub } from "../../Services/clubService";
 
 const Header = () => {
 
@@ -88,7 +88,7 @@ const Header = () => {
 
   const updateClubProfile = async () => {
     try {
-      const updateResponse = await postProfile({
+      const updateResponse = await updateOwnCLub({
         companyName,
         email,
         telephone,
@@ -96,8 +96,6 @@ const Header = () => {
         photo,
         
       });
-      handleClose()
-      onLogout()
       return updateResponse
     } catch (error) {
       console.log(signupResponse.data);
