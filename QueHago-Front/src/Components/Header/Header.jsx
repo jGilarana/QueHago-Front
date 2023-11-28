@@ -44,8 +44,10 @@ const Header = () => {
   const handleOpen = () => {
     if (localStorage.role === "user" || localStorage.role === "admin") {
       setOpen(true);
+      return
     } else {
       setOpenClub(true);
+      return
     }
     console.log(openClub);
   };
@@ -121,6 +123,10 @@ const Header = () => {
       const  {data}  = localStorage.getItem("role") 
         ? await getProfile()
         : await getOwnClub();
+        if (data.image === null) {
+          setPhoto('https://res.cloudinary.com/djpdopxfy/image/upload/v1700759387/QueHago/yfwbqcttpnfh8gdkbsdp.png')
+          return
+          }
       setPhoto(data.image);
       return data;
     }
@@ -182,15 +188,6 @@ const Header = () => {
             sx={{ marginBottom: "20px" }}
           />
           <TextField
-            color="success"
-            onChange={(e) => setEmail(e.target.value)}
-            label="Tu mejor email"
-            variant="filled"
-            fullWidth={true}
-            sx={{ marginBottom: "20px", color: "#500041" }}
-          />
-          <p>Si camias el email o la contraseña, tendrás que iniciar sesión nuevamente</p>
-          <TextField
             onChange={(e) => setTelephone(e.target.value)}
             label="Teléfono"
             variant="filled"
@@ -249,14 +246,6 @@ const Header = () => {
             sx={{ marginBottom: "20px" }}
           />
              <TextField
-            onChange={(e) => setEmail(e.target.value)}
-            label="¿Tu email es el mismo o lo has actualizado?"
-            variant="filled"
-            fullWidth={true}
-            sx={{ marginBottom: "20px" }}
-          />
-          <p>Si camias el email o la contraseña, tendrás que iniciar sesión nuevamente</p>
-             <TextField
             onChange={(e) => setTelephone(e.target.value)}
             label="¿Has actualizado tu telefono?"
             variant="filled"
@@ -272,12 +261,12 @@ const Header = () => {
           />
             <TextField
             onChange={(e) => setAddress(e.target.value)}
-            label="¿Cual es la dirección del evento?"
+            label="Actualiza tu dirección física si la has cambiado"
             variant="filled"
             fullWidth={true}
             sx={{ marginBottom: "20px" }}
           />
-          <UploadWidget setUrl={setPhoto} updatePhoto={updateClubPhoto} />
+          <UploadWidget setUrl={setPhoto} updatePhoto={updateClubPhoto}/>
           <Button onClick={() => updateClubProfile()}>Update</Button>
         </Box>
       </Modal>
@@ -290,7 +279,7 @@ const Header = () => {
       </Link>
       <Link to={"/login"}>
         <Button
-          sx={{ margin: "20px", backgroundColor: "#792350", color: "white" }}
+          sx={{ margin: "20px", backgroundColor: "#792350", color: "white",   display: (localStorage.getItem('token')) ? 'none' : 'initial' }}
           color="primary"
         >
           Login
@@ -298,7 +287,7 @@ const Header = () => {
       </Link>
       <Link to={"/signup"}>
         <Button
-          sx={{ margin: "20px", backgroundColor: green[600], color: "white" }}
+          sx={{ display: (localStorage.getItem('token')) ? 'none' : 'initial', margin: "20px", backgroundColor: green[600], color: "white" }}
           color="success"
         >
           Sign Up
@@ -306,7 +295,7 @@ const Header = () => {
       </Link>
       <Link to={"/bussiness/login"}>
         <Button
-          sx={{ margin: "20px", backgroundColor: "#792350", color: "white" }}
+          sx={{display: (localStorage.getItem('token')) ? 'none' : 'initial', margin: "20px", backgroundColor: "#792350", color: "white" }}
           color="success"
         >
           Login Bussiness
@@ -314,14 +303,14 @@ const Header = () => {
       </Link>
       <Link to={"/bussiness/signup"}>
         <Button
-          sx={{ margin: "20px", backgroundColor: green[600], color: "white" }}
+          sx={{ display: (localStorage.getItem('token')) ? 'none' : 'initial', margin: "20px", backgroundColor: green[600], color: "white" }}
           color="success"
         >
           SignUp Bussiness
         </Button>
       </Link>
       <Link>
-        <Button onClick={() => onLogout()}>Logout</Button>
+        <Button sx={{ display: (localStorage.getItem('token')) ? 'initial' : 'none'}}onClick={() => onLogout()}>Logout</Button>
       </Link>
 
       <div>

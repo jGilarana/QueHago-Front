@@ -8,6 +8,7 @@ import LoginClub from "../Pages/Login/LoginClub.jsx";
 import SignUpClub from "../Pages/SignUp/SignUpClub/SignUpClub.jsx";
 import SingleEvent from "../Pages/SingleEvent/SingleEvent.jsx";
 import Map from "../Components/Map/Map.jsx";
+import Favorites from "../Pages/Favorites/Favorites.jsx";
 
 const router = createBrowserRouter([
     {
@@ -45,7 +46,11 @@ const router = createBrowserRouter([
             {
                 path: '/map',
                 element : <Map/>
-            }
+            },
+               {
+                path:'/favorites',
+                element:<Favorites/>
+               }
         ]
     }
 ])

@@ -10,8 +10,14 @@ import HomeComponent from "./HomeComponent/HomeComponent.jsx"
 import Map from "../../Components/Map/Map.jsx"
 
 const Home = () => {
+  const [genre,setGenre] = useState('')
   const [event, setEvent] = useState([])
   const [filteredEvent, setFilteredEvent] = useState({})
+
+
+  const handleChangeGenre= (e) => {
+    setGenre(e.target.value);
+  };
 
   const getEvents = async () => {
     const data = await getAllEvents()
@@ -32,6 +38,16 @@ const Home = () => {
 
   return (
     <div className="home">
+
+{/* <label>
+            AQUI PONES EL TITULO DE LO QUE SE VA A BUSCAR POR EJEMPLO
+            <select value={genre} onChange={handleChangeGenre}>
+              <option value="">eurobeat</option>
+              <option value="">tecno</option>
+              <option value="">house</option>
+</select>
+</label> */}
+
           <Map/>
       <HomeComponent event={event} />
     </div>
