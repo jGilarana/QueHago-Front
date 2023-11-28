@@ -75,7 +75,6 @@ const Header = () => {
         photo
       });
       handleClose()
-      onLogout()
       return updateResponse
     } catch (error) {
       
@@ -96,6 +95,7 @@ const Header = () => {
         photo,
         
       });
+      handleCloseClub()
       return updateResponse
     } catch (error) {
       console.log(signupResponse.data);
