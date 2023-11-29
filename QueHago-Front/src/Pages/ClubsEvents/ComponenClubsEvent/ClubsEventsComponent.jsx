@@ -18,7 +18,13 @@ const ClubsEventsComponent = ({
   setImage,
   events,
   createEvent, 
-  updateEvent
+  updateEvent,
+  openUpdate,
+  open,
+  handleOpen,
+  handleClose,
+  handleOpenUpdate,
+  handleCloseUpdate
 }) => {
 
 
@@ -28,8 +34,6 @@ const ClubsEventsComponent = ({
   )
 
   const [eventId, setEventId] = useState()
-  const [openUpdate, setOpenUpdate] = useState(false)
-  const [open, setOpen] = useState(false)
   const [hovered, setHovered] = useState(false)
 
    
@@ -41,16 +45,6 @@ const ClubsEventsComponent = ({
   const handleMouseLeave = () => {
     setHovered(false);
   };
-  const handleOpen = () => {
-    setOpen(true)
-  }
-  const handleClose = () => setOpen(false)
-
-  const handleOpenUpdate = () => {
-    setOpenUpdate(true)
-  }
-  const handleCloseUpdate = () => setOpenUpdate(false)
-
   
   return (
     <div className="clubsEventsContainer">
@@ -252,7 +246,7 @@ const ClubsEventsComponent = ({
           ></TextField>
           <UploadWidget setUrl={setImage}></UploadWidget>
           <Button
-            onClick={(e)=>updateEvent(eventId)}
+            onClick={()=>updateEvent(eventId)}
             sx={{
               alignSelf: "center",
               backgroundColor: blue[300],

@@ -13,12 +13,10 @@ const HomeComponent = ({event}) => {
 
   const getFavorites = async() =>  {
       const data = await getUsersFavorites()
-      console.log(data)
       setFavorite(data)
   }
   
   const sames = favorite.map((em) => (em.favorite.eventId))
-  console.log(sames)
 
 
   useEffect(() => {
@@ -69,7 +67,7 @@ const HomeComponent = ({event}) => {
        }
      }}
    >
-          <FavoriteIcon className= {sames.includes(em.id) ? 'favIcon' : 'noFavIcon'}
+          <FavoriteIcon sx={{display: localStorage.getItem('token') ? 'initial' : 'none'}} className= {sames.includes(em.id) ? 'favIcon' : 'noFavIcon'}
           onClick={sames.includes(em.id) ? () => deleteFav(em.id) : () => setUsersFavorite(em.id)}
             ></FavoriteIcon>
           <h3 key={em.id}>{em.title}</h3>
