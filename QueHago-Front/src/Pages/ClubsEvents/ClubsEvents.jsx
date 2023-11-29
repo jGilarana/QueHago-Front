@@ -99,7 +99,7 @@ const ClubsEvents = () => {
         createEvent={postEvents}
         updateEvent={updateEvent}
         events={events}
-        handleCloseUpdate = {handleCloseUpdate}
+        
        
       />
     </>
