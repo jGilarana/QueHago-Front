@@ -10,6 +10,9 @@ const HomeComponent = ({event}) => {
 
 
   const [favorite, setFavorite] = useState([])
+  const [refresh, setRefresh] = useState(false)
+  
+  
 
   const getFavorites = async() =>  {
       const data = await getUsersFavorites()
@@ -21,20 +24,23 @@ const HomeComponent = ({event}) => {
 
   useEffect(() => {
       getFavorites()
-  },[])
+  },[refresh])
+
 
 
   const setUsersFavorite = async(id) => {
     const data = await userSetsFavorite(id)
-    return
+    setRefresh(!refresh)
+    return 'Favourite added'
   }
 
   const deleteFav = async(id) => {
     const data = await userDeletesFav(id)
-    return
+    setRefresh(!refresh)
+    return 'Favourite deleted'
   }
 
-
+  
   
 
   return (

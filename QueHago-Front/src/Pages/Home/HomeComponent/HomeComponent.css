@@ -61,8 +61,10 @@
 
   .favIcon {
     color: red;
+    margin-top: 10px;
   }
 
   .noFavIcon {
     color: blue;
+    margin-top: 10px;
   }
