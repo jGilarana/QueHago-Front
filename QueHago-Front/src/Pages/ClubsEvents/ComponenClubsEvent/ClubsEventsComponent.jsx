@@ -61,7 +61,7 @@ const ClubsEventsComponent = ({
           sx={{
             overflow: "auto",
             width: "30vw",
-            height: "80vh",
+            height: "100%",
             display: "flex",
             alignContent: "center",
             justifyContent: "center",
@@ -75,7 +75,7 @@ const ClubsEventsComponent = ({
         >
           <TextField
             onChange={(e) => setTitle(e.target.value)}
-            label="title"
+            label="CUal"
             variant="filled"
             color="success"
             sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
