@@ -6,20 +6,8 @@ import { Box } from "@mui/material"
 import { blue } from "@mui/material/colors"
 
 const EventMap = ({pos}) => {
+  console.log(pos)
   
-  /* const getMyPos = () => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      setMyPos({
-        lat: latitude,
-        lng: longitude,
-      })
-    })
-  } */
-
-/*   useEffect(() => {
-    getMyPos()
-  }, []) */
-
   return (
    
       <MapContainer className="map" center={[pos.lat, pos.lng]} zoom={13} scrollWheelZoom={true}>

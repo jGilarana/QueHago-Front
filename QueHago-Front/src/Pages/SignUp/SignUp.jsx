@@ -49,7 +49,6 @@ const SignUp = () => {
      // REVISAR 
       navigate("/")
     } catch (error) {
-      console.log(signupResponse.data)
       console.error("Error al crear cuenta:", error)
     }
   }

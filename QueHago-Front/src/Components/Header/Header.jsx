@@ -31,6 +31,7 @@ const Header = () => {
 
   const [open, setOpen] = useState(false);
   const [openClub, setOpenClub] = useState(false);
+  const [openNotoken, setOpenNotoken] = useState(false);
 
   const [hovered, setHovered] = useState(false);
   const handleMouseEnter = () => {
@@ -45,17 +46,23 @@ const Header = () => {
     if (localStorage.role === "user" || localStorage.role === "admin") {
       setOpen(true);
       return
-    } else {
+    } else if(localStorage.getItem('subscriptionStatus')) {
       setOpenClub(true);
       return
+    } else {
+      setOpenNotoken(true);
+      return
     }
-    console.log(openClub);
   };
   const handleClose = () => {
     if (localStorage.role === "user" || localStorage.role === "admin") {
       setOpen(false);
-    } else {
+    } else if(localStorage.getItem('subscriptionStatus')) {
       setOpenClub(false);
+      return
+    } else {
+      setOpenNotoken(false);
+      return
     }
   };
 
@@ -269,6 +276,45 @@ const Header = () => {
           />
           <UploadWidget setUrl={setPhoto} updatePhoto={updateClubPhoto}/>
           <Button onClick={() => updateClubProfile()}>Update</Button>
+        </Box>
+      </Modal>
+
+{/*       ///////////////////////////////////////////////////// NO TOKEN MODAL ///////////////////////////////////////////////////////////////////
+ */}
+
+<Modal
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100vw",
+          height: "100vh",
+          backgroundColor: "transparent",
+          position: "fixed",
+        }}
+        open={openNotoken}
+        onClose={handleClose}
+        aria-labelledby="parent-modal-title"
+        aria-describedby="parent-modal-description"
+      >
+        <Box
+          sx={{
+            overflow: "auto",
+            width: "30vw",
+            height: "80%",
+            display: "flex",
+            alignContent: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            borderRadius: "12px",
+            backgroundColor: "#9294ff",
+            opacity: "90%",
+            backdropFilter: "blur(800px)",
+            zIndex: "2",
+          }}
+        >
+           <h1>No puedes actualizar tu usuario porque no has iniciado sesión</h1>
+          <Button onClick={() => navigation('/login')}>Iniciar sesión</Button>
         </Box>
       </Modal>
 

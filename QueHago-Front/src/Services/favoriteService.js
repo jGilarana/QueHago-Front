@@ -21,6 +21,5 @@ export const userSetsFavorite = async(id) => {
             'Authorization' : localStorage.getItem('token')
         }
     })
-    console.log(response)
     return response
 }

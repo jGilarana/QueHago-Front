@@ -18,7 +18,6 @@ const  ClubsEvents = () => {
   
   const updateEvent = async(id) => {
     const response = await updateClubsEvent(id, {title, genre, address, latitude, longitude, rooms, date, minimumAge, image})
-    console.log(response)
   }
   const seeEvents = async () => {
     if (localStorage.getItem('subscriptionStatus') === null) {

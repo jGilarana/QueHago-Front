@@ -17,7 +17,7 @@
 
 .event {
   width: 60%;
-  height: 50%;
+  height: 20vh;
   border-radius: 12px;
   object-fit: cover;
   }

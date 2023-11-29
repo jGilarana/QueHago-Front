@@ -22,7 +22,7 @@ export const getOneEvent = async (eventId) => {
 export const updateClubsEvent = async(id, eventData) => {
    
     console.log(eventData)
-    const {response} = await api.put(`/events/${id}`, eventData, {
+    const response = await api.put(`/events/${id}`, eventData, {
         headers : {
             'Cache-Control' : 'no-cache',
             'Authorization' : localStorage.getItem('token')

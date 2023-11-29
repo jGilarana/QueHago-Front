@@ -23,7 +23,6 @@ export const createClubsEvents = async (eventData) => {
         Authorization: localStorage.getItem("token"),
       },
     })
-    console.log(data)
     return data
   } catch (error) {
     console.log(error.message)
@@ -38,7 +37,6 @@ export const getOwnClub = async () => {
       'Authorization': localStorage.getItem("token"),
     },
   })
-  console.log(data)
   return data
 }
 

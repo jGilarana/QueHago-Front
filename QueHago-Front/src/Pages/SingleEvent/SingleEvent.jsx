@@ -15,7 +15,6 @@ const SingleEvent = () => {
 
   const getEvent = async () => {
     const data = await getOneEvent(eventId)
-    console.log(data)
     setEvent(data)
   }
 
@@ -54,7 +53,7 @@ const SingleEvent = () => {
       <h2>¿Qué generos de música escucharé? : <br></br>{event.genre}</h2>
       </div>
       
-      <div className="map">{event?.latitude && <EventMap pos={{lat:event.latitude, lng:event.longitude}} />}</div>
+      <div className={event.latitude ? "map" : "none"}>{event?.latitude && <EventMap pos={{lat:event.latitude, lng:event.longitude}}/>}</div>
       </Card>
     </div>
   )
