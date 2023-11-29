@@ -17,18 +17,15 @@ const ClubsEventsComponent = ({
   setMinimumAge,
   setImage,
   events,
-  createEvent, 
+  createEvent,
   updateEvent,
   openUpdate,
   open,
   handleOpen,
   handleClose,
   handleOpenUpdate,
-  handleCloseUpdate
+  handleCloseUpdate,
 }) => {
-
-
-
   const [eventImg, setEventImg] = useState(
     "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg"
   )
@@ -36,21 +33,19 @@ const ClubsEventsComponent = ({
   const [eventId, setEventId] = useState()
   const [hovered, setHovered] = useState(false)
 
-   
-
   const handleMouseEnter = () => {
-    setHovered(true);
-  };
+    setHovered(true)
+  }
 
   const handleMouseLeave = () => {
-    setHovered(false);
-  };
-  
+    setHovered(false)
+  }
+
   return (
     <div className="clubsEventsContainer">
-    
-{/* //////////////////////////////////////////// CREATE CLUB MODAL /////////////////////////////////////////////////
- */}      <Modal
+      {/* //////////////////////////////////////////// CREATE CLUB MODAL /////////////////////////////////////////////////
+       */}{" "}
+      <Modal
         sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
         open={open}
         onClose={handleClose}
@@ -94,14 +89,14 @@ const ClubsEventsComponent = ({
             color="success"
             sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
           ></TextField>
-           <TextField
+          <TextField
             onChange={(e) => setLatitude(e.target.value)}
             label="Latitude"
             variant="filled"
             color="success"
             sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
           ></TextField>
-           <TextField
+          <TextField
             onChange={(e) => setLongitude(e.target.value)}
             label="Longitude"
             variant="filled"
@@ -123,7 +118,7 @@ const ClubsEventsComponent = ({
             type="number"
             sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
           ></TextField>
-             <TextField
+          <TextField
             onChange={(e) => setMinimumAge(e.target.value)}
             label="Minimum Age"
             variant="filled"
@@ -144,16 +139,15 @@ const ClubsEventsComponent = ({
             sx={{
               alignSelf: "center",
               backgroundColor: blue[300],
-              "&:hover": { backgroundColor: blue[500] }  
+              "&:hover": { backgroundColor: blue[500] },
             }}
           >
             Upload
           </Button>
         </Box>
       </Modal>
-
-{/* //////////////////////////////////////////// UPDATE EVENT MODAL /////////////////////////////////////////////////
- */}
+      {/* //////////////////////////////////////////// UPDATE EVENT MODAL /////////////////////////////////////////////////
+       */}
       <Modal
         sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
         open={openUpdate}
@@ -206,7 +200,7 @@ const ClubsEventsComponent = ({
             type="number"
             sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
           ></TextField>
-           <TextField
+          <TextField
             onChange={(e) => setLongitude(e.target.value)}
             label="Longitude"
             variant="filled"
@@ -229,7 +223,7 @@ const ClubsEventsComponent = ({
             type="number"
             sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
           ></TextField>
-             <TextField
+          <TextField
             onChange={(e) => setMinimumAge(e.target.value)}
             label="Minimum Age"
             variant="filled"
@@ -246,21 +240,22 @@ const ClubsEventsComponent = ({
           ></TextField>
           <UploadWidget setUrl={setImage}></UploadWidget>
           <Button
-            onClick={()=>updateEvent(eventId)}
+            onClick={() => updateEvent(eventId)}
             sx={{
               alignSelf: "center",
               backgroundColor: blue[300],
-              "&:hover": { backgroundColor: blue[500] }  
+              "&:hover": { backgroundColor: blue[500] },
             }}
           >
             Upload
           </Button>
         </Box>
       </Modal>
-      <Card onClick={handleOpen} 
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className="hoverCard"
+      <Card
+        onClick={handleOpen}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className="hoverCard"
         sx={{
           backgroundColor: "#131313",
           margin: "2vw",
@@ -274,7 +269,7 @@ const ClubsEventsComponent = ({
           textAlign: "center",
           overflow: "hidden",
           color: "white",
-          transition:'0.5s',
+          transition: "0.5s",
 
           "@media (min-width: 600px) and (max-width: 1080px)": {
             width: "30vw",
@@ -288,43 +283,66 @@ const ClubsEventsComponent = ({
         }}
       >
         <h3>Crear nuevo evento</h3>
-        <div>
-          
-        </div>
-        <img onClick={handleOpen} className={hovered ? "newEvent" : "clubsEvent"} src={hovered ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1701078519/Dise%C3%B1o_sin_t%C3%ADtulo_1_pdvujw.png' : eventImg}></img>
+        <div></div>
+        <img
+          onClick={handleOpen}
+          className={hovered ? "newEvent" : "clubsEvent"}
+          src={
+            hovered
+              ? "https://res.cloudinary.com/djpdopxfy/image/upload/v1701078519/Dise%C3%B1o_sin_t%C3%ADtulo_1_pdvujw.png"
+              : eventImg
+          }
+        ></img>
         <p onClick={handleOpen}>Haz Click para crear nuevo evento</p>
       </Card>
       {events.map((em, i) => (
         <Card
-        onClick={() => { handleOpenUpdate(); setEventId(em.id); }}
-         key={em.id}
+          onClick={() => {
+            handleOpenUpdate()
+            setEventId(em.id)
+          }}
+          key={em.id}
           sx={{
             backgroundColor: "#131313",
             margin: "2vw",
             width: "14vw",
-            height: "50vh",
+            height: "60vh",
             alignItems: "center",
-            justifyContent: "space-between",
             display: "flex",
             flexDirection: "column",
             borderRadius: "12px",
             textAlign: "center",
-            overflow: "hidden",
+            overflow: "auto",
             color: "white",
+            justifyContent: "space-evenly",
+            boxSizing: "border-box",
 
             "@media (min-width: 600px) and (max-width: 1080px)": {
-              width: "30vw",
-              height: "30vh",
+              width: "18vw",
+              height: "40vh",
             },
 
             "@media (max-width: 600px)": {
-              width: "42vw",
-              height: "30vh",
+              width: "40vw",
+              height: "40vh",
+            },
+            ":hover": {
+              backgroundColor: "#000000",
+              cursor: "pointer",
+              border: "2px solid",
             },
           }}
         >
           <h3 key={em.id}>{em.title}</h3>
-          <img className='event' key={i} src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}></img>
+          <img
+            className="event"
+            key={i}
+            src={
+              em.image === null
+                ? "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg"
+                : em.image
+            }
+          ></img>
           <h4>{em.genre}</h4>
           <h4>{em.address}</h4>
           <Link to={`/event/${em.id}`}>
@@ -335,7 +353,6 @@ const ClubsEventsComponent = ({
     </div>
   )
 }
-
 
 // CONSEGUIR QUE LOS EVENTOS EN BUSSINESS APAREZCAN 9 POR PÁGINA
 export default ClubsEventsComponent

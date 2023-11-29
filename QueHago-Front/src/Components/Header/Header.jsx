@@ -132,7 +132,7 @@ const Header = () => {
         ? await getProfile()
         : await getOwnClub();
         if (data.image === null) {
-          setPhoto('https://res.cloudinary.com/djpdopxfy/image/upload/v1700759387/QueHago/yfwbqcttpnfh8gdkbsdp.png')
+          setPhoto('https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg')
           return
           }
       setPhoto(data.image);

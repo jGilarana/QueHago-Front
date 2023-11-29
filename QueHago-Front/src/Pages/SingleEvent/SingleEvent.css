@@ -40,16 +40,7 @@
    border: 2px solid white;
 }
 
-.map {
-   margin: 2vw;
-   width: 25vw;
-   height: 70vh;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   border-radius: 10px;
-}
+
 
 .none {
    display: none;

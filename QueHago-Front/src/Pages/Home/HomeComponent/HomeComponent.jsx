@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import './HomeComponent.css'
-import { Card, colors } from '@mui/material'
+import { Box, Button, Card, Modal, colors } from '@mui/material'
 import { blue } from '@mui/material/colors'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { getUsersFavorites, userDeletesFav, userSetsFavorite } from '../../../Services/favoriteService'
 
 const HomeComponent = ({event}) => {
+
+  const navigation = useNavigate();
 
 
   const [favorite, setFavorite] = useState([])
@@ -41,26 +43,76 @@ const HomeComponent = ({event}) => {
   }
 
   
-  
+  const cardStyles = {
+
+    '&:hover': {
+      backgroundColor: '#e0e0e0',
+      cursor: 'pointer',
+    },
+  };
+  const [openNotoken, setOpenNotoken] = useState(false);
+
+  const handleOpen = () => {
+    setOpenNotoken(true);
+  };
+  const handleClose = () => setOpenNotoken(false);
+
 
   return (
     <div className='events-container'>
+      <Modal
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100vw",
+          height: "100vh",
+          backgroundColor: "transparent",
+          position: "fixed",
+        }}
+        open={openNotoken}
+        onClose={handleClose}
+        aria-labelledby="parent-modal-title"
+        aria-describedby="parent-modal-description"
+      >
+        <Box
+          sx={{
+            overflow: "auto",
+            width: "30vw",
+            height: "80%",
+            display: "flex",
+            alignContent: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            borderRadius: "12px",
+            backgroundColor: "#9294ff",
+            opacity: "90%",
+            backdropFilter: "blur(800px)",
+            zIndex: "2",
+          }}
+        >
+           <h1>No puedes actualizar tu usuario porque no has iniciado sesión</h1>
+          <Button onClick={() => navigation('/login')}>Iniciar sesión</Button>
+        </Box>
+      </Modal>
      {event.map((em, i) => (
      <Card
+     onClick={localStorage.getItem('token') ? () => navigation('/login') : handleOpen}
      key={em.id}
      sx={{
        backgroundColor: '#131313',
        margin: '2vw',
-       width: '13vw',
-       height: '40vh', 
+       width: '14vw',
+       height: '60vh', 
        alignItems: 'center',
-       justifyContent: 'space-between',
        display: 'flex',
        flexDirection: 'column',
        borderRadius: '12px',
        textAlign: 'center',
        overflow: 'auto',
        color: 'white',
+      justifyContent:'space-evenly',
+      boxSizing:'border-box',
    
        '@media (min-width: 600px) and (max-width: 1080px)': {
          width: '18vw',
@@ -70,18 +122,24 @@ const HomeComponent = ({event}) => {
        '@media (max-width: 600px)': {
          width: '40vw',
          height: '40vh', 
-       }
+       }, 
+       ':hover': {
+         backgroundColor: '#000000',
+         cursor: 'pointer',
+         border:'2px solid'
+         
+       },
      }}
    >
           <FavoriteIcon sx={{display: localStorage.getItem('token') ? 'initial' : 'none'}} className= {sames.includes(em.id) ? 'favIcon' : 'noFavIcon'}
           onClick={sames.includes(em.id) ? () => deleteFav(em.id) : () => setUsersFavorite(em.id)}
             ></FavoriteIcon>
-          <h3 key={em.id}>{em.title}</h3>
-          <img className='event' key={i} src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}></img>
-          <h4>{em.genre}</h4>
+          <h1 key={em.id}>{em.title}</h1>
+          <p className='genre'>{em.genre}</p>
+          <img className='event' key={i} 
+          src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}>
+          </img>
           <h4>{em.address}</h4>
-       
-          <Link to={`/event/${em.id}`}><p className='moreInfo'>Ver más</p></Link>
      </Card>
       ))}
     </div>

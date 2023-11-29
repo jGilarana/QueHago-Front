@@ -1,20 +1,28 @@
 .events-container {
-  width: 70vw;
+  width: 72vw;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #000000;
   border-radius: 15px;
   background-repeat:repeat;
   background-size: 55%;
   position: relative;
-  right: 0;
+  right: 30px;
   z-index: 2;
+  border: 2px solid white;
+  margin-left: 10px;
 }
 
+
+.genre {
+
+  margin-bottom: 30px;
+
+}
 .event {
   width: 60%;
   height: 20vh;
@@ -30,6 +38,8 @@
     align-items: center;
     justify-content: center;
   } 
+
+  
   .event {  
     width: 60%;
     height: 50%;
@@ -54,7 +64,6 @@
 }
 
 .moreInfo {
-    margin-bottom: 5vh;
     color: #0000ff;
   }
 

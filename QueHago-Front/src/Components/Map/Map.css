@@ -1,5 +1,5 @@
 .leaflet-container {
-    width: 12vw;
+    width: 3vw;
     height: 30vh;
     margin: 2vw;
     background-color: aliceblue; 
@@ -9,4 +9,13 @@
 
 
 
-
+.map {
+    margin: 2vw;
+    width: 24vw;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+ }
