@@ -4,11 +4,14 @@ import "./SingleEvent.css"
 import { useParams } from "react-router-dom"
 import { getOneEvent } from "../../Services/eventService"
 import Map from "../../Components/Map/Map"
+import EventMap from "../../Components/Map/EventMap/EventMap"
+
 
 const SingleEvent = () => {
   const { eventId } = useParams()
   const [event, setEvent] = useState({})
- 
+  const [latitude, setLatitude] = useState(28.141401524287414)
+  const [longitude,setLongitude] = useState(-15.43008879603786)
 
   const getEvent = async () => {
     const data = await getOneEvent(eventId)
@@ -50,7 +53,7 @@ const SingleEvent = () => {
       <h2>¿Qué generos de música escucharé? : <br></br>{event.genre}</h2>
       </div>
       
-      <div className="map"><Map/></div>
+      <div className="map"><EventMap latitude={latitude} longitude={longitude}/></div>
       </Card>
     </div>
   )

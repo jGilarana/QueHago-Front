@@ -29,7 +29,7 @@ const ClubsEventsComponent = ({
   const [openUpdate, setOpenUpdate] = useState(false)
   const [open, setOpen] = useState(false)
   const [hovered, setHovered] = useState(false)
-  console.log(eventId)
+
    
 
   const handleMouseEnter = () => {
