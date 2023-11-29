@@ -23,3 +23,13 @@ export const userSetsFavorite = async(id) => {
     })
     return response
 }
+
+export const userDeletesFav = async(id) => {
+    const {response} = await api.delete(`/users/deletefav/${id}`, {
+        headers : {
+            'Cache-Control' : 'no-cache',
+            'Authorization' : localStorage.getItem('token')
+        }
+    })
+    return response
+}

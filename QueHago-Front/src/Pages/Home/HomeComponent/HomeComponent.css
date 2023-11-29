@@ -53,10 +53,16 @@
   }
 }
 
-
-  
-
 .moreInfo {
     margin-bottom: 5vh;
     color: #0000ff;
+  }
+
+
+  .favIcon {
+    color: red;
+  }
+
+  .noFavIcon {
+    color: blue;
   }

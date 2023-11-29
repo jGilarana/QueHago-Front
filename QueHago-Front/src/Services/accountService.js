@@ -72,3 +72,4 @@ export async function postProfile(data) {
     throw error;
   }
 }
+

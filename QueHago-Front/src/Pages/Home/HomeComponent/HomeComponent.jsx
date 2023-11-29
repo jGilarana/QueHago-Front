@@ -1,17 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './HomeComponent.css'
 import { Card, colors } from '@mui/material'
 import { blue } from '@mui/material/colors'
 import { Link } from "react-router-dom"
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { userSetsFavorite } from '../../../Services/favoriteService'
+import { getUsersFavorites, userDeletesFav, userSetsFavorite } from '../../../Services/favoriteService'
 
 const HomeComponent = ({event}) => {
 
-  const setFavorite = async(id) => {
+
+  const [favorite, setFavorite] = useState([])
+
+  const getFavorites = async() =>  {
+      const data = await getUsersFavorites()
+      console.log(data)
+      setFavorite(data)
+  }
+  
+  const sames = favorite.map((em) => (em.favorite.eventId))
+  console.log(sames)
+
+
+  useEffect(() => {
+      getFavorites()
+  },[])
+
+
+  const setUsersFavorite = async(id) => {
     const data = await userSetsFavorite(id)
     return
   }
+
+  const deleteFav = async(id) => {
+    const data = await userDeletesFav(id)
+    return
+  }
+
+
   
 
   return (
@@ -44,11 +69,8 @@ const HomeComponent = ({event}) => {
        }
      }}
    >
-          <FavoriteIcon 
-          onClick={() => setFavorite(em.id)}
-          sx={{
-            color:'red'
-            }}
+          <FavoriteIcon className= {sames.includes(em.id) ? 'favIcon' : 'noFavIcon'}
+          onClick={sames.includes(em.id) ? () => deleteFav(em.id) : () => setUsersFavorite(em.id)}
             ></FavoriteIcon>
           <h3 key={em.id}>{em.title}</h3>
           <img className='event' key={i} src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}></img>
