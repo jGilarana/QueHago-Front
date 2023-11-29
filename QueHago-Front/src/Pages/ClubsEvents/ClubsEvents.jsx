@@ -13,9 +13,11 @@ const  ClubsEvents = () => {
   const [date, setDate] = useState()
   const [minimumAge, setMinimumAge] = useState()
   const [image, setImage] = useState()
+  const [latitude, setLatitude] = useState()
+  const [longitude,setLongitude] = useState()
   
   const updateEvent = async(id) => {
-    const response = await updateClubsEvent(id, {title, genre, address, rooms, date, minimumAge, image})
+    const response = await updateClubsEvent(id, {title, genre, address, latitude, longitude, rooms, date, minimumAge, image})
     console.log(response)
   }
   const seeEvents = async () => {
@@ -29,7 +31,7 @@ const  ClubsEvents = () => {
   }
 
   const postEvents = async() =>  {
-    const data = await createClubsEvents({title, genre, address, rooms, date, minimumAge, image})
+    const data = await createClubsEvents({title, genre, address, latitude, longitude, rooms, date, minimumAge, image})
     console.log(data)
   }
 
@@ -41,7 +43,7 @@ useEffect(() => {
   return (
 
 <>
-<ClubsEventsComponent setTitle={setTitle} setGenre={setGenre} setAddress={setAddress} setRooms={setRooms} setDate={setDate} setMinimumAge={setMinimumAge} setImage={setImage} createEvent={postEvents} updateEvent={updateEvent} events={events}/>
+<ClubsEventsComponent setTitle={setTitle} setGenre={setGenre} setAddress={setAddress} setLatitude={setLatitude} setLongitude={setLongitude} setRooms={setRooms} setDate={setDate} setMinimumAge={setMinimumAge} setImage={setImage} createEvent={postEvents} updateEvent={updateEvent} events={events}/>
 </>
   )
 }

@@ -97,10 +97,11 @@ const Header = () => {
         photo,
         
       });
-      handleCloseClub()
+      console.log('Club Updated Succesfully')
+      handleClose()
       return updateResponse
     } catch (error) {
-      console.log(signupResponse.data);
+      
       console.error("Error al actualizar usuario:", error);
     }
   };

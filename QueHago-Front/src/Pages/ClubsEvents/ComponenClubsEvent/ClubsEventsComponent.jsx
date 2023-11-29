@@ -12,6 +12,8 @@ const ClubsEventsComponent = ({
   setAddress,
   setRooms,
   setDate,
+  setLatitude,
+  setLongitude,
   setMinimumAge,
   setImage,
   events,
@@ -94,6 +96,20 @@ const ClubsEventsComponent = ({
           <TextField
             onChange={(e) => setAddress(e.target.value)}
             label="address"
+            variant="filled"
+            color="success"
+            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+          ></TextField>
+           <TextField
+            onChange={(e) => setLatitude(e.target.value)}
+            label="Latitude"
+            variant="filled"
+            color="success"
+            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+          ></TextField>
+           <TextField
+            onChange={(e) => setLongitude(e.target.value)}
+            label="Longitude"
             variant="filled"
             color="success"
             sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
@@ -186,6 +202,22 @@ const ClubsEventsComponent = ({
             label="address"
             variant="filled"
             color="success"
+            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+          ></TextField>
+          <TextField
+            onChange={(e) => setLatitude(e.target.value)}
+            label="Latitude"
+            variant="filled"
+            color="success"
+            type="number"
+            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+          ></TextField>
+           <TextField
+            onChange={(e) => setLongitude(e.target.value)}
+            label="Longitude"
+            variant="filled"
+            color="success"
+            type="number"
             sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
           ></TextField>
           <TextField
