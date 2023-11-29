@@ -18,6 +18,21 @@
 }
 
 
+
+.headerCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  background-color: grey;
+}
+
+/* //HACER DISPLAY FLEX, FLEX ROW PARA CORAZON DE LIKE CON HORA */
+
+.eventTitle {
+  margin: 10px;
+  margin-top: 0;
+}
 .genre {
 
   margin-bottom: 30px;

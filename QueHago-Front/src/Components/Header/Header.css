@@ -15,6 +15,7 @@
 }
 
 
+
 @media screen and (max-width: 600px) {
     .header-container {
         background-color: aliceblue;
@@ -37,8 +38,21 @@
     border-radius: 100%;
 }
 
+.logo:hover{
+    cursor: pointer;
+    border: 2px solid grey;
+    box-sizing: border-box;
+    opacity: 40%;
+}
 .profilePhoto {
     width: 7vh;
     height: 7vh;
     border-radius: 100%;  
+}
+
+.profilePhoto:hover {
+    cursor: pointer;
+    border: 2px solid grey;
+    box-sizing: border-box;
+    opacity: 40%;
 }

@@ -16,6 +16,8 @@
     border: solid white 2px;
 }
 
+/* ///////////////////////////HACER DISPLAY GRID Y AÑADIR DESCRIPCION AL MODAL //////////////////////////// */
+
 .hoverCard:hover {
     background-color: #363535;
     cursor: pointer;

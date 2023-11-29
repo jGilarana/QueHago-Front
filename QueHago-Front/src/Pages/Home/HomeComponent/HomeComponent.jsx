@@ -97,7 +97,6 @@ const HomeComponent = ({event}) => {
       </Modal>
      {event.map((em, i) => (
      <Card
-     onClick={localStorage.getItem('token') ? () => navigation('/login') : handleOpen}
      key={em.id}
      sx={{
        backgroundColor: '#131313',
@@ -111,8 +110,8 @@ const HomeComponent = ({event}) => {
        textAlign: 'center',
        overflow: 'auto',
        color: 'white',
-      justifyContent:'space-evenly',
-      boxSizing:'border-box',
+       justifyContent:'space-evenly',
+       boxSizing:'border-box',
    
        '@media (min-width: 600px) and (max-width: 1080px)': {
          width: '18vw',
@@ -131,15 +130,25 @@ const HomeComponent = ({event}) => {
        },
      }}
    >
-          <FavoriteIcon sx={{display: localStorage.getItem('token') ? 'initial' : 'none'}} className= {sames.includes(em.id) ? 'favIcon' : 'noFavIcon'}
-          onClick={sames.includes(em.id) ? () => deleteFav(em.id) : () => setUsersFavorite(em.id)}
+
+          <div className='headerCard'>
+            <p className='hour'>22:00 - 06:00</p>
+           <FavoriteIcon sx={{ display: localStorage.getItem('role') ? 'initial' : 'none',
+          ':hover' : {
+            color: 'black',
+          } 
+          }} className= {sames.includes(em.id) ? 'favIcon' : 'noFavIcon'}
+            onClick={sames.includes(em.id) ? () => deleteFav(em.id) : () => setUsersFavorite(em.id)}
             ></FavoriteIcon>
-          <h1 key={em.id}>{em.title}</h1>
+            </div>
+          <div onClick={localStorage.getItem('token') ? () => window.open(`/event/${em.id}`) : handleOpen} >
+          <h1 className='eventTitle' key={em.id}>{em.title}</h1>
           <p className='genre'>{em.genre}</p>
           <img className='event' key={i} 
           src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}>
           </img>
           <h4>{em.address}</h4>
+          </div>
      </Card>
       ))}
     </div>

@@ -251,6 +251,9 @@ const ClubsEventsComponent = ({
           </Button>
         </Box>
       </Modal>
+      { /* ///////////////////////////HACER DISPLAY GRID Y AÑADIR DESCRIPCION AL MODAL //////////////////////////// */ }
+
+
       <Card
         onClick={handleOpen}
         onMouseEnter={handleMouseEnter}
@@ -316,6 +319,7 @@ const ClubsEventsComponent = ({
             color: "white",
             justifyContent: "space-evenly",
             boxSizing: "border-box",
+            transition: "0.2s",
 
             "@media (min-width: 600px) and (max-width: 1080px)": {
               width: "18vw",

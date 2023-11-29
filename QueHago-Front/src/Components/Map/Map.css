@@ -5,6 +5,7 @@
     background-color: aliceblue; 
     padding: 0;
     left: 2px;
+    z-index: 0;
 }
 
 

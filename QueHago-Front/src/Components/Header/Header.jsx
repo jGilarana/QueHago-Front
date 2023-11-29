@@ -172,6 +172,7 @@ const Header = () => {
             height: "60vh",
             display: "flex",
             alignContent: "center",
+            alignItems:'center',
             justifyContent: "center",
             flexDirection: "column",
             borderRadius: "12px",
@@ -186,21 +187,21 @@ const Header = () => {
             label="Nombre"
             variant="filled"
             fullWidth={true}
-            sx={{ marginBottom: "20px", color: "white" }}
+            sx={{width:'80%', marginBottom: "20px", color: "white" }}
           />
           <TextField
             onChange={(e) => setLastName(e.target.value)}
             label="Apellidos"
             variant="filled"
             fullWidth={true}
-            sx={{ marginBottom: "20px" }}
+            sx={{width:'80%', marginBottom: "20px", color: "white" }}
           />
           <TextField
             onChange={(e) => setTelephone(e.target.value)}
             label="Teléfono"
             variant="filled"
             fixed
-            sx={{ marginBottom: "20px" }}
+            sx={{ width:'80%', marginBottom: "20px", color: "white"}}
           />
           <TextField
             onChange={(e) => setPassword(e.target.value)}
@@ -208,6 +209,7 @@ const Header = () => {
             variant="filled"
             type="password"
             fullWidth={true}
+            sx={{width:'80%', marginBottom: "20px", color: "white"}}
           />
           <UploadWidget setUrl={setPhoto} updatePhoto={updatePhoto} />
           <Button onClick={() => updateUserProfile()}>Update</Button>

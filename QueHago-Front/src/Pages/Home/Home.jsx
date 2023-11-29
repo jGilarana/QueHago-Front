@@ -50,7 +50,7 @@ const Home = () => {
 </select>
 </label> */}
           <Button 
-          sx={{display: localStorage.getItem('token') ? 'initial' : 'none', backgroundColor: red[600], height: '5vh', width: '10vw', position:'absolute', top:'11vh', right:'10vw' }}
+          sx={{display: localStorage.getItem('role') ? 'initial' : 'none', backgroundColor: red[600], height: '5vh', width: '10vw', position:'absolute', top:'11vh', right:'10vw' }}
           onClick={() => navigate('/favorites')}>Go to Favorites</Button>
           <Map/>
       <HomeComponent event={event} />
