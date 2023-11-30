@@ -5,9 +5,14 @@ import { blue } from '@mui/material/colors'
 import { Link, useNavigate } from "react-router-dom"
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { getUsersFavorites, userDeletesFav, userSetsFavorite } from '../../../Services/favoriteService'
+import dayjs from 'dayjs'
 
 const HomeComponent = ({event}) => {
 
+
+
+  const now = dayjs()
+  
   const navigation = useNavigate();
 
 
@@ -96,7 +101,7 @@ const HomeComponent = ({event}) => {
           <Button sx={{backgroundColor:'#4d425f', margin:'1vw'}} onClick={() => navigation('/signup')}>Crear cuenta</Button>
         </Box>
       </Modal>
-     {event.map((em, i) => (
+     {event.sort((a, b) => dayjs(a.date).diff(dayjs(b.date))).filter(em => dayjs(em.date).isAfter(dayjs(), 'day')).map((em, i) => (
      <Card
      key={em.id}
      sx={{
@@ -149,7 +154,8 @@ const HomeComponent = ({event}) => {
           <img className='event' key={i} 
           src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}>
           </img>
-          <h3 className='address'>{em.address}</h3>
+          <h4>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY", em.date)}</h4>
+          <p className='address'>{em.address}</p>
           </div>
      </Card>
       ))}

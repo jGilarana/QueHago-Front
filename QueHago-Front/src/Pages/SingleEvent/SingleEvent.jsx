@@ -7,7 +7,7 @@ import Map from "../../Components/Map/Map"
 import EventMap from "../../Components/Map/EventMap/EventMap"
 import dayjs from 'dayjs'
 import 'dayjs/locale/es'; 
- dayjs.locale('es')
+dayjs.locale('es')
 
 const SingleEvent = () => {
   const { eventId } = useParams()
@@ -16,12 +16,12 @@ const SingleEvent = () => {
   const [longitude,setLongitude] = useState(-15.43008879603786)
 
 
-  const date = dayjs()
+  const date = dayjs(event.date)
   const capitalize = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
-  const dateMayus = capitalize
+
   const getEvent = async () => {
     const data = await getOneEvent(eventId)
     setEvent(data)
@@ -58,7 +58,7 @@ const SingleEvent = () => {
       <h2>¿Dónde es la fiesta? : {event.address}</h2>
       <h2>¿Cuántas salas tiene? : {event.rooms}</h2>
       <h2>¿Cuál es la edad mínima? : {event.minimumAge}</h2>
-      <h2> ¿Cuando podré ir a partir la pana? : <br></br><br></br>  {capitalize(date.format("dddd , DD [de] MMMM [de] YYYY", event.date))}</h2>
+      <h2> ¿Cuando podré ir a partir la pana? : <br></br><br></br>  {capitalize(date.format("dddd , D [de] MMMM [de] YYYY", event.date))}</h2>
       <h2>¿Qué generos de música escucharé? : <br></br><br></br>{event.genre}</h2>
       </div>
       

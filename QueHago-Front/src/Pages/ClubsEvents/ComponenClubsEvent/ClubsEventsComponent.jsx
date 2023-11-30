@@ -5,6 +5,7 @@ import { Box, Card, Modal, Button, TextField } from "@mui/material"
 import { blue } from "@mui/material/colors"
 import UploadWidget from "../../../Components/UploadWidget/UploadWidget"
 import { updateClubsEvent } from "../../../Services/eventService"
+import dayjs from "dayjs"
 
 const ClubsEventsComponent = ({
   setTitle,
@@ -296,7 +297,7 @@ const ClubsEventsComponent = ({
         ></img>
         <p onClick={handleOpen}>Haz Click para crear nuevo evento</p>
       </Card>
-      {events.map((em, i) => (
+      {events.sort((a, b) => dayjs(a.date).diff(dayjs(b.date))).map((em, i) => (
         <Card
           onClick={() => {
             handleOpenUpdate()
@@ -346,6 +347,7 @@ const ClubsEventsComponent = ({
             }
           ></img>
           <h4>{em.genre}</h4>
+          <h4>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY", em.date)}</h4>
           <h4>{em.address}</h4>
           <Link to={`/event/${em.id}`}>
             <p className="moreInfo">Ver más</p>

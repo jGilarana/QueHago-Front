@@ -12,7 +12,7 @@ import { getUsersFavorites, userSetsFavorite } from "../../Services/favoriteServ
 
 const Home = () => {
 
-   const navigate = useNavigate()
+  const navigate = useNavigate()
   const [genre,setGenre] = useState('')
   const [event, setEvent] = useState([])
   const [filteredEvent, setFilteredEvent] = useState({})
