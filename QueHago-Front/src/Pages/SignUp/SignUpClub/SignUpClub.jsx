@@ -123,9 +123,9 @@ const SignUpClub = () => {
         </CardContent>
         <Divider />
         <CardActions>
-          <Button
+        <Button
             sx={{
-              backgroundColor: "#917800",
+              backgroundColor: blue[300], marginBottom: '10vh',
               "&:hover": { backgroundColor: "white" },
             }}
             onClick={() => onSignupClub()}

@@ -6,6 +6,7 @@ import { blue } from "@mui/material/colors"
 import UploadWidget from "../../../Components/UploadWidget/UploadWidget"
 import { updateClubsEvent } from "../../../Services/eventService"
 import dayjs from "dayjs"
+import ModeEditIcon from '@mui/icons-material/ModeEdit';
 
 const ClubsEventsComponent = ({
   setTitle,
@@ -319,6 +320,7 @@ const ClubsEventsComponent = ({
             justifyContent: "space-evenly",
             boxSizing: "border-box",
             transition: "0.2s",
+            position:'relative',
 
             "@media (min-width: 600px) and (max-width: 1080px)": {
               width: "18vw",
@@ -336,6 +338,9 @@ const ClubsEventsComponent = ({
             },
           }}
         >
+          <div>
+          <ModeEditIcon sx={{position:'absolute', left:'20px', color:'grey', width:'40px', ':hover' : {color:'white'}}}></ModeEditIcon>
+          </div>
           <h3 key={em.id}>{em.title}</h3>
           <img
             className="event"
@@ -350,7 +355,7 @@ const ClubsEventsComponent = ({
           <h4>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY", em.date)}</h4>
           <h4>{em.address}</h4>
           <Link to={`/event/${em.id}`}>
-            <p className="moreInfo">Ver más</p>
+            <p  className="moreInfo">Ver más</p>
           </Link>
         </Card>
       ))}

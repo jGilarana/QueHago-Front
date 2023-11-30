@@ -18,6 +18,10 @@
 
 /* ///////////////////////////HACER DISPLAY GRID Y AÑADIR DESCRIPCION AL MODAL //////////////////////////// */
 
+.clubsEventsContainer a {
+    width: 80px;
+}
+
 .hoverCard:hover {
     background-color: #363535;
     cursor: pointer;

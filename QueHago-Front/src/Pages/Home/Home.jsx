@@ -51,7 +51,7 @@ const Home = () => {
 </label> */}
           <Button 
           sx={{display: localStorage.getItem('role') ? 'initial' : 'none', backgroundColor: red[600], height: '5vh', width: '10vw', position:'absolute', top:'11vh', right:'10vw' }}
-          onClick={() => navigate('/favorites')}>Go to Favorites</Button>
+          onClick={() => navigate('/favorites')}>IR A FAVORITOS</Button>
           <Map/>
       <HomeComponent event={event} />
     </div>

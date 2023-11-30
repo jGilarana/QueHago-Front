@@ -1,7 +1,7 @@
 import  { useState } from 'react'
 import { Button, Card, CardActions, CardContent, CardHeader, Divider, TextField, Typography } from '@mui/material'
-import './Login.css'
-import { blue, green } from '@mui/material/colors'
+import './LoginClub.css'
+import { blue, green, purple } from '@mui/material/colors'
 import { login } from '../../Services/accountService.js'
 import { useNavigate } from 'react-router-dom'
 
@@ -39,7 +39,7 @@ const LoginClub = () => {
           <img className="loginBackground" src={'https://res.cloudinary.com/djpdopxfy/image/upload/v1700780199/1700748592773_psb91d.jpg'}>
           </img>
         <Card sx={{
-          backgroundColor: '#1A759F',
+          backgroundColor: purple[400],
           position: 'fixed',
           top: '0',
           right: '0',
@@ -62,21 +62,29 @@ const LoginClub = () => {
             color='success'
             sx={{marginBottom:'20px'}}
           />
-             <TextField
+             <TextField sx={{marginBottom:'40px'}}
             onChange={(e) => setPassword(e.target.value)}
             label='Password'
             variant='filled'
             type='password'
             color='success'
             fullWidth={true}
-          />
-          </CardContent>
+          />   
+          <div className='loginActions'>
+          <div>
           <p>He olvidado mi contraseña</p>
           <p>Recordarme</p>
-          <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <Button sx={{backgroundColor: green[600]}} onClick={() => onLogin()} color="success">
+          </div>
+          <Button sx={{backgroundColor: green[600], color:'white', marginTop:'30px'}} onClick={() => onLogin()}>
               Login
             </Button>
+          </div>
+          </CardContent>
+          <Divider/>
+          <CardActions sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            
+            <p>¿Aún no te has registrado?</p>
+            <Button sx={{backgroundColor: blue[600], color:'white'}} onClick={() => navigate('/bussiness/signup')}> Registrarse</Button>
           </CardActions>
         </Card>
         </>

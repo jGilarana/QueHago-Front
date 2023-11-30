@@ -14,7 +14,7 @@ import { getOwnClub, postClubPhoto, updateOwnCLub } from "../../Services/clubSer
 const Header = () => {
 
 
-  const navigation = useNavigate();
+  const navigate = useNavigate();
 
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
@@ -144,6 +144,7 @@ const Header = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("role");
     localStorage.removeItem("subscriptionStatus");
+    navigate('/')
     if (location === "/") {
       window.location.reload();
     }
@@ -329,7 +330,7 @@ const Header = () => {
           }}
         >
            <h1>No puedes actualizar tu usuario porque no has iniciado sesión</h1>
-          <Button onClick={() => navigation('/login')}>Iniciar sesión</Button>
+          <Button onClick={() => navigate('/login')}>Iniciar sesión</Button>
         </Box>
       </Modal>
 
@@ -371,10 +372,8 @@ const Header = () => {
           SignUp Bussiness
         </Button>
       </Link>
-      <Link>
-        <Button sx={{ display: (localStorage.getItem('token')) ? 'initial' : 'none'}}onClick={() => onLogout()}>Logout</Button>
-      </Link>
-
+        <Button sx={{ display: (localStorage.getItem('subscriptionStatus')) ? 'initial' : 'none'}}onClick={() => onLogout()}>Logout</Button>
+        <Button sx={{ display: (localStorage.getItem('token')) ? 'initial' : 'none'}} onClick={() => navigate('/bussiness')}>Accede a tus eventos</Button>
       <div>
         <img
           onClick={() => handleOpen()}

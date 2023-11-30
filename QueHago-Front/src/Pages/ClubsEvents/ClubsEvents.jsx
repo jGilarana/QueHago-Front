@@ -19,6 +19,7 @@ const ClubsEvents = () => {
   const [image, setImage] = useState();
   const [latitude, setLatitude] = useState();
   const [longitude, setLongitude] = useState();
+  const [refresh,  setRefresh] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
@@ -44,6 +45,7 @@ const ClubsEvents = () => {
     });
     console.log(response);
     handleCloseUpdate();
+    setRefresh(!refresh)
   };
   const seeEvents = async () => {
     if (localStorage.getItem("subscriptionStatus") === null) {
@@ -51,6 +53,7 @@ const ClubsEvents = () => {
       return null;
     } else {
       const events = await getClubsEvents();
+      
       setEvents(events);
     }
   };
@@ -69,12 +72,14 @@ const ClubsEvents = () => {
     });
     console.log(data);
     handleClose();
+    setRefresh(!refresh)
   };
 
   useEffect(() => {
     seeEvents();
-  }, [events]);
+  }, [refresh]);
 
+  console.log(refresh)
   return (
     <>
       <ClubsEventsComponent

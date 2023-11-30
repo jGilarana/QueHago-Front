@@ -65,7 +65,7 @@ const SignUp = () => {
       <Card
   
         sx={{
-          backgroundColor: "#8f7600",
+          backgroundColor: blue[400],
           opacity: "98.5%",
           position: "fixed",
           right: "0",
@@ -133,7 +133,7 @@ const SignUp = () => {
         <CardActions>
           <Button
             sx={{
-              backgroundColor: "#917800",
+              backgroundColor: blue[300], marginBottom: '10vh',
               "&:hover": { backgroundColor: "white" },
             }}
             onClick={() => onSignup()}
