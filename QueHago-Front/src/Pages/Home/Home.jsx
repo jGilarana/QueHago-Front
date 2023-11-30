@@ -8,7 +8,8 @@ import { getProfile, postPhoto } from "../../Services/accountService"
 import UploadWidget from "../../Components/UploadWidget/UploadWidget.jsx"
 import HomeComponent from "./HomeComponent/HomeComponent.jsx"
 import Map from "../../Components/Map/Map.jsx"
-import { getUsersFavorites, userSetsFavorite } from "../../Services/favoriteService.js"
+import dayjs from "dayjs"
+
 
 const Home = () => {
 
@@ -16,6 +17,11 @@ const Home = () => {
   const [genre,setGenre] = useState('')
   const [event, setEvent] = useState([])
   const [filteredEvent, setFilteredEvent] = useState({})
+
+  const getAllTheEvents = async () => {
+    const data = await getAllEvents()
+    setEvent(data.sort((a, b) => dayjs(b.date).diff(dayjs(a.date))))
+  }
  
   const handleChangeGenre= (e) => {
     setGenre(e.target.value);
@@ -23,8 +29,11 @@ const Home = () => {
 
   const getEvents = async () => {
     const data = await getAllEvents()
-    setEvent(data)
+    const filteredData = data.sort((a, b) => dayjs(a.date).diff(dayjs(b.date))).filter(em => dayjs(em.date).isAfter(dayjs(), 'day'))
+    setEvent(filteredData)
   }
+
+  
 
   const filterEvent = async () => {
     const data = await getAllEvents()
@@ -36,7 +45,7 @@ const Home = () => {
   
   useEffect(() => {
     getEvents()
-  }, [event])
+  }, [])
 
   return (
     <div className="home">
@@ -49,6 +58,14 @@ const Home = () => {
               <option value="">house</option>
 </select>
 </label> */}
+
+
+<Button 
+          sx={{ backgroundColor: green[600], height: '5vh', width: '10vw', position:'absolute', top:'11vh', right:'33vw' }}
+          onClick={() => getEvents()}>MOSTRAR EVENTOS NO OCURRIDOS</Button>
+          <Button 
+          sx={{ backgroundColor: green[600], height: '5vh', width: '10vw', position:'absolute', top:'11vh', right:'22vw' }}
+          onClick={() => getAllTheEvents()}>MOSTRAR TODOS LOS EVENTOS</Button>
           <Button 
           sx={{display: localStorage.getItem('role') ? 'initial' : 'none', backgroundColor: red[600], height: '5vh', width: '10vw', position:'absolute', top:'11vh', right:'10vw' }}
           onClick={() => navigate('/favorites')}>IR A FAVORITOS</Button>

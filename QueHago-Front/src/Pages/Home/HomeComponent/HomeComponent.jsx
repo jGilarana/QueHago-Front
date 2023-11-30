@@ -101,7 +101,7 @@ const HomeComponent = ({event}) => {
           <Button sx={{backgroundColor:'#4d425f', margin:'1vw'}} onClick={() => navigation('/signup')}>Crear cuenta</Button>
         </Box>
       </Modal>
-     {event.sort((a, b) => dayjs(a.date).diff(dayjs(b.date))).filter(em => dayjs(em.date).isAfter(dayjs(), 'day')).map((em, i) => (
+     {event.map((em, i) => (
      <Card
      key={em.id}
      sx={{

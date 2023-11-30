@@ -372,7 +372,7 @@ const Header = () => {
           SignUp Bussiness
         </Button>
       </Link>
-        <Button sx={{ display: (localStorage.getItem('subscriptionStatus')) ? 'initial' : 'none'}}onClick={() => onLogout()}>Logout</Button>
+        <Button sx={{ display: (localStorage.getItem('token')) ? 'initial' : 'none'}}onClick={() => onLogout()}>Logout</Button>
         <Button sx={{ display: (localStorage.getItem('token')) ? 'initial' : 'none'}} onClick={() => navigate('/bussiness')}>Accede a tus eventos</Button>
       <div>
         <img
