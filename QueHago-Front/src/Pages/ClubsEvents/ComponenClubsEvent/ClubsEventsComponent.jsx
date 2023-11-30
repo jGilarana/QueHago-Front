@@ -27,6 +27,8 @@ const ClubsEventsComponent = ({
   handleClose,
   handleOpenUpdate,
   handleCloseUpdate,
+  setOpenTime,
+  setCloseTime
 }) => {
   const [eventImg, setEventImg] = useState(
     "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg"
@@ -110,6 +112,22 @@ const ClubsEventsComponent = ({
             variant='outlined'
             type="date"
             color="success"
+            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+          ></TextField>
+            <TextField
+            onChange={(e) => setOpenTime(e.target.value)}
+            label="¿A qué hora abre el evento?"
+            variant="filled"
+            color="success"
+            type="time"
+            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+          ></TextField>
+           <TextField
+            onChange={(e) => setCloseTime(e.target.value)}
+            label="¿A qué hora cierra el evento?"
+            variant="filled"
+            color="success"
+            type="time"
             sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
           ></TextField>
           <TextField
@@ -213,6 +231,22 @@ const ClubsEventsComponent = ({
             variant='outlined'
             type="date"
             color="success"
+            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+          ></TextField>
+              <TextField
+            onChange={(e) => setOpenTime(e.target.value)}
+            label="¿A qué hora abre el evento?"
+            variant="filled"
+            color="success"
+            type="time"
+            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+          ></TextField>
+           <TextField
+            onChange={(e) => setCloseTime(e.target.value)}
+            label="¿A qué hora cierra el evento?"
+            variant="filled"
+            color="success"
+            type="time"
             sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
           ></TextField>
           <TextField

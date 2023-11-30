@@ -20,6 +20,8 @@ const ClubsEvents = () => {
   const [latitude, setLatitude] = useState();
   const [longitude, setLongitude] = useState();
   const [refresh,  setRefresh] = useState(false);
+  const [openTime, setOpenTime] =   useState();
+  const [closeTime, setCloseTime] = useState();
 
   const handleOpen = () => {
     setOpen(true);
@@ -40,6 +42,8 @@ const ClubsEvents = () => {
       longitude,
       rooms,
       date,
+      openTime,
+      closeTime,
       minimumAge,
       image,
     });
@@ -104,6 +108,8 @@ const ClubsEvents = () => {
         createEvent={postEvents}
         updateEvent={updateEvent}
         events={events}
+        setOpenTime = {setOpenTime}
+        setCloseTime={setCloseTime}
         
        
       />

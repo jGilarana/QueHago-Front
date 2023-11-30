@@ -139,7 +139,7 @@ const HomeComponent = ({event}) => {
    >
 
           <div className='headerCard'>
-            <p className='hour'>22:00 - 06:00</p>
+            {em?.openTime && <p className='hour'>{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</p>}
            <FavoriteIcon sx={{ display: localStorage.getItem('role') ? 'initial' : 'none',
           ':hover' : {
             color: 'black',
