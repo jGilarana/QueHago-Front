@@ -5,7 +5,9 @@ import { useParams } from "react-router-dom"
 import { getOneEvent } from "../../Services/eventService"
 import Map from "../../Components/Map/Map"
 import EventMap from "../../Components/Map/EventMap/EventMap"
-
+import dayjs from 'dayjs'
+import 'dayjs/locale/es'; 
+ dayjs.locale('es')
 
 const SingleEvent = () => {
   const { eventId } = useParams()
@@ -13,6 +15,13 @@ const SingleEvent = () => {
   const [latitude, setLatitude] = useState(28.141401524287414)
   const [longitude,setLongitude] = useState(-15.43008879603786)
 
+
+  const date = dayjs()
+  const capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
+  const dateMayus = capitalize
   const getEvent = async () => {
     const data = await getOneEvent(eventId)
     setEvent(data)
@@ -45,12 +54,12 @@ const SingleEvent = () => {
         {event && <h1>{event.title}</h1>}
         <img className="singleEventImage" src={event && event.image === null ? "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg" : event.image}></img>
       </div>
-      <div className="infoContainer">
+      <div className= {event.latitude === null || event.longitude === null ? "infoContainer" : "infoContainerWithMap"}>
       <h2>¿Dónde es la fiesta? : {event.address}</h2>
       <h2>¿Cuántas salas tiene? : {event.rooms}</h2>
       <h2>¿Cuál es la edad mínima? : {event.minimumAge}</h2>
-      <h2> ¿Cuando podré ir a partir la pana? : <br></br>  {event.date}</h2>
-      <h2>¿Qué generos de música escucharé? : <br></br>{event.genre}</h2>
+      <h2> ¿Cuando podré ir a partir la pana? : <br></br><br></br>  {capitalize(date.format("dddd , DD [de] MMMM [de] YYYY", event.date))}</h2>
+      <h2>¿Qué generos de música escucharé? : <br></br><br></br>{event.genre}</h2>
       </div>
       
       <div className={event.latitude ? "map" : "none"}>{event?.latitude && <EventMap pos={{lat:event.latitude, lng:event.longitude}}/>}</div>

@@ -11,7 +11,8 @@
 
 
 .map {
-    margin: 2vw;
+    margin: 1.5vw;
+    margin-right:2vw;
     width: 24vw;
     height: 65vh;
     display: flex;

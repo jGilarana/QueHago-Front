@@ -91,8 +91,9 @@ const HomeComponent = ({event}) => {
             zIndex: "2",
           }}
         >
-           <h1>No puedes actualizar tu usuario porque no has iniciado sesión</h1>
-          <Button onClick={() => navigation('/login')}>Iniciar sesión</Button>
+           <h1>No podemos mostrarte la información adicional de este evento porque no has iniciado sesión</h1>
+          <Button sx={{backgroundColor:'#4d425f', margin:'1vw'}} onClick={() => navigation('/login')}>Iniciar sesión</Button>
+          <Button sx={{backgroundColor:'#4d425f', margin:'1vw'}} onClick={() => navigation('/signup')}>Crear cuenta</Button>
         </Box>
       </Modal>
      {event.map((em, i) => (
@@ -112,6 +113,7 @@ const HomeComponent = ({event}) => {
        color: 'white',
        justifyContent:'space-evenly',
        boxSizing:'border-box',
+       position:'relative',
    
        '@media (min-width: 600px) and (max-width: 1080px)': {
          width: '18vw',
@@ -141,13 +143,13 @@ const HomeComponent = ({event}) => {
             onClick={sames.includes(em.id) ? () => deleteFav(em.id) : () => setUsersFavorite(em.id)}
             ></FavoriteIcon>
             </div>
-          <div onClick={localStorage.getItem('token') ? () => window.open(`/event/${em.id}`) : handleOpen} >
+          <div className='noHeaderCard' onClick={localStorage.getItem('token') ? () => window.open(`/event/${em.id}`) : handleOpen} >
           <h1 className='eventTitle' key={em.id}>{em.title}</h1>
           <p className='genre'>{em.genre}</p>
           <img className='event' key={i} 
           src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}>
           </img>
-          <h4>{em.address}</h4>
+          <h3 className='address'>{em.address}</h3>
           </div>
      </Card>
       ))}

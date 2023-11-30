@@ -25,6 +25,8 @@
   justify-content: space-around;
   width: 100%;
   background-color: grey;
+  position: absolute;
+  top: 20px;
 }
 
 /* //HACER DISPLAY FLEX, FLEX ROW PARA CORAZON DE LIKE CON HORA */
@@ -38,8 +40,14 @@
   margin-bottom: 30px;
 
 }
+
+
+.noHeaderCard {
+  margin-top: 5vh;
+}
+
 .event {
-  width: 60%;
+  width: 8vw;
   height: 20vh;
   border-radius: 12px;
   object-fit: cover;

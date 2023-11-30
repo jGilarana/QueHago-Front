@@ -28,7 +28,7 @@
    border: 2px solid white;
 }
 
-.infoContainer {
+.infoContainerWithMap {
    margin-left: 2vw;
    width: 25vw;
    height: 70vh;
@@ -38,6 +38,20 @@
    align-items: center;
    border-radius: 10px;
    border: 2px solid white;
+   overflow: auto;
+}
+
+.infoContainer {
+   margin: 2vw;
+   width: 47vw;
+   height: 70vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   border-radius: 10px;
+   border: 2px solid white;
+   overflow: auto;
 }
 
 

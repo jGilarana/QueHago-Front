@@ -1,0 +1,10 @@
+.eventMap {
+    margin: 1vw;
+    width: 24vw;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+ }

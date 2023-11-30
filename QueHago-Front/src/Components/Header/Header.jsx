@@ -159,6 +159,10 @@ const Header = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          width: "100vw",
+          height: "100vh",
+          backgroundColor: "transparent",
+          position: "fixed",
         }}
         open={open}
         onClose={handleClose}
@@ -169,39 +173,47 @@ const Header = () => {
           sx={{
             overflow: "auto",
             width: "30vw",
-            height: "60vh",
+            height: "80%",
             display: "flex",
             alignContent: "center",
-            alignItems:'center',
             justifyContent: "center",
             flexDirection: "column",
             borderRadius: "12px",
             backgroundColor: "#9294ff",
-            opacity: "85%",
+            opacity: "90%",
             backdropFilter: "blur(800px)",
             zIndex: "2",
           }}
         >
+          <h2>Actualizar Usuario</h2>
           <TextField
             onChange={(e) => setFirstName(e.target.value)}
-            label="Nombre"
+            label="¿Quieres que te llamemos de otra manera?"
             variant="filled"
             fullWidth={true}
-            sx={{width:'80%', marginBottom: "20px", color: "white" }}
+            sx={{marginBottom: "25px", color: "white" }}
           />
           <TextField
             onChange={(e) => setLastName(e.target.value)}
-            label="Apellidos"
+            label="¿Han cambiado tus apellidos?"
             variant="filled"
             fullWidth={true}
-            sx={{width:'80%', marginBottom: "20px", color: "white" }}
+            sx={{marginBottom: "25px", color: "white" }}
           />
           <TextField
             onChange={(e) => setTelephone(e.target.value)}
-            label="Teléfono"
+            label="Escribe aquí tu nuevo número de teléfono"
             variant="filled"
             fixed
-            sx={{ width:'80%', marginBottom: "20px", color: "white"}}
+            sx={{ marginBottom: "25px", color: "white"}}
+          />
+          <h4>¿Pusiste mal tu cumpleaños? 🤔</h4>
+           <TextField
+            onChange={(e) => setBirthDate(e.target.value)}
+            variant="filled"
+            type="date"
+            fullWidth={true}
+            sx={{marginBottom: "25px", color: "white" }}
           />
           <TextField
             onChange={(e) => setPassword(e.target.value)}
@@ -209,10 +221,10 @@ const Header = () => {
             variant="filled"
             type="password"
             fullWidth={true}
-            sx={{width:'80%', marginBottom: "20px", color: "white"}}
+            sx={{marginBottom: "25px", color: "white"}}
           />
           <UploadWidget setUrl={setPhoto} updatePhoto={updatePhoto} />
-          <Button onClick={() => updateUserProfile()}>Update</Button>
+          <Button onClick={() => updateUserProfile()}>ACTUALIZAR USUARIO</Button>
         </Box>
       </Modal>
       {/* /////////////////////////////////////////////// CLUB MODAL /////////////////////////////////////////////////////////////////////// */}
@@ -248,33 +260,34 @@ const Header = () => {
             zIndex: "2",
           }}
         >
+            <h2>Actualizar Compañía</h2>
             <TextField
             onChange={(e) => setCompanyName(e.target.value)}
             label="¿Has cambiado el nombre de tu compañía?"
             variant="filled"
             fullWidth={true}
-            sx={{ marginBottom: "20px" }}
+            sx={{ marginBottom: "25px" }}
           />
              <TextField
             onChange={(e) => setTelephone(e.target.value)}
             label="¿Has actualizado tu telefono?"
             variant="filled"
             fullWidth={true}
-            sx={{ marginBottom: "20px" }}
+            sx={{ marginBottom: "25px" }}
           />
             <TextField
             onChange={(e) => setPassword(e.target.value)}
             label="Aquí puedes cambiar tu contraseña"
             variant="filled"
             fullWidth={true}
-            sx={{ marginBottom: "20px" }}
+            sx={{ marginBottom: "25px" }}
           />
             <TextField
             onChange={(e) => setAddress(e.target.value)}
             label="Actualiza tu dirección física si la has cambiado"
             variant="filled"
             fullWidth={true}
-            sx={{ marginBottom: "20px" }}
+            sx={{ marginBottom: "25px" }}
           />
           <UploadWidget setUrl={setPhoto} updatePhoto={updateClubPhoto}/>
           <Button onClick={() => updateClubProfile()}>Update</Button>

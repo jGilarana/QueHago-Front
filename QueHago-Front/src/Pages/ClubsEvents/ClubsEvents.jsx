@@ -73,7 +73,7 @@ const ClubsEvents = () => {
 
   useEffect(() => {
     seeEvents();
-  }, []);
+  }, [events]);
 
   return (
     <>
