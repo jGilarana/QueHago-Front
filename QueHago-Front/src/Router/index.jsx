@@ -9,6 +9,7 @@ import SignUpClub from "../Pages/SignUp/SignUpClub/SignUpClub.jsx";
 import SingleEvent from "../Pages/SingleEvent/SingleEvent.jsx";
 import Map from "../Components/Map/Map.jsx";
 import Favorites from "../Pages/Favorites/Favorites.jsx";
+import AccountMenu from "../Components/MenuItem/MenuItem.jsx";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
                {
                 path:'/favorites',
                 element:<Favorites/>
+               },
+               {
+                path:'/menuitem',
+                element: <AccountMenu/>
                }
         ]
     }

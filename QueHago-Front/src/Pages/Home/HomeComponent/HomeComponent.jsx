@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom"
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { getUsersFavorites, userDeletesFav, userSetsFavorite } from '../../../Services/favoriteService'
 import dayjs from 'dayjs'
+import { FavoriteBorder } from '@mui/icons-material'
 
 const HomeComponent = ({event}) => {
 
@@ -140,13 +141,13 @@ const HomeComponent = ({event}) => {
 
           <div className='headerCard'>
             {em?.openTime && <p className='hour'>{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</p>}
-           <FavoriteIcon sx={{ display: localStorage.getItem('role') ? 'initial' : 'none',
+           <FavoriteBorder color='transparent' sx={{ display: localStorage.getItem('role') ? 'initial' : 'none',
           ':hover' : {
             color: 'black',
           } 
           }} className= {sames.includes(em.id) ? 'favIcon' : 'noFavIcon'}
             onClick={sames.includes(em.id) ? () => deleteFav(em.id) : () => setUsersFavorite(em.id)}
-            ></FavoriteIcon>
+            ></FavoriteBorder>
             </div>
           <div className='noHeaderCard' onClick={localStorage.getItem('token') ? () => window.open(`/event/${em.id}`) : handleOpen} >
           <h1 className='eventTitle' key={em.id}>{em.title}</h1>
