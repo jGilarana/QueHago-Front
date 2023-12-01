@@ -27,3 +27,13 @@
     border-radius: 12px;
     object-fit: cover;
   }
+
+  .day {
+    color: white;
+    position: absolute;
+    top: 11vh;
+    right: 0;
+    right: 20px;
+   
+  }
+  

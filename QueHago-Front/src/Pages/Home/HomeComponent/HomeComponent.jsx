@@ -10,17 +10,6 @@ import { FavoriteBorder } from '@mui/icons-material'
 
 const HomeComponent = ({event}) => {
 
-  const eventsByDay = {};
-
-event.forEach((em) => {
-  const eventDay = dayjs(em.date).format("YYYY-MM-DD");
-
-  if (!eventsByDay[eventDay]) {
-    eventsByDay[eventDay] = [];
-  }
-
-  eventsByDay[eventDay].push(em);
-});
 
   const now = dayjs()
   
@@ -164,7 +153,7 @@ event.forEach((em) => {
           <img className='event' key={i} 
           src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}>
           </img>
-          <h4>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY", em.date)}</h4>
+          <h4>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY")}</h4>
           <p className='address'>Click para ver más</p>
           </div>
      </Card>

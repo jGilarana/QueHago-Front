@@ -17,7 +17,13 @@ const Home = () => {
   const [genre,setGenre] = useState('')
   const [event, setEvent] = useState([])
   const [filteredEvent, setFilteredEvent] = useState({})
+  const [today, setToday] = useState(dayjs())
+  const [openNotoken, setOpenNotoken] = useState(false);
+ 
 
+
+  const now = dayjs()
+ // console.log(now.format('YYYY-MM-DD'))
   const getAllTheEvents = async () => {
     const data = await getAllEvents()
     setEvent(data.sort((a, b) => dayjs(b.date).diff(dayjs(a.date))))
@@ -33,19 +39,49 @@ const Home = () => {
     setEvent(filteredData)
   }
 
-  
+ 
+ 
+
+
 
   const filterEvent = async () => {
+/*     var now = dayjs()
+    console.log(now)
+    console.log(today)
+    if (today != now) {
+        resetToday()
+    } */
     const data = await getAllEvents()
-    const filteredData = data.filter((event) => event.genre === ("Concierto"))
-    setFilteredEvent(filteredData)
-    setEvent(data)
+    const filteredData = data.filter(em => dayjs(em.date).isSame(dayjs(today), 'day'));
+    setEvent(filteredData)
   }
 
-  
+   const addDay = () => {  
+    setToday((today) => today.add(1, 'day'))
+   
+  }
+
+  const oneDayLess = () => {  
+    setToday((today) => today.add(-1, 'day'))
+   
+  }
+
+
+  const resetToday = () => {  
+    setToday(dayjs())
+  }
+
+
+useEffect(() => {
+   filterEvent()
+  },[today])
+
+
   useEffect(() => {
     getEvents()
   }, [])
+
+  
 
   return (
     <div className="home">
@@ -81,6 +117,29 @@ const Home = () => {
             color: 'white'}        
         }}
           onClick={() => navigate('/favorites')}>IR A FAVORITOS</Button>
+          <Button 
+          sx={{display: localStorage.getItem('token') ? 'initial' : 'none',border:'2px solid red',borderRadius:'12px', height: '5vh', width: '10vw', position:'absolute', top:'11vh', left:'40px',
+          ':hover' : {
+            backgroundColor: 'red',
+            color: 'white'}        
+        }}
+          onClick={() => oneDayLess()}>DIA ANTERIOR</Button>
+          <Button 
+            sx={{display: localStorage.getItem('token') ? 'initial' : 'none',border:'2px solid red',borderRadius:'12px', height: '5vh', width: '10vw', position:'absolute', top:'11vh', left:'16vw',
+            ':hover' : {
+              backgroundColor: 'red',
+              color: 'white'}        
+            }}
+            onClick={() => resetToday()}
+          >MOSTRAR LOS EVENTOS DE HOY</Button>
+          <Button 
+          sx={{display: localStorage.getItem('token') ? 'initial' : 'none',border:'2px solid red',borderRadius:'12px', height: '5vh', width: '10vw', position:'absolute', top:'11vh', left:'30vw',
+          ':hover' : {
+            backgroundColor: 'red',
+            color: 'white'}        
+        }}
+          onClick={() => addDay()}>SIGUIENTE DIA</Button>
+          <h2 className="day">{today.format('dddd, DD/MM/YYYY')}</h2>
           <Map/>
       <HomeComponent event={event} />
     </div>
