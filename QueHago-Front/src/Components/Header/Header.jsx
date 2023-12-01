@@ -342,8 +342,7 @@ const Header = () => {
       </Link>
       <Link to={"/login"}>
         <Button
-          sx={{ margin: "20px", backgroundColor: "#792350", color: "white",   display: (localStorage.getItem('token')) ? 'none' : 'initial' }}
-          color="primary"
+          sx={{ margin: "20px", backgroundColor: "#792350", color: "green",   display: (localStorage.getItem('token')) ? 'none' : 'initial' }}
         >
           Login
         </Button>

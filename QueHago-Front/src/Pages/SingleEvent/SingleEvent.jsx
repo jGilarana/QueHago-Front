@@ -35,7 +35,7 @@ const SingleEvent = () => {
     <div className="singleEventContainer">
       <Card
         sx={{
-          backgroundColor: "black",
+          background:' linear-gradient(133deg, rgba(122,130,143,1) 3%, rgba(51,35,111,1) 26%, rgba(17,15,105,0.9934348739495799) 58%, rgba(28,36,114,1) 75%, rgba(70,81,84,1) 100%)',
           border:'2px solid white',
           width: "80vw",
           height: "80vh",
@@ -58,7 +58,7 @@ const SingleEvent = () => {
       <h2>¿Dónde es la fiesta? : {event.address}</h2>
       <h2>¿Cuántas salas tiene? : {event.rooms}</h2>
       <h2>¿Cuál es la edad mínima? : {event.minimumAge}</h2>
-      <h2> ¿Cuando podré ir a partir la pana? : <br></br><br></br>  {capitalize(date.format("dddd , D [de] MMMM [de] YYYY", event.date))}</h2>
+      <h2> ¿Cuando podré ir a partir la pana? : <br></br><br></br> {capitalize(date.format("dddd , D [de] MMMM [de] YYYY", event.date))}</h2>
       <h2>¿Qué generos de música escucharé? : <br></br><br></br>{event.genre}</h2>
       </div>
       

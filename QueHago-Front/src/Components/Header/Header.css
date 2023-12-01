@@ -1,7 +1,8 @@
 .header-container {
     position: fixed;
     top: 0;
-    background-color:transparent;
+    background:linear-gradient(13deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 39%, rgba(53,0,255,1) 100%);
+    opacity: 20;
     backdrop-filter: blur(15px);
     width: 100vw;
     height: 9vh;

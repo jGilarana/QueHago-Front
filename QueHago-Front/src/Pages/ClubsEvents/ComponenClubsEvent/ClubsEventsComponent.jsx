@@ -294,7 +294,7 @@ const ClubsEventsComponent = ({
         onMouseLeave={handleMouseLeave}
         className="hoverCard"
         sx={{
-          backgroundColor: "#131313",
+          background:'linear-gradient(13deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 39%, rgba(53,0,255,1) 100%)',
           margin: "2vw",
           width: "14vw",
           height: "50vh",
@@ -340,7 +340,7 @@ const ClubsEventsComponent = ({
           }}
           key={em.id}
           sx={{
-            backgroundColor: "#131313",
+            background:'linear-gradient(13deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 39%, rgba(53,0,255,1) 100%)',
             margin: "2vw",
             width: "14vw",
             height: "60vh",
