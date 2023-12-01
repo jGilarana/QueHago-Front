@@ -2,7 +2,7 @@ import "./Home.css"
 import { React, useEffect, useState } from "react"
 import { getAllEvents } from "../../Services/eventService"
 import { Box, Button } from "@mui/material"
-import { blue, green, red } from "@mui/material/colors"
+import { blue, green, red, yellow } from "@mui/material/colors"
 import { Link, useNavigate } from "react-router-dom"
 import { getProfile, postPhoto } from "../../Services/accountService"
 import UploadWidget from "../../Components/UploadWidget/UploadWidget.jsx"
@@ -61,16 +61,16 @@ const Home = () => {
 
 
 <Button 
-          sx={{ border:'2px solid white',borderRadius:'12px', height: '5vh', width: '10vw', position:'absolute', top:'11vh', right:'33vw',
+          sx={{ display : localStorage.getItem('token') ? 'initial' : 'none', border:'2px solid white',borderRadius:'12px', height: '5vh', width: '10vw', fontSize:'12px', position:'absolute', top:'11vh', right:'33vw',
           ':hover' : {
-            backgroundColor: 'white',
+            backgroundColor: yellow[600],
             color: 'black'}        
         }}
           onClick={() => getEvents()}>MOSTRAR EVENTOS NO OCURRIDOS</Button>
           <Button 
-          sx={{border:'2px solid white',borderRadius:'12px', height: '5vh', width: '10vw',fontSize:'12px', position:'absolute', top:'11vh', right:'22vw',
+          sx={{display : localStorage.getItem('token') ? 'initial' : 'none', border:'2px solid white',borderRadius:'12px', height: '5vh', width: '10vw',fontSize:'12px', position:'absolute', top:'11vh', right:'22vw',
           ':hover' : {
-            backgroundColor: 'white',
+            backgroundColor: yellow[600],
             color: 'black'}        
         }}
           onClick={() => getAllTheEvents()}>MOSTRAR TODOS LOS EVENTOS</Button>

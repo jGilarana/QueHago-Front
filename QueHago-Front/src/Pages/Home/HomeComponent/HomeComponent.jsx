@@ -142,8 +142,8 @@ const HomeComponent = ({event}) => {
    >
 
         
-            {em?.openTime && <p className='hour'>{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</p>}
-           <FavoriteBorder color='transparent' sx={{width:'3vw', height : '3vh'}} className= {sames.includes(em.id) ? 'favIcon' : 'noFavIcon'}
+            {em?.openTime && <p className={localStorage.getItem('token') ? 'hour' : 'hourNoToken' }>{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</p>}
+           <FavoriteBorder color='transparent' sx={{display: localStorage.getItem('token') ? 'flex' : 'none', width:'3vw', height : '3vh'}} className= {sames.includes(em.id) ? 'favIcon' : 'noFavIcon'}
             onClick={sames.includes(em.id) ? () => deleteFav(em.id) : () => setUsersFavorite(em.id)}
             ></FavoriteBorder>
            

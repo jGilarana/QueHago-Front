@@ -76,6 +76,14 @@
   border-radius: 12px;
 }
 
+.hourNoToken {
+  position: absolute;
+  top: 20px;
+  color: white;
+  background-color:#ddb900;
+  width: 5vw;
+  border-radius: 12px;
+}
 
 .event {
   width: 8vw;

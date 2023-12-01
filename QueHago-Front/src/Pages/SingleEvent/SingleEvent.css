@@ -13,6 +13,7 @@
    height: 45vh;
    border-radius: 12px;
    margin-bottom: 2vh;
+   background-size: cover;
 }
 
 
@@ -30,16 +31,23 @@
 
 .infoContainerWithMap {
    margin-left: 2vw;
-   width: 25vw;
+   width: 35vw;
    height: 70vh;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   background-color: #534bae;
-   align-items: center;
+   background-color: #000000;
+   align-items: left;
    border-radius: 10px;
    border: 2px solid white;
    overflow: auto;
+  
+}
+
+.infoContainerWithMap h2 {
+ 
+   text-align: left;
+    
 }
 
 .infoContainer {
@@ -49,7 +57,9 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   align-items: center;
+   align-items: right;
+   text-align: right;
+   background-color: #000000;
    border-radius: 10px;
    border: 2px solid white;
    overflow: auto;

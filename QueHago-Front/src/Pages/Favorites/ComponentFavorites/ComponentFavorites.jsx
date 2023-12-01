@@ -85,7 +85,7 @@ const ComponentFavorites = ({fav, eventOpenTime, eventCloseTime}) => {
    >
 
           <div className='headerCard'>
-            <p className='hour'>{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</p>
+            <p className='hour'>{fav && em.openTime?.slice(0, -3)} - {fav && em.closeTime?.slice(0, -3)}</p>
            <FavoriteIcon sx={{ display: localStorage.getItem('role') ? 'initial' : 'none',
           ':hover' : {
             color: 'black',
