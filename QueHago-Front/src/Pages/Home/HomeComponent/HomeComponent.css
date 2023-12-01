@@ -1,5 +1,5 @@
 .events-container {
-  width: 72vw;
+  width: 68vw;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -11,10 +11,10 @@
   background-repeat:repeat;
   background-size: 55%;
   position: relative;
-  right: 30px;
   z-index: 2;
   border: 2px solid white;
   margin-left: 10px;
+  padding: 1rem;
 }
 
 .scrollBar::-webkit-scrollbar {
@@ -57,7 +57,7 @@
 /* //HACER DISPLAY FLEX, FLEX ROW PARA CORAZON DE LIKE CON HORA */
 
 .eventTitle {
-  margin: 10px;
+ 
   margin-top: 0;
 }
 .genre {

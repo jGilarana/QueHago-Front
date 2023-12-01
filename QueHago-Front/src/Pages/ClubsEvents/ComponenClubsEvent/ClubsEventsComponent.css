@@ -19,6 +19,21 @@
 
 /* ///////////////////////////HACER DISPLAY GRID Y AÑADIR DESCRIPCION AL MODAL //////////////////////////// */
 
+.clubEventTitle {
+    margin-top: 2rem;
+}
+
+.eventHour {
+    position: absolute;
+    top: 0;
+    right: 30%;
+    color: white;
+    background-color:#ddb900;
+    width: 5vw;
+    border-radius: 12px;
+  }
+
+
 .clubsEventsContainer a {
     width: 80px;
 }

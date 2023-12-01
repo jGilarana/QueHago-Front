@@ -375,9 +375,11 @@ const ClubsEventsComponent = ({
           }}
         >
           <div>
-          <ModeEditIcon sx={{position:'absolute', left:'20px', color:'grey', width:'40px', ':hover' : {color:'white'}}}></ModeEditIcon>
+          {em?.openTime && <p className='eventHour' >{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</p>}
+          <ModeEditIcon sx={{position:'absolute', left:'20px', bottom: '10px', color:'grey', width:'40px', ':hover' : {color:'white'}}}></ModeEditIcon>
           </div>
-          <h3 key={em.id}>{em.title}</h3>
+          <h2 className="clubEventTitle" key={em.id}>{em.title}</h2>
+          <h4>{em.genre}</h4>
           <img
             className="event"
             key={i}
@@ -387,7 +389,7 @@ const ClubsEventsComponent = ({
                 : em.image
             }
           ></img>
-          <h4>{em.genre}</h4>
+          
           <h4>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY", em.date)}</h4>
           <h4>{em.address}</h4>
           <Link to={`/event/${em.id}`}>

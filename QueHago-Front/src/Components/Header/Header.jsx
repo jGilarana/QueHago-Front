@@ -181,10 +181,11 @@ const Header = () => {
             justifyContent: "center",
             flexDirection: "column",
             borderRadius: "12px",
-            backgroundColor: "#9294ff",
-            opacity: "90%",
+            background: "linear-gradient(0deg, rgba(12,12,170,1) 20%, rgba(9,9,189,1) 95%)",
+            opacity: "95%",
             backdropFilter: "blur(800px)",
             zIndex: "2",
+            position:'relative'
           }}
         >
           <h2>Actualizar Usuario</h2>
@@ -226,7 +227,7 @@ const Header = () => {
             sx={{marginBottom: "25px", color: "white"}}
           />
           <UploadWidget setUrl={setPhoto} updatePhoto={updatePhoto} />
-          <Button onClick={() => updateUserProfile()}>ACTUALIZAR USUARIO</Button>
+          <Button sx={{color:'white', border:'2px solid white', width:'10vw', position:'absolute', bottom : '8vh', right:'35%' ,':hover' : {backgroundColor:'yellow', color:'black'}}} onClick={() => updateUserProfile()}>ACTUALIZAR USUARIO</Button>
         </Box>
       </Modal>
       {/* /////////////////////////////////////////////// CLUB MODAL /////////////////////////////////////////////////////////////////////// */}
@@ -256,10 +257,11 @@ const Header = () => {
             justifyContent: "center",
             flexDirection: "column",
             borderRadius: "12px",
-            backgroundColor: "#9294ff",
-            opacity: "90%",
+            background: 'linear-gradient(0deg, rgba(97,52,164,1) 24%, rgba(143,21,203,1) 82%)',
+            opacity: "95%",
             backdropFilter: "blur(800px)",
             zIndex: "2",
+            position:'relative'
           }}
         >
             <h2>Actualizar Compañía</h2>
@@ -292,7 +294,7 @@ const Header = () => {
             sx={{ marginBottom: "25px" }}
           />
           <UploadWidget setUrl={setPhoto} updatePhoto={updateClubPhoto}/>
-          <Button onClick={() => updateClubProfile()}>Update</Button>
+          <Button sx={{color:'white', border:'2px solid white', width:'10vw', position:'absolute', bottom : '8vh', right:'35%' ,':hover' : {backgroundColor:'yellow', color:'black'}}} onClick={() => updateClubProfile()}>Update</Button>
         </Box>
       </Modal>
 
@@ -324,7 +326,7 @@ const Header = () => {
             justifyContent: "center",
             flexDirection: "column",
             borderRadius: "12px",
-            backgroundColor: "#9294ff",
+            background:'linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(6,6,201,1) 34%)',
             opacity: "90%",
             backdropFilter: "blur(800px)",
             zIndex: "2",
@@ -372,8 +374,8 @@ const Header = () => {
           SignUp Bussiness
         </Button>
       </Link>
-        <Button color="warning" sx={{ display: (localStorage.getItem('token')) ? 'initial' : 'none'}}onClick={() => onLogout()}>Logout</Button>
-        <Button sx={{ display: (localStorage.getItem('subscriptionStatus')) ? 'initial' : 'none', display : pathname == '/bussiness' ? 'none' : 'initial'}} onClick={() => navigate('/bussiness')}>Accede a tus eventos</Button>
+        <Button color="warning" sx={{ display: (localStorage.getItem('token'))  ? 'initial' : 'none'}}onClick={() => onLogout()}>Logout</Button>
+        <Button sx={{ display:(localStorage.getItem('subscriptionStatus'))  ? 'initial' : 'none'}} onClick={() => navigate('/bussiness')}>Accede a tus eventos</Button>
       <div>
         <img
           onClick={() => handleOpen()}

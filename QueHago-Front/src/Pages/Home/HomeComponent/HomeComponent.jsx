@@ -10,7 +10,17 @@ import { FavoriteBorder } from '@mui/icons-material'
 
 const HomeComponent = ({event}) => {
 
+  const eventsByDay = {};
 
+event.forEach((em) => {
+  const eventDay = dayjs(em.date).format("YYYY-MM-DD");
+
+  if (!eventsByDay[eventDay]) {
+    eventsByDay[eventDay] = [];
+  }
+
+  eventsByDay[eventDay].push(em);
+});
 
   const now = dayjs()
   
@@ -91,7 +101,7 @@ const HomeComponent = ({event}) => {
             justifyContent: "center",
             flexDirection: "column",
             borderRadius: "12px",
-            backgroundColor: "#9294ff",
+            background : 'linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(6,6,201,1) 34%)',
             opacity: "90%",
             backdropFilter: "blur(800px)",
             zIndex: "2",
@@ -102,6 +112,7 @@ const HomeComponent = ({event}) => {
           <Button sx={{backgroundColor:'#4d425f', margin:'1vw'}} onClick={() => navigation('/signup')}>Crear cuenta</Button>
         </Box>
       </Modal>
+     
      {event.map((em, i) => (
      <Card
      className='scrollBar'
@@ -111,14 +122,13 @@ const HomeComponent = ({event}) => {
        background:'linear-gradient(13deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 39%, rgba(53,0,255,1) 100%)',
        opacity:'80%',
        margin: '2vw',
-       width: '14vw',
-       height: '60vh', 
+       width: '13vw',
+       height: '48vh', 
        alignItems: 'center',
        display: 'flex',
        flexDirection: 'column',
        borderRadius: '12px',
        textAlign: 'center',
-       overflow: 'auto',
        color: 'white',
        justifyContent:'space-evenly',
        boxSizing:'border-box',
