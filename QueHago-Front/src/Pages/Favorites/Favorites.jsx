@@ -18,7 +18,7 @@ const Favorites = () => {
 
   return (
 
-    <ComponentFavorites fav={favorite}/>
+    <ComponentFavorites fav={favorite} eventOpenTime={favorite && favorite.openTime} eventCloseTime={favorite && favorite?.closeTime}/>
 
   )
 }

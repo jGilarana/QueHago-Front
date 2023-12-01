@@ -61,13 +61,25 @@ const Home = () => {
 
 
 <Button 
-          sx={{ backgroundColor: green[600], height: '5vh', width: '10vw', position:'absolute', top:'11vh', right:'33vw' }}
+          sx={{ border:'2px solid white',borderRadius:'12px', height: '5vh', width: '10vw', position:'absolute', top:'11vh', right:'33vw',
+          ':hover' : {
+            backgroundColor: 'white',
+            color: 'black'}        
+        }}
           onClick={() => getEvents()}>MOSTRAR EVENTOS NO OCURRIDOS</Button>
           <Button 
-          sx={{ backgroundColor: green[600], height: '5vh', width: '10vw', position:'absolute', top:'11vh', right:'22vw' }}
+          sx={{border:'2px solid white',borderRadius:'12px', height: '5vh', width: '10vw',fontSize:'12px', position:'absolute', top:'11vh', right:'22vw',
+          ':hover' : {
+            backgroundColor: 'white',
+            color: 'black'}        
+        }}
           onClick={() => getAllTheEvents()}>MOSTRAR TODOS LOS EVENTOS</Button>
           <Button 
-          sx={{display: localStorage.getItem('role') ? 'initial' : 'none', backgroundColor: red[600], height: '5vh', width: '10vw', position:'absolute', top:'11vh', right:'10vw' }}
+          sx={{display: localStorage.getItem('role') ? 'initial' : 'none',border:'2px solid red',borderRadius:'12px', height: '5vh', width: '10vw', position:'absolute', top:'11vh', right:'10vw',
+          ':hover' : {
+            backgroundColor: 'red',
+            color: 'white'}        
+        }}
           onClick={() => navigate('/favorites')}>IR A FAVORITOS</Button>
           <Map/>
       <HomeComponent event={event} />

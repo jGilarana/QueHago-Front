@@ -104,9 +104,11 @@ const HomeComponent = ({event}) => {
       </Modal>
      {event.map((em, i) => (
      <Card
+     className='scrollBar'
+     onClick={localStorage.getItem('token') ? null : () => handleOpen()}
      key={em.id}
      sx={{
-       backgroundColor: '#131313',
+       background:'linear-gradient(13deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 39%, rgba(53,0,255,1) 100%)',
        margin: '2vw',
        width: '14vw',
        height: '60vh', 
@@ -139,19 +141,14 @@ const HomeComponent = ({event}) => {
      }}
    >
 
-          <div className='headerCard'>
+        
             {em?.openTime && <p className='hour'>{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</p>}
-           <FavoriteBorder color='transparent' sx={{ display: localStorage.getItem('role') ? 'initial' : 'none',
-          ':hover' : {
-            color: 'black',
-          } 
-          }} className= {sames.includes(em.id) ? 'favIcon' : 'noFavIcon'}
+           <FavoriteBorder color='transparent' sx={{width:'3vw', height : '3vh'}} className= {sames.includes(em.id) ? 'favIcon' : 'noFavIcon'}
             onClick={sames.includes(em.id) ? () => deleteFav(em.id) : () => setUsersFavorite(em.id)}
             ></FavoriteBorder>
-            </div>
+           
           <div className='noHeaderCard' onClick={localStorage.getItem('token') ? () => window.open(`/event/${em.id}`) : handleOpen} >
           <h1 className='eventTitle' key={em.id}>{em.title}</h1>
-          <p className='genre'>{em.genre}</p>
           <img className='event' key={i} 
           src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}>
           </img>

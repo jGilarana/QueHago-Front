@@ -6,7 +6,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Link } from 'react-router-dom';
 import { getUsersFavorites, userDeletesFav, userSetsFavorite } from '../../../Services/favoriteService';
 
-const ComponentFavorites = ({fav}) => {
+const ComponentFavorites = ({fav, eventOpenTime, eventCloseTime}) => {
 
   const [favorite, setFavorite] = useState([])
   const [refresh, setRefresh] = useState(false)
@@ -79,13 +79,13 @@ const ComponentFavorites = ({fav}) => {
          backgroundColor: '#000000',
          cursor: 'pointer',
          border:'2px solid'
-         
+        
        },
      }}
    >
 
           <div className='headerCard'>
-            <p className='hour'>22:00 - 06:00</p>
+            <p className='hour'>{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</p>
            <FavoriteIcon sx={{ display: localStorage.getItem('role') ? 'initial' : 'none',
           ':hover' : {
             color: 'black',

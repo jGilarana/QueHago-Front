@@ -17,6 +17,15 @@
     overflow: auto;
 }
 
+.hoverBorder:hover {
+border: 2px;
+cursor: pointer;
+border-image: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(226,35,62,1) 38%, rgba(64,29,253,1) 64%, rgba(252,176,69,1) 100%);
+border-radius: 12px;
+border-width: 2px;
+border-style: solid;
+}
+
 .pageContainer {
     width: 100vw;
     height: 100vh;
