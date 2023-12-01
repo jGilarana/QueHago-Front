@@ -6,14 +6,15 @@ import {
   postPhoto,
   postProfile,
 } from "../../Services/accountService";
-import { Link, Navigate, redirect, useNavigate } from "react-router-dom";
+import { Link, Navigate, redirect, useLocation, useNavigate } from "react-router-dom";
 import { Box, Button, MenuItem, Modal, TextField } from "@mui/material";
 import { blueGrey, green } from "@mui/material/colors";
 import { getOwnClub, postClubPhoto, updateOwnCLub } from "../../Services/clubService";
 
 const Header = () => {
 
-
+  const { pathname } = useLocation()
+  console.log(pathname)
   const navigate = useNavigate();
 
   const [password, setPassword] = useState();
@@ -371,8 +372,8 @@ const Header = () => {
           SignUp Bussiness
         </Button>
       </Link>
-        <Button sx={{ display: (localStorage.getItem('token')) ? 'initial' : 'none'}}onClick={() => onLogout()}>Logout</Button>
-        <Button sx={{ display: (localStorage.getItem('subscriptionStatus')) ? 'initial' : 'none'}} onClick={() => navigate('/bussiness')}>Accede a tus eventos</Button>
+        <Button color="warning" sx={{ display: (localStorage.getItem('token')) ? 'initial' : 'none'}}onClick={() => onLogout()}>Logout</Button>
+        <Button sx={{ display: (localStorage.getItem('subscriptionStatus')) ? 'initial' : 'none', display : pathname == '/bussiness' ? 'none' : 'initial'}} onClick={() => navigate('/bussiness')}>Accede a tus eventos</Button>
       <div>
         <img
           onClick={() => handleOpen()}

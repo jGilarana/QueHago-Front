@@ -7,7 +7,6 @@ import UploadWidget from "../../../Components/UploadWidget/UploadWidget"
 import { updateClubsEvent } from "../../../Services/eventService"
 import dayjs from "dayjs"
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
-
 const ClubsEventsComponent = ({
   setTitle,
   setGenre,
@@ -30,6 +29,9 @@ const ClubsEventsComponent = ({
   setOpenTime,
   setCloseTime
 }) => {
+
+ 
+ 
   const [eventImg, setEventImg] = useState(
     "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg"
   )

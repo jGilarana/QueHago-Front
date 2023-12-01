@@ -57,7 +57,7 @@ const ClubsEvents = () => {
       return null;
     } else {
       const events = await getClubsEvents();
-      
+      console.log(events)
       setEvents(events);
     }
   };
@@ -73,6 +73,8 @@ const ClubsEvents = () => {
       date,
       minimumAge,
       image,
+      openTime,
+      closeTime
     });
     console.log(data);
     handleClose();
@@ -83,7 +85,6 @@ const ClubsEvents = () => {
     seeEvents();
   }, [refresh]);
 
-  console.log(refresh)
   return (
     <>
       <ClubsEventsComponent
@@ -107,7 +108,7 @@ const ClubsEvents = () => {
         setImage={setImage}
         createEvent={postEvents}
         updateEvent={updateEvent}
-        events={events}
+        events={events && events}
         setOpenTime = {setOpenTime}
         setCloseTime={setCloseTime}
         

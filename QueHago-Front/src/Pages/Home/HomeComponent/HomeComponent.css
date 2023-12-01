@@ -110,6 +110,30 @@
   }
 }
 
+.moreInfo {
+    color: #0000ff;
+  }
+
+  .favIcon {
+    color: red;
+   
+    position: absolute;
+    top: 30px;
+    right: 10px;
+  }
+
+  .noFavIcon {
+    color: rgba(239, 239, 239, 0.482);
+    position: absolute;
+    top: 30px;
+    right: 10px;
+  }
+
+
+  .noFavIcon:hover {
+    color: red;
+  }
+
 @media screen and (min-width: 600px) and (max-width: 1080px) {
 
   .events-container {
@@ -169,23 +193,5 @@
 
 
 
-.moreInfo {
-    color: #0000ff;
-  }
-
-  .favIcon {
-    color: red;
-   
-    position: absolute;
-    top: 30px;
-    right: 10px;
-  }
-
-  .noFavIcon {
-    color: rgba(239, 239, 239, 0.482);
-    position: absolute;
-    top: 30px;
-    right: 10px;
-  }
 
  

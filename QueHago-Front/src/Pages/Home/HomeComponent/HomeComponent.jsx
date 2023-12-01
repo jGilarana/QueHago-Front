@@ -123,6 +123,7 @@ const HomeComponent = ({event}) => {
        justifyContent:'space-evenly',
        boxSizing:'border-box',
        position:'relative',
+       padding:'0.3rem',
    
        '@media (min-width: 600px) and (max-width: 1080px)': {
          width: '18vw',
@@ -144,7 +145,7 @@ const HomeComponent = ({event}) => {
 
         
             {em?.openTime && <p className={localStorage.getItem('token') ? 'hour' : 'hourNoToken' }>{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</p>}
-           <FavoriteBorder color='transparent' sx={{display: localStorage.getItem('token') ? 'flex' : 'none', width:'3vw', height : '3vh'}} className= {sames.includes(em.id) ? 'favIcon' : 'noFavIcon'}
+           <FavoriteBorder color='transparent' sx={{display: localStorage.getItem('role') ? 'flex' : 'none', width:'3vw', height : '3vh'}} className= {sames.includes(em.id) ? 'favIcon' : 'noFavIcon'}
             onClick={sames.includes(em.id) ? () => deleteFav(em.id) : () => setUsersFavorite(em.id)}
             ></FavoriteBorder>
            
