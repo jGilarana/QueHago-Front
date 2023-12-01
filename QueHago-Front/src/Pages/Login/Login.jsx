@@ -1,7 +1,7 @@
 import  { useState } from 'react'
 import { Button, Card, CardActions, CardContent, CardHeader, Divider, TextField, Typography } from '@mui/material'
 import './Login.css'
-import { blue, green } from '@mui/material/colors'
+import { blue, green, purple } from '@mui/material/colors'
 import { login } from '../../Services/accountService.js'
 import { useNavigate } from 'react-router-dom'
 
@@ -37,16 +37,14 @@ const Login = () => {
     
       return (
         <>
-          <img className="loginBackground" src={'https://res.cloudinary.com/djpdopxfy/image/upload/v1700780199/1700748592773_psb91d.jpg'}>
-          </img>
+          <div className='background'></div>
           <Card sx={{
-          backgroundColor: blue[400],
+          background : ' linear-gradient(171deg, rgba(88,60,156,1) 17%, rgba(91,71,91,1) 90%)',
           position: 'fixed',
           top: '0',
           right: '0',
           width: '30vw',
           height: '100vh',         
-          borderRadius: '12px',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',

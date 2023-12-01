@@ -55,12 +55,12 @@ const SignUpClub = () => {
       <img
         className="signupBackground"
         src={
-          "https://res.cloudinary.com/djpdopxfy/image/upload/v1700937728/SignUp_Wallpaper_ae4c7e.png"
+          "https://res.cloudinary.com/djpdopxfy/image/upload/v1700780199/1700748592773_psb91d.jpg"
         }
       ></img>
       <Card
         sx={{
-          backgroundColor: "#792350",
+          backgroundColor: "#033c4e",
           opacity: "98.5%",
           position: "absolute",
           right: "0",

@@ -175,18 +175,16 @@
 
   .favIcon {
     color: red;
-    margin-top: 10px;
+   
     position: absolute;
-    top: 15px;
+    top: 30px;
     right: 10px;
-    
   }
 
   .noFavIcon {
-    color: rgb(239, 239, 239);
-    margin-top: 10px;
+    color: rgba(239, 239, 239, 0.482);
     position: absolute;
-    top: 15px;
+    top: 30px;
     right: 10px;
   }
 

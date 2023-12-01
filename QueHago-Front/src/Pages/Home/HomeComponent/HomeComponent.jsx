@@ -109,6 +109,7 @@ const HomeComponent = ({event}) => {
      key={em.id}
      sx={{
        background:'linear-gradient(13deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 39%, rgba(53,0,255,1) 100%)',
+       opacity:'80%',
        margin: '2vw',
        width: '14vw',
        height: '60vh', 
@@ -133,7 +134,7 @@ const HomeComponent = ({event}) => {
          height: '40vh', 
        }, 
        ':hover': {
-         backgroundColor: '#000000',
+         opacity:'100%',
          cursor: 'pointer',
          border:'2px solid'
          
@@ -153,7 +154,7 @@ const HomeComponent = ({event}) => {
           src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}>
           </img>
           <h4>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY", em.date)}</h4>
-          <p className='address'>{em.address}</p>
+          <p className='address'>Click para ver más</p>
           </div>
      </Card>
       ))}
