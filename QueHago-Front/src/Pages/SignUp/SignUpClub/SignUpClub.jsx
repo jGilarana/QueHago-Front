@@ -60,7 +60,7 @@ const SignUpClub = () => {
       ></img>
       <Card
         sx={{
-          backgroundColor: "#033c4e",
+          background: 'linear-gradient(340deg, rgba(39,67,70,1) 16%, rgba(2,127,144,1) 82%)',
           opacity: "98.5%",
           position: "absolute",
           right: "0",
@@ -76,27 +76,27 @@ const SignUpClub = () => {
         }}
       >
         <CardHeader title="signup" />
-        <CardContent>
+        <CardContent sx={{marginTop: "8vh"}}>
           <TextField
             onChange={(e) => setCompanyName(e.target.value)}
             label="Nombre de la Empresa"
             variant="filled"
             fullWidth={true}
-            sx={{ marginBottom: "20px", color: "white" }}
+            sx={{width:'80%',backgroundColor:'#A7A7AD' ,marginBottom: "35px", color: "white" }}
           />
           <TextField
             onChange={(e) => setEmail(e.target.value)}
             label="email de contacto"
             variant="filled"
             fullWidth={true}
-            sx={{ marginBottom: "20px" }}
+            sx={{width:'80%' ,backgroundColor:'#A7A7AD' ,marginBottom: "35px" }}
           />
           <TextField
             onChange={(e) => setAddress(e.target.value)}
             label="Localización de la empresa"
             variant="filled"
             fullWidth={true}
-            sx={{ marginBottom: "20px" }}
+            sx={{width:'80%' ,backgroundColor:'#A7A7AD' ,marginBottom: "35px" }}
           />
           <TextField
             onChange={(e) => setTelephone(e.target.value)}
@@ -104,7 +104,7 @@ const SignUpClub = () => {
             variant="filled"
             fullWidth={true}
             type="number"
-            sx={{ marginBottom: "20px" }}
+            sx={{width:'80%' ,backgroundColor:'#A7A7AD' ,marginBottom: "35px" }}
           />
           <TextField
             onChange={(e) => setPassword(e.target.value)}
@@ -112,6 +112,7 @@ const SignUpClub = () => {
             variant="filled"
             type="password"
             fullWidth={true}
+            sx={{width:'80%' ,backgroundColor:'#A7A7AD' ,marginBottom: "35px" }}
           />
           <TextField
             onChange={(e) => e.target.value}
@@ -119,13 +120,14 @@ const SignUpClub = () => {
             variant="filled"
             type="password"
             fullWidth={true}
+            sx={{width:'80%' ,backgroundColor:'#A7A7AD' ,marginBottom: "35px" }}
           />
         </CardContent>
         <Divider />
         <CardActions>
         <Button
             sx={{
-              backgroundColor: blue[300], marginBottom: '10vh',
+              backgroundColor: green[500], marginBottom: '10vh', width:'8vw',
               "&:hover": { backgroundColor: "white" },
             }}
             onClick={() => onSignupClub()}

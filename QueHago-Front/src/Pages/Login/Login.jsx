@@ -59,9 +59,9 @@ const Login = () => {
             variant='filled'
             fullWidth={true}
             color='success'
-            sx={{marginBottom:'20px'}}
+            sx={{backgroundColor:'#a3baf1', marginBottom:'20px'}}
           />
-             <TextField sx={{marginBottom:'40px'}}
+             <TextField sx={{backgroundColor:'#a3baf1', marginBottom:'40px'}}
             onChange={(e) => setPassword(e.target.value)}
             label='Password'
             variant='filled'
@@ -74,7 +74,7 @@ const Login = () => {
           <p>He olvidado mi contraseña</p>
           <p>Recordarme</p>
           </div>
-          <Button sx={{backgroundColor: green[600], color:'white', marginTop:'30px'}} onClick={() => onLogin()}>
+          <Button sx={{backgroundColor: blue[600], color:'white', marginTop:'30px'}} onClick={() => onLogin()}>
               Login
             </Button>
           </div>
@@ -83,7 +83,7 @@ const Login = () => {
           <CardActions sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             
             <p>¿Aún no te has registrado?</p>
-            <Button sx={{backgroundColor: blue[600], color:'white'}} onClick={() => navigate('/signup')}> Registrarse</Button>
+            <Button sx={{backgroundColor: 'green', color:'white', ':hover' : {backgroundColor: 'transparent'}}} onClick={() => navigate('/signup')}> Registrarse</Button>
           </CardActions>
         </Card>
         </>

@@ -60,9 +60,9 @@ const LoginClub = () => {
             variant='filled'
             fullWidth={true}
             color='success'
-            sx={{marginBottom:'20px'}}
+            sx={{ backgroundColor: '#a3baf1' , marginBottom:'20px'}}
           />
-             <TextField sx={{marginBottom:'40px'}}
+             <TextField sx={{backgroundColor:'#a3baf1',  marginBottom:'40px'}}
             onChange={(e) => setPassword(e.target.value)}
             label='Password'
             variant='filled'
@@ -75,7 +75,7 @@ const LoginClub = () => {
           <p>He olvidado mi contraseña</p>
           <p>Recordarme</p>
           </div>
-          <Button sx={{backgroundColor: green[600], color:'white', marginTop:'30px'}} onClick={() => onLogin()}>
+          <Button sx={{backgroundColor: '#a3baf1', color:'white', marginTop:'30px', ':hover' : {backgroundColor: 'green'}}} onClick={() => onLogin()}>
               Login
             </Button>
           </div>

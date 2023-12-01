@@ -65,7 +65,7 @@ const SignUp = () => {
       <Card
   
         sx={{
-          backgroundColor: blue[400],
+          background: 'linear-gradient(69deg, rgba(97,2,96,1) 40%, rgba(127,2,144,1) 82%)',
           opacity: "98.5%",
           position: "fixed",
           right: "0",
@@ -82,58 +82,64 @@ const SignUp = () => {
         }}
       >
         <CardHeader title="signup" />
-        <CardContent>
+        <CardContent sx={{marginTop:'8vh'}}>
           <TextField
             onChange={(e) => setFirstName(e.target.value)}
+            color="secondary"
             label="Nombre"
             variant="filled"
             fullWidth={true}
-            sx={{ marginBottom: "20px", color: "white" }}
+            sx={{ width:'80%' ,backgroundColor: '#BBA7BD', marginBottom: "20px", color: "white" }}
           />
           <TextField
             onChange={(e) => setLastName(e.target.value)}
+            color="secondary"
             label="Apellidos"
             variant="filled"
             fullWidth={true}
-            sx={{ marginBottom: "20px" }}
+            sx={{ width:'80%' ,backgroundColor: '#BBA7BD', marginBottom: "20px" }}
           />
           <TextField
-          color="success"
             onChange={(e) => setEmail(e.target.value)}
+            color="secondary"
             label="Tu mejor email"
             variant="filled"
             fullWidth={true}
-            sx={{ marginBottom: "20px", color: '#500041' }}
+            sx={{ width:'80%' ,backgroundColor: '#BBA7BD', marginBottom: "20px", color: '#500041' }}
           />
           <TextField
             onChange={(e) => setTelephone(e.target.value)}
+            color="secondary"
             label="Teléfono"
             variant="filled"
             fullWidth={true}
             type="number"
-            sx={{ marginBottom: "20px" }}
+            sx={{ width:'80%' ,backgroundColor: '#BBA7BD', marginBottom: "20px" }}
           />
           <p>Fecha de nacimiento :</p>
           <TextField
             onChange={(e) => setBirthDate(e.target.value)}
+            color="secondary"
             variant="filled"
             type="date"
             fullWidth={true}
-            sx={{ marginBottom: "20px" }}
+            sx={{ width:'80%' ,backgroundColor: '#BBA7BD', marginBottom: "20px" }}
           />
           <TextField
             onChange={(e) => setPassword(e.target.value)}
+            color="secondary"
             label="Contraseña"
             variant="filled"
             type="password"
             fullWidth={true}
+            sx={{ width:'80%' ,backgroundColor: '#BBA7BD', marginBottom: "20px" }}
           />
         </CardContent>
         <Divider />
         <CardActions>
           <Button
             sx={{
-              backgroundColor: blue[300], marginBottom: '10vh',
+              backgroundColor: blue[300], marginBottom: '10vh', width:'10vw',
               "&:hover": { backgroundColor: "white" },
             }}
             onClick={() => onSignup()}

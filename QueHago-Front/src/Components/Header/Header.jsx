@@ -10,12 +10,16 @@ import { Link, Navigate, redirect, useLocation, useNavigate } from "react-router
 import { Box, Button, MenuItem, Modal, TextField } from "@mui/material";
 import { blueGrey, green } from "@mui/material/colors";
 import { getOwnClub, postClubPhoto, updateOwnCLub } from "../../Services/clubService";
+import dayjs from "dayjs";
 
 const Header = () => {
 
   const { pathname } = useLocation()
   console.log(pathname)
   const navigate = useNavigate();
+
+  const [info,setInfo] = useState({})
+  console.log(info)
 
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
@@ -93,8 +97,6 @@ const Header = () => {
   };
 
 
-  
-
   const updateClubProfile = async () => {
     try {
       const updateResponse = await updateOwnCLub({
@@ -120,10 +122,7 @@ const Header = () => {
     return data;
   };
 
-  useEffect(() => {
-    getPhoto();
-  }, []);
-
+ 
   const getPhoto = async () => {
     if (localStorage.getItem("token") === null) {
       console.log("You are not logged in");
@@ -141,6 +140,19 @@ const Header = () => {
     }
   };
 
+  const getAccountInfo = async() => {
+    if (localStorage.getItem("token") === null) {
+      console.log("You are not logged in");
+      return null;
+    } else {
+      const  {data}  = localStorage.getItem("role") 
+        ? await getProfile()
+        : await getOwnClub();     
+      setInfo(data);
+      return data;
+    }
+  }
+
   function onLogout() {
     localStorage.removeItem("token");
     localStorage.removeItem("role");
@@ -151,6 +163,12 @@ const Header = () => {
     }
     console.log("You are logged out");
   }
+
+
+  useEffect(() => {
+    getPhoto(), getAccountInfo()
+  }, []);
+
 
   return (
     <Box className="header-container">
@@ -174,8 +192,8 @@ const Header = () => {
         <Box
           sx={{
             overflow: "auto",
-            width: "30vw",
-            height: "80%",
+            width: "55vw",
+            height: "100%",
             display: "flex",
             alignContent: "center",
             justifyContent: "center",
@@ -188,7 +206,8 @@ const Header = () => {
             position:'relative'
           }}
         >
-          <h2>Actualizar Usuario</h2>
+          <h2 className="modalInfo">Actualizar Usuario</h2>
+          <h2 className="modalInfo">Tu nombre : {info?.firstName}</h2>
           <TextField
             onChange={(e) => setFirstName(e.target.value)}
             label="¿Quieres que te llamemos de otra manera?"
@@ -196,6 +215,7 @@ const Header = () => {
             fullWidth={true}
             sx={{marginBottom: "25px", color: "white" }}
           />
+          <h2 className="modalInfo">Tu apellido : {info?.lastName}</h2>
           <TextField
             onChange={(e) => setLastName(e.target.value)}
             label="¿Han cambiado tus apellidos?"
@@ -203,6 +223,7 @@ const Header = () => {
             fullWidth={true}
             sx={{marginBottom: "25px", color: "white" }}
           />
+          <h2 className="modalInfo">TU telefono : {info?.telephone}</h2>
           <TextField
             onChange={(e) => setTelephone(e.target.value)}
             label="Escribe aquí tu nuevo número de teléfono"
@@ -210,6 +231,7 @@ const Header = () => {
             fixed
             sx={{ marginBottom: "25px", color: "white"}}
           />
+          <h2 className="modalInfo">Tu cumpleaños : {dayjs(info?.birthDate).format('DD/MM/YYYY')}</h2>
           <h4>¿Pusiste mal tu cumpleaños? 🤔</h4>
            <TextField
             onChange={(e) => setBirthDate(e.target.value)}
@@ -227,7 +249,7 @@ const Header = () => {
             sx={{marginBottom: "25px", color: "white"}}
           />
           <UploadWidget setUrl={setPhoto} updatePhoto={updatePhoto} />
-          <Button sx={{color:'white', border:'2px solid white', width:'10vw', position:'absolute', bottom : '8vh', right:'35%' ,':hover' : {backgroundColor:'yellow', color:'black'}}} onClick={() => updateUserProfile()}>ACTUALIZAR USUARIO</Button>
+          <Button sx={{color:'white', border:'2px solid white', width:'10vw', position:'absolute', bottom:'10px', right:'40%' ,':hover' : {backgroundColor:'yellow', color:'black'}}} onClick={() => updateUserProfile()}>ACTUALIZAR USUARIO</Button>
         </Box>
       </Modal>
       {/* /////////////////////////////////////////////// CLUB MODAL /////////////////////////////////////////////////////////////////////// */}
@@ -265,6 +287,7 @@ const Header = () => {
           }}
         >
             <h2>Actualizar Compañía</h2>
+            <h2 className="modalInfo">Nombre de la empresa : {info?.companyName}</h2>
             <TextField
             onChange={(e) => setCompanyName(e.target.value)}
             label="¿Has cambiado el nombre de tu compañía?"
@@ -272,6 +295,7 @@ const Header = () => {
             fullWidth={true}
             sx={{ marginBottom: "25px" }}
           />
+          <h2 className="modalInfo">Tu teléfono : {info?.telephone}</h2>
              <TextField
             onChange={(e) => setTelephone(e.target.value)}
             label="¿Has actualizado tu telefono?"
@@ -286,6 +310,7 @@ const Header = () => {
             fullWidth={true}
             sx={{ marginBottom: "25px" }}
           />
+          <h2 className="modalInfo">Tu correo electrónico : {info?.email}</h2>
             <TextField
             onChange={(e) => setAddress(e.target.value)}
             label="Actualiza tu dirección física si la has cambiado"
