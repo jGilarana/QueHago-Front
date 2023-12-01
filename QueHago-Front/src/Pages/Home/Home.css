@@ -7,6 +7,29 @@
     grid-template-columns:  2fr 10fr;
 }
 
+.button {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+.day {
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    right: 20px;
+   
+  }
+
+
+  .hide {
+    display: none;
+    background-color: aliceblue;
+  }
+
+
 @media screen and (max-width: 600px) {
     .events-container {
         justify-content: center;
@@ -21,19 +44,5 @@
     }
   }
   
-  .button {
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    object-fit: cover;
-  }
 
-  .day {
-    color: white;
-    position: absolute;
-    top: 11vh;
-    right: 0;
-    right: 20px;
-   
-  }
   

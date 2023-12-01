@@ -15,11 +15,9 @@ import dayjs from "dayjs";
 const Header = () => {
 
   const { pathname } = useLocation()
-  console.log(pathname)
   const navigate = useNavigate();
 
   const [info,setInfo] = useState({})
-  console.log(info)
 
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
@@ -361,13 +359,11 @@ const Header = () => {
           <Button onClick={() => navigate('/login')}>Iniciar sesión</Button>
         </Box>
       </Modal>
-
-      <Link to={"/"}>
-        <img
+        <img onClick={ window.location.pathname === '/' ? () => window.location.reload() : () => navigate('/')}
           className="logo"
           src="https://res.cloudinary.com/djpdopxfy/image/upload/v1700734298/QueHago_logo_1_dlxtrk.png"
         ></img>
-      </Link>
+      
       <Link to={"/login"}>
         <Button
           sx={{ margin: "20px", backgroundColor: "#792350", color: "green",   display: (localStorage.getItem('token')) ? 'none' : 'initial' }}

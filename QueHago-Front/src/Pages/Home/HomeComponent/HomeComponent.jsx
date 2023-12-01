@@ -8,7 +8,7 @@ import { getUsersFavorites, userDeletesFav, userSetsFavorite } from '../../../Se
 import dayjs from 'dayjs'
 import { FavoriteBorder } from '@mui/icons-material'
 
-const HomeComponent = ({event}) => {
+const HomeComponent = ({event, dayWeek}) => {
 
 
   const now = dayjs()
@@ -65,6 +65,7 @@ const HomeComponent = ({event}) => {
 
   return (
     <div className='events-container'>
+      <h2 className='day'>{dayWeek}</h2>
       <Modal
         sx={{
           display: "flex",
