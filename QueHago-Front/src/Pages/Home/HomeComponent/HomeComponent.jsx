@@ -123,7 +123,8 @@ const HomeComponent = ({event, dayWeek}) => {
        justifyContent:'space-evenly',
        boxSizing:'border-box',
        position:'relative',
-       padding:'0.3rem',
+       paddingLeft:'0.3rem',
+       paddingRight:'0.3rem',
    
        '@media (min-width: 600px) and (max-width: 1080px)': {
          width: '18vw',

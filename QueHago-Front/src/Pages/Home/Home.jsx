@@ -20,7 +20,7 @@ const Home = () => {
   const [today, setToday] = useState(dayjs())
   const [openNotoken, setOpenNotoken] = useState(false);
   const [openDay,setOpenDay] = useState(false)
-  const [hideButton, setHideButton] = useState(true)
+  const [hideButton, setHideButton] = useState(1)
  
 
 
@@ -29,7 +29,7 @@ const Home = () => {
   const getAllTheEvents = async () => {
     const data = await getAllEvents()
     setEvent(data.sort((a, b) => dayjs(b.date).diff(dayjs(a.date))))
-    setHideButton(true)
+    setHideButton(1)
   }
  
   const handleChangeGenre= (e) => {
@@ -40,13 +40,10 @@ const Home = () => {
     const data = await getAllEvents()
     const filteredData = data.sort((a, b) => dayjs(a.date).diff(dayjs(b.date))).filter(em => dayjs(em.date).isAfter(dayjs(), 'day'))
     setEvent(filteredData)
-    setHideButton(false)
+    setHideButton(2)
   }
 
  
- 
-
-
 
   const filterEvent = async () => {
 /*     var now = dayjs()
@@ -58,6 +55,7 @@ const Home = () => {
     const data = await getAllEvents()
     const filteredData = data.filter(em => dayjs(em.date).isSame(dayjs(today), 'day'));
     setEvent(filteredData)
+    setHideButton(3)
   }
 
    const addDay = () => {  
@@ -77,15 +75,23 @@ const Home = () => {
     setToday(dayjs())
   }
 
-
 useEffect(() => {
    filterEvent()
   },[today])
 
+  
+ useEffect(() => {
+   getEvents()
+   const timeoutId = setTimeout(getEvents, 50);
 
-  useEffect(() => {
-   event && getEvents()
+   // Limpiar el timeout si el componente se desmonta antes de que expire
+   return () => clearTimeout(timeoutId);
   }, [])
+
+
+
+
+ 
 
   
 
@@ -103,46 +109,46 @@ useEffect(() => {
 
 
           <Button 
-          sx={{ display : localStorage.getItem('token') ? 'initial' : 'none', backgroundColor:hideButton === false ? 'yellow' : 'transparent', border:'2px solid white',borderRadius:'12px', height: '5vh', width: '10vw', fontSize:'12px', position:'absolute', top:'11vh', right:'33vw',
+          sx={{ display : localStorage.getItem('token') ? 'initial' : 'none', backgroundColor:hideButton === 2 ? 'yellow' : 'transparent', border:'2px solid white',borderRadius:'12px', height: '5vh', width: '10vw', fontSize:'11px', position:'absolute', top:'11vh', right:'33vw',
           ':hover' : {
             backgroundColor: yellow[600],
             color: 'black'}        
         }}
-          onClick={() => getEvents()}>MOSTRAR EVENTOS NO OCURRIDOS</Button>
+          onClick={() => getEvents() && setOpenDay(false)}>MOSTRAR EVENTOS NO OCURRIDOS</Button>
           <Button 
-          sx={{display : localStorage.getItem('token') ? 'initial' : 'none', backgroundColor:hideButton === true ? 'yellow' : 'transparent',border:'2px solid white',borderRadius:'12px', height: '5vh', width: '10vw',fontSize:'12px', position:'absolute', top:'11vh', right:'22vw',
+          sx={{display : localStorage.getItem('token') ? 'initial' : 'none', backgroundColor:hideButton === 1 ? 'yellow' : 'transparent',border:'2px solid white',borderRadius:'12px', height: '5vh', width: '10vw',fontSize:'11px', position:'absolute', top:'11vh', right:'22vw',
           ':hover' : {
             backgroundColor: yellow[600],
             color: 'black'}        
         }}
-          onClick={() => getAllTheEvents()}>MOSTRAR TODOS LOS EVENTOS</Button>
+          onClick={() => getAllTheEvents() && setOpenDay(false)}>MOSTRAR TODOS LOS EVENTOS</Button>
           <Button 
-          sx={{display: localStorage.getItem('role') ? 'initial' : 'none',  border:'2px solid red',borderRadius:'12px', height: '5vh', width: '10vw', position:'absolute', top:'11vh', right:'10vw',
+          sx={{display: localStorage.getItem('role') ? 'initial' : 'none',  border:'2px solid red',borderRadius:'12px', height: '5vh', width: '10vw', position:'absolute', top:'11vh', right:'10vw', fontSize:'11px',
           ':hover' : {
             backgroundColor: 'red',
             color: 'white'}        
         }}
           onClick={() => navigate('/favorites')}>IR A FAVORITOS</Button>
           <Button 
-          sx={{display: localStorage.getItem('token') ? 'initial' : 'none', border:'2px solid red',borderRadius:'12px', height: '5vh', width: '10vw', position:'absolute', top:'11vh', left:'40px',
+          sx={{display: localStorage.getItem('token') ? 'initial' : 'none', border:'2px solid grey',borderRadius:'12px', height: '5vh', width: '10vw', position:'absolute', top:'11vh', left:'40px', fontSize:'11px',
           ':hover' : {
-            backgroundColor: 'red',
-            color: 'white'}        
+            backgroundColor: 'white',
+            color: 'black'}        
         }}
           onClick={() => oneDayLess()}>DIA ANTERIOR</Button>
           <Button 
-            sx={{display: localStorage.getItem('token') ? 'initial' : 'none',  border:'2px solid red',borderRadius:'12px', height: '5vh', width: '10vw', position:'absolute', top:'11vh', left:'16vw',
+            sx={{display: localStorage.getItem('token') ? 'initial' : 'none',  border:'2px solid grey',borderRadius:'12px', height: '5vh', width: '10vw', position:'absolute', top:'11vh', left:'16vw', fontSize:'11px',
             ':hover' : {
-              backgroundColor: 'red',
-              color: 'white'}        
+              backgroundColor: 'white',
+              color: 'black'}        
             }}
             onClick={() => resetToday()}
           >MOSTRAR LOS EVENTOS DE HOY</Button>
           <Button 
-          sx={{display: localStorage.getItem('token') ? 'initial' : 'none',border:'2px solid red',borderRadius:'12px', height: '5vh', width: '10vw', position:'absolute', top:'11vh', left:'30vw',
+          sx={{display: localStorage.getItem('token') ? 'initial' : 'none',border:'2px solid grey',borderRadius:'12px', height: '5vh', width: '10vw', position:'absolute', top:'11vh', left:'30vw', fontSize:'11px',
           ':hover' : {
-            backgroundColor: 'red',
-            color: 'white'}        
+            backgroundColor: 'white',
+            color: 'black'}        
         }}
           onClick={() => addDay()}>SIGUIENTE DIA</Button>
           

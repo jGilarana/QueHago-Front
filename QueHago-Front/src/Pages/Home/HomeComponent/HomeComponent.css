@@ -42,7 +42,7 @@
   border-top: 2px solid white;
   border-bottom: 2px solid white;
   position: absolute;
-  top: 20px;
+  top: 0;
 }
 
 
@@ -68,7 +68,7 @@
 
 .hour {   
   position: absolute;
-  top: 20px;
+  top: 10px;
   left: 20px;
   color: white;
   background-color:#ddb900;
@@ -78,7 +78,7 @@
 
 .hourNoToken {
   position: absolute;
-  top: 20px;
+  top: 10px;
   color: white;
   background-color:#ddb900;
   width: 5vw;
@@ -118,14 +118,14 @@
     color: red;
    
     position: absolute;
-    top: 30px;
+    top: 20px;
     right: 10px;
   }
 
   .noFavIcon {
     color: rgba(239, 239, 239, 0.482);
     position: absolute;
-    top: 30px;
+    top: 20px;
     right: 10px;
   }
 

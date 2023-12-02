@@ -8,10 +8,9 @@
     height: 9vh;
     text-align: center;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    
     border-bottom: 2px ;
     border-image: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(226,35,62,1) 38%, rgba(64,29,253,1) 64%, rgba(252,176,69,1) 100%);
     /* Establece cómo se deben dividir las imágenes en el borde */
@@ -26,8 +25,64 @@
     border-right-style: none;
 }
 
-.modalInfo {
+.headerItemsContainer {
+    width: 90vw;
+    height: 10vh;
+    margin-left: 3vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  
+}
+
+.modalClubInfo {
     color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    
+}
+.updateInfo {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 50px;
+    
+}
+.updateInfo h2 {
+    background-color: rgb(106, 94, 159);
+    padding: 4px;
+    width: 15vw;
+    text-align: center;
+    border-radius: 12px;
+    margin-left: 30px;
+}
+
+.birthInfo {
+ color: white;
+ right: 0;
+ display: flex;
+ justify-content: space-between;
+ flex-direction: row;
+ align-items: center;
+ text-align: left;
+}
+
+.modalInfo {
+    color: white;  
+}
+
+#updateUser {
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 2%;
 }
 
 @media screen and (max-width: 600px) {
