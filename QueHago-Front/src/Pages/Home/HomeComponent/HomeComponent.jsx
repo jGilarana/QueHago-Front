@@ -103,7 +103,7 @@ const HomeComponent = ({event, dayWeek}) => {
         </Box>
       </Modal>
      
-     {event.map((em, i) => (
+     {event.map((em, i) => ( 
      <Card
      className='scrollBar'
      onClick={localStorage.getItem('token') ? null : () => handleOpen()}

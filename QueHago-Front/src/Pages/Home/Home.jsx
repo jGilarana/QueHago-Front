@@ -34,8 +34,8 @@ const Home = () => {
     const data = await getAllEvents()
     const filteredData = data
       .sort((a, b) => dayjs(a.date).diff(dayjs(b.date)))
-      .filter((em) => dayjs(em.date).isAfter(dayjs(), "day"))
-    setEvent(filteredData)
+      .filter((em) => dayjs(em.date).isAfter(dayjs().subtract(1, 'day'), 'day'))
+      setEvent(filteredData)
     setHideButton(2)
   }
 

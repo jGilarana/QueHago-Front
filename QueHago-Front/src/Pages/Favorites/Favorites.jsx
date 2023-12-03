@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ComponentFavorites from './ComponentFavorites/ComponentFavorites'
 import { getUsersFavorites } from '../../Services/favoriteService'
+import dayjs from 'dayjs'
 
 const Favorites = () => {
 
@@ -9,7 +10,7 @@ const Favorites = () => {
     const getFavorites = async() =>  {
         const data = await getUsersFavorites()
         console.log(data)
-        setFavorite(data)
+        setFavorite(data.sort((a, b) => dayjs(b.date).diff(dayjs(a.date))))
     }
     
     useEffect(() => {

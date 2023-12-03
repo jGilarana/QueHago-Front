@@ -5,6 +5,7 @@ import {
   getClubsEvents,
 } from "../../Services/clubService.js";
 import { updateClubsEvent } from "../../Services/eventService.js";
+import dayjs from "dayjs";
 
 const ClubsEvents = () => {
   const [open, setOpen] = useState(false);
@@ -58,7 +59,7 @@ const ClubsEvents = () => {
     } else {
       const events = await getClubsEvents();
       console.log(events)
-      setEvents(events);
+      setEvents(events.sort((a, b) => dayjs(b.date).diff(dayjs(a.date))))
     }
   };
 
