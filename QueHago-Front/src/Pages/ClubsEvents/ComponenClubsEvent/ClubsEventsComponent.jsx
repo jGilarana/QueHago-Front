@@ -362,7 +362,7 @@ const ClubsEventsComponent = ({
             textAlign: "center",
             overflow: "hidden",
             color: "white",
-            justifyContent: "space-between",
+            justifyContent: "space-around",
             boxSizing: "border-box",
             transition: "0.2s",
             position:'relative',
@@ -385,7 +385,7 @@ const ClubsEventsComponent = ({
           }}
         >
           {em?.openTime && <h4 className='eventHour' >{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</h4>}
-          <ModeEditIcon sx={{position:'absolute', left:'20px', bottom: '10px', color:'grey', width:'40px', ':hover' : {color:'white'}}}></ModeEditIcon>
+          <ModeEditIcon sx={{position:'absolute', left:'10px', bottom: '10px', color:'grey', width:'40px', ':hover' : {color:'white'}}}></ModeEditIcon>
           <h2 className="clubEventTitle" key={em.id}>{em.title}</h2>
           <h4>{em.genre}</h4>
           <img
