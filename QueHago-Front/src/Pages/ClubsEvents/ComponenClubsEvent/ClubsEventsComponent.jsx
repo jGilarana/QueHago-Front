@@ -360,9 +360,9 @@ const ClubsEventsComponent = ({
             flexDirection: "column",
             borderRadius: "12px",
             textAlign: "center",
-            overflow: "auto",
+            overflow: "hidden",
             color: "white",
-            justifyContent: "space-evenly",
+            justifyContent: "space-between",
             boxSizing: "border-box",
             transition: "0.2s",
             position:'relative',
@@ -384,10 +384,8 @@ const ClubsEventsComponent = ({
             },
           }}
         >
-          <div>
           {em?.openTime && <h4 className='eventHour' >{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</h4>}
           <ModeEditIcon sx={{position:'absolute', left:'20px', bottom: '10px', color:'grey', width:'40px', ':hover' : {color:'white'}}}></ModeEditIcon>
-          </div>
           <h2 className="clubEventTitle" key={em.id}>{em.title}</h2>
           <h4>{em.genre}</h4>
           <img
@@ -402,9 +400,6 @@ const ClubsEventsComponent = ({
           
           <h4>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY", em.date)}</h4>
           <h4>{em.address}</h4>
-          <Link to={`/event/${em.id}`}>
-            <p  className="moreInfo">Ver más</p>
-          </Link>
         </Card>
       ))}
     </div>

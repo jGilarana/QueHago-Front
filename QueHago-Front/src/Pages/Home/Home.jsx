@@ -149,8 +149,8 @@ const Home = () => {
           left: "3vw",
           fontSize: "11px",
           ":hover": {
-            backgroundColor: "white",
-            color: "black",
+            backgroundColor: blue[600],
+            color: "white",
           },
         }}
         onClick={() => oneDayLess()}
@@ -168,10 +168,10 @@ const Home = () => {
           position: "absolute",
           top: "11vh",
           left: "16vw",
-          fontSize: "9px",
+          fontSize: "11px",
           ":hover": {
-            backgroundColor: "white",
-            color: "black",
+            backgroundColor: blue[800],
+            color: "white",
           },
         }}
         onClick={() => resetToday()}
@@ -191,8 +191,8 @@ const Home = () => {
           left: "29vw",
           fontSize: "11px",
           ":hover": {
-            backgroundColor: "white",
-            color: "black",
+            backgroundColor: blue[600],
+            color: "white",
           },
         }}
         onClick={() => addDay()}

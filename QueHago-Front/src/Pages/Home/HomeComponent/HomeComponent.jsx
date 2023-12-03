@@ -124,7 +124,7 @@ const HomeComponent = ({event, dayWeek}) => {
        borderRadius: '12px',
        textAlign: 'center',
        color: 'white',
-       justifyContent:'space-evenly',
+       justifyContent:'space-between',
        boxSizing:'border-box',
        position:'relative',
        
@@ -147,21 +147,21 @@ const HomeComponent = ({event, dayWeek}) => {
        },
      }}
    >
-
-        
-            {em?.openTime && <h4 className={localStorage.getItem('token') ? 'hour' : 'hourNoToken' }>{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</h4>}
-           <FavoriteBorder color='transparent' sx={{display: localStorage.getItem('role') ? 'flex' : 'none', width:'3vw', height : '3vh'}} className= {sames.includes(em.id) ? 'favIcon' : 'noFavIcon'}
+          <div className='cardInfo'>
+       
+           <FavoriteBorder color='transparent' sx={{ position:'absolute', top:'10px', right:'42%', display: localStorage.getItem('role') ? 'flex' : 'none'}} className= {sames.includes(em.id) ? 'favIcon' : 'noFavIcon'}
             onClick={sames.includes(em.id) ? () => deleteFav(em.id) : () => setUsersFavorite(em.id)}
             ></FavoriteBorder>
            
           <div className='noHeaderCard' onClick={localStorage.getItem('token') ? () => navigation(`/event/${em.id}`) : handleOpen} >
-          <h1 className='eventTitle' key={em.id}>{em.title}</h1>
+          <h2 className='eventTitle' key={em.id}>{em.title}</h2>
           <img className='event' key={i} 
           src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}>
           </img>
-          <h5>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY")}</h5>
+          <h5>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY")}</h5> 
+          {em?.openTime && <h4>{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</h4>}
           <p className='address'>Click para ver más</p>
-          </div>
+          </div></div>
      </Card>
       ))}
     </div>

@@ -520,7 +520,7 @@ const Header = () => {
         </Button>
         <Button
           color="warning"
-          sx={{ display: localStorage.getItem("token") ? "initial" : "none", position:'absolute', right:'40px' }}
+          sx={{ display: localStorage.getItem("token") ? "initial" : "none", position:'absolute', right:'3vw' }}
           onClick={() => onLogout()}
         >
           Logout

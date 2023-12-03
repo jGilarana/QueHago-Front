@@ -114,6 +114,9 @@
     height: 7vh;
     border-radius: 100%;
     background-size: cover;
+    position: absolute;
+    top: 1vh;
+    right: 9vw;
 }
 
 .profilePhoto:hover {

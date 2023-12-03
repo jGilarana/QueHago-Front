@@ -17,6 +17,12 @@
     border: solid white 2px;
 }
 
+.eventImg { 
+    width: 60%;
+    height: 50%;
+    border-radius: 12px;
+    cursor: pointer;
+}
 /* ///////////////////////////HACER DISPLAY GRID Y AÑADIR DESCRIPCION AL MODAL //////////////////////////// */
 
 .clubEventTitle {
@@ -24,13 +30,10 @@
 }
 
 .eventHour {
-    position: absolute;
-    top: 0;
-    right: 30%;
     color: #131313;
     background-color:#ffffff;
-    width: 5vw;
     border-radius: 12px;
+    top: 0;
   }
 
 
