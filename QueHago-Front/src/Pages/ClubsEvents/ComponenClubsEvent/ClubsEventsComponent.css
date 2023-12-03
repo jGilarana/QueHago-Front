@@ -25,15 +25,11 @@
 }
 /* ///////////////////////////HACER DISPLAY GRID Y AÑADIR DESCRIPCION AL MODAL //////////////////////////// */
 
-.clubEventTitle {
-    margin-top: 2rem;
-}
 
 .eventHour {
     color: #131313;
     background-color:#ffffff;
     border-radius: 12px;
-    top: 0;
   }
 
 
