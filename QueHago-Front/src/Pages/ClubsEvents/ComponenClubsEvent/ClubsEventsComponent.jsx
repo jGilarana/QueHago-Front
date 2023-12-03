@@ -61,17 +61,19 @@ const ClubsEventsComponent = ({
         <Box
           sx={{
             overflow: "auto",
-            width: "30vw",
+            width: "60vw",
             height: "100%",
             display: "flex",
+            flexWrap:'wrap',
             alignContent: "center",
-            justifyContent: "center",
-            flexDirection: "column",
+            justifyContent: "space-evenly",
+            flexDirection: "row",
             borderRadius: "12px",
             backgroundColor: "#9294ff",
-            opacity: "85%",
             backdropFilter: "blur(800px)",
             zIndex: "2",
+            position:'relative'
+
           }}
         >
           <TextField
@@ -153,12 +155,14 @@ const ClubsEventsComponent = ({
             label="¿Quieres actualizar la imagen del evento?"
             variant="filled"
             color="success"
-            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ marginBottom: "20px", width: "58%", alignSelf: "center" }}
           ></TextField>
           <UploadWidget setUrl={setImage}></UploadWidget>
           <Button
             onClick={createEvent}
             sx={{
+              position:'absolute',
+              bottom:'10px',
               alignSelf: "center",
               backgroundColor: blue[300],
               "&:hover": { backgroundColor: blue[500] },
@@ -180,17 +184,19 @@ const ClubsEventsComponent = ({
         <Box
           sx={{
             overflow: "auto",
-            width: "30vw",
+            width: "60vw",
             height: "100%",
             display: "flex",
+            flexWrap:'wrap',
             alignContent: "center",
-            justifyContent: "center",
-            flexDirection: "column",
+            justifyContent: "space-evenly",
+            flexDirection: "row",
             borderRadius: "12px",
             backgroundColor: "#9294ff",
-            opacity: "85%",
             backdropFilter: "blur(800px)",
             zIndex: "2",
+            position:'relative'
+
           }}
         >
           <TextField
@@ -198,42 +204,43 @@ const ClubsEventsComponent = ({
             label="¿Se ha cambiado el nombre del evento?"
             variant="filled"
             color="success"
-            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            defaultValue={events.title}
+            sx={{ marginBottom: "20px", width: "40%", alignSelf: "center" }}
           ></TextField>
           <TextField
             onChange={(e) => setGenre(e.target.value)}
             label="¿Qué género/s de música se reproducirá?"
             variant="filled"
             color="success"
-            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ marginBottom: "20px", width: "40%", alignSelf: "center" }}
           ></TextField>
           <TextField
             onChange={(e) => setAddress(e.target.value)}
             label="Indica la nueva dirección si ha sido modificada"
             variant="filled"
             color="success"
-            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ marginBottom: "20px", width: "40%", alignSelf: "center" }}
           ></TextField>
           <TextField
             onChange={(e) => setLatitude(e.target.value)}
             label="En caso de querer situarla en el mapa, indica su latitud"
             variant="filled"
             color="success"
-            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ marginBottom: "20px", width: "40%", alignSelf: "center" }}
           ></TextField>
           <TextField
             onChange={(e) => setLongitude(e.target.value)}
             label="En caso de querer situarla en el mapa, indica su longitud"
             variant="filled"
             color="success"
-            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ marginBottom: "20px", width: "40%", alignSelf: "center" }}
           ></TextField>
           <TextField
             onChange={(e) => setDate(e.target.value)}
             variant='outlined'
             type="date"
             color="success"
-            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ marginBottom: "20px", width: "40%", alignSelf: "center" }}
           ></TextField>
               <TextField
             onChange={(e) => setOpenTime(e.target.value)}
@@ -241,7 +248,7 @@ const ClubsEventsComponent = ({
             variant="filled"
             color="success"
             type="time"
-            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ marginBottom: "20px", width: "40%", alignSelf: "center" }}
           ></TextField>
            <TextField
             onChange={(e) => setCloseTime(e.target.value)}
@@ -249,7 +256,7 @@ const ClubsEventsComponent = ({
             variant="filled"
             color="success"
             type="time"
-            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ marginBottom: "20px", width: "40%", alignSelf: "center" }}
           ></TextField>
           <TextField
             onChange={(e) => setRooms(e.target.value)}
@@ -257,7 +264,7 @@ const ClubsEventsComponent = ({
             variant="filled"
             color="success"
             type="number"
-            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ marginBottom: "20px", width: "40%", alignSelf: "center" }}
           ></TextField>
           <TextField
             onChange={(e) => setMinimumAge(e.target.value)}
@@ -265,7 +272,7 @@ const ClubsEventsComponent = ({
             variant="filled"
             color="success"
             type="number"
-            sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ marginBottom: "20px", width: "40%", alignSelf: "center" }}
           ></TextField>
           <TextField
             onChange={(e) => setImage(e.target.value)}
@@ -357,6 +364,7 @@ const ClubsEventsComponent = ({
             boxSizing: "border-box",
             transition: "0.2s",
             position:'relative',
+            padding:'0.5rem',
 
             "@media (min-width: 600px) and (max-width: 1080px)": {
               width: "18vw",

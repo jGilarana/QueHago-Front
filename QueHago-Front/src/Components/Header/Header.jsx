@@ -494,6 +494,13 @@ const Header = () => {
           color="success"
         >
           Soy Empresa
+        </Button>   
+         <Button
+          color="secondary"
+          sx={{ display: localStorage.getItem("subscriptionStatus") && window.location.pathname !== "/bussiness" ? "initial" : "none" }}
+          onClick={() => navigate('/bussiness')}
+        >
+          Acceder A tus Eventos
         </Button>
         <Button
           color="warning"
@@ -502,6 +509,8 @@ const Header = () => {
         >
           Logout
         </Button>
+    
+
         <div>
           <img
             onClick={() => handleOpen()}

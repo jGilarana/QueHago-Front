@@ -68,11 +68,11 @@
 
 .hour {   
   position: absolute;
-  top: 10px;
+  top: 0.3vw;
   left: 20px;
   color: white;
   background-color:#ddb900;
-  width: 5vw;
+  width: 57%;
   border-radius: 12px;
 }
 
@@ -142,9 +142,12 @@
   }
 
   .noHeaderCard {
-    margin-top: 20vh;
+    margin-top: 8vh;
     width:65%;
  
+  }
+  .noHeaderCard h1 {
+    font-size: 12px;
   }
 
   .hour {
@@ -166,14 +169,27 @@
 @media screen and (max-width: 600px) {
 
   .events-container {
-    width: 100%;
-    height: 80%;
-  }
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  } 
 
   .noHeaderCard {
-    margin-top: 20vh;
+    margin-top: 13vh;
     width:65%;
- 
+  }
+
+  .favIcon {
+    position: absolute;
+    top: 5vh;
+    right: 42%;
+  }
+
+  .noFavIcon {
+    top: 35px;
+    right: 45%;
   }
 
   .event {

@@ -35,7 +35,7 @@ const SingleEvent = () => {
     <div className="singleEventContainer">
       <Card
         sx={{
-          backgroundColor: "transparent",
+          background : 'linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(6,6,201,1) 34%)',
           width: "80vw",
           height: "80vh",
           marginTop : '5vh',
@@ -45,6 +45,11 @@ const SingleEvent = () => {
           flexDirection: "row",
           textAlign: "center",
           overflow: "hidden",
+          position: 'relative',
+          border: "2px solid white",
+          borderRadius: "12px",
+          color: "white",
+          transition: "0.5s",
         }}
       > 
       <div className="titleImg">
@@ -52,11 +57,11 @@ const SingleEvent = () => {
         <img className="singleEventImage" src={event && event.image === null ? "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg" : event.image}></img>
       </div>
       <div className= {event.latitude === null || event.longitude === null ? "infoContainer" : "infoContainerWithMap"}>
-      <h2>¿Dónde es la fiesta? :  </h2> <h1>{event.address}</h1>
-      <h2>¿Cuántas salas tiene? : </h2> <h1> {event.rooms}</h1>
-      <h2>¿Cuál es la edad mínima? :  </h2> <h1>{event.minimumAge}</h1>
-      <h2> ¿Cuando podré ir a partir la pana? :  <br></br><br></br> </h2> <h1>{capitalize(date.format("dddd , D [de] MMMM [de] YYYY", event.date))}</h1>
-      <h2>¿Qué generos de música escucharé? :  <br></br><br></br></h2> <h1>{event.genre}</h1>
+      <div className="infoText"><h3>¿Dónde es la fiesta? :  </h3> <h2>{event.address}</h2></div>
+      <div className="infoText"><h3>¿Cuántas salas tiene? : </h3> <h2> {event.rooms}</h2></div>
+      <div className="infoText"><h3>¿Cuál es la edad mínima? :  </h3> <h2>{event.minimumAge}</h2></div>
+      <div className="infoText"><h3> ¿Cuando podré ir a partir la pana? :  <br></br><br></br> </h3> <h2>{capitalize(date.format("dddd , D [de] MMMM [de] YYYY", event.date))}</h2></div>
+      <div className="infoText"><h3>¿Qué generos de música escucharé? :  <br></br><br></br></h3> <h2>{event.genre}</h2></div>
       </div>
       
       </Card> 

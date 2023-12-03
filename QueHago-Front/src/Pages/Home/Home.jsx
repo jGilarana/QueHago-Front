@@ -85,7 +85,7 @@ const Home = () => {
           fontSize: "11px",
           position: "absolute",
           top: "11vh",
-          right: "33vw",
+          right: "32vw",
           ":hover": {
             backgroundColor: yellow[600],
             color: "black",
@@ -106,7 +106,7 @@ const Home = () => {
           fontSize: "11px",
           position: "absolute",
           top: "11vh",
-          right: "22vw",
+          right: "19vw",
           ":hover": {
             backgroundColor: yellow[600],
             color: "black",
@@ -125,7 +125,7 @@ const Home = () => {
           width: "10vw",
           position: "absolute",
           top: "11vh",
-          right: "10vw",
+          right: "6vw",
           fontSize: "11px",
           ":hover": {
             backgroundColor: "red",
@@ -145,7 +145,7 @@ const Home = () => {
           width: "10vw",
           position: "absolute",
           top: "11vh",
-          left: "40px",
+          left: "2vw",
           fontSize: "11px",
           ":hover": {
             backgroundColor: "white",
@@ -166,7 +166,7 @@ const Home = () => {
           position: "absolute",
           top: "11vh",
           left: "16vw",
-          fontSize: "11px",
+          fontSize: "9px",
           ":hover": {
             backgroundColor: "white",
             color: "black",

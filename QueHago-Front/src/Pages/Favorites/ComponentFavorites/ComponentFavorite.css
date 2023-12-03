@@ -36,3 +36,14 @@
     margin-bottom: 10vh;
 }
 
+
+@media (max-width: 600px) {
+    .favContainer {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10vh;
+    }
+}
