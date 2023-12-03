@@ -36,10 +36,10 @@ const LoginClub = () => {
     
       return (
         <>
-          <img className="loginBackground" src='https://res.cloudinary.com/djpdopxfy/image/upload/v1700780199/1700748592773_psb91d.jpg'>
+          <img className="loginBackground" src='https://res.cloudinary.com/djpdopxfy/image/upload/v1700858217/QueHago/bfzuyqcodp9gigxxp0ay.jpg'>
           </img>
         <Card sx={{
-          backgroundColor: purple[400],
+          backgroundColor: '#1e1e5d',
           position: 'fixed',
           top: '0',
           right: '0',

@@ -14,7 +14,7 @@ import {
   useNavigate,
 } from "react-router-dom"
 import { Box, Button, MenuItem, Modal, TextField } from "@mui/material"
-import { blueGrey, green } from "@mui/material/colors"
+import { blue, blueGrey, green, purple } from "@mui/material/colors"
 import {
   getOwnClub,
   postClubPhoto,
@@ -173,7 +173,6 @@ const Header = () => {
   }, [])
 
   return (
-
     <Box className="header-container">
       {/* /////////////////////////////////////////////// USER MODAL /////////////////////////////////////////////////////////////////////// */}
       <Modal
@@ -194,12 +193,13 @@ const Header = () => {
         <Box
           sx={{
             overflow: "auto",
-            width: "55vw",
+            width: "30vw",
             height: "90%",
-            marginTop:'9vh',
+            marginTop: "9vh",
             display: "flex",
             alignContent: "center",
             justifyContent: "center",
+            alignItems: "center",
             flexDirection: "column",
             borderRadius: "12px",
             background:
@@ -209,71 +209,70 @@ const Header = () => {
             zIndex: "2",
             position: "relative",
             position: "absolute",
-            right:'5vw'
+            right: "5vw",
           }}
         >
           <h2 id="updateUser">Actualizar Usuario</h2>
-          <div className="updateInfo">
-            <h2 className="modalInfo">Tu nombre : {info?.firstName}</h2>
-            <TextField
-              onChange={(e) => setFirstName(e.target.value)}
-              label="¿Quieres que te llamemos de otra manera?"
-              variant="filled"
-              fullWidth={true}
-              sx={{
-                width: "55%",
-                margin: "10px",
-                marginBottom: "25px",
-                backgroundColor: "white",
-              }}
-            />
-          </div>
-          <div className="updateInfo">
-            <h2 className="modalInfo">Tu apellido : {info?.lastName}</h2>
-
-            <TextField
-              onChange={(e) => setLastName(e.target.value)}
-              label="¿Han cambiado tus apellidos?"
-              variant="filled"
-              fullWidth={true}
-              sx={{
-                width: "55%",
-                margin: "10px",
-                marginBottom: "25px",
-                backgroundColor: "white",
-              }}
-            />
-          </div>
-          <div className="updateInfo">
-            <h2 className="modalInfo">Tu telefono : {info?.telephone}</h2>
-            <TextField
-              onChange={(e) => setTelephone(e.target.value)}
-              label="Escribe aquí tu nuevo número de teléfono"
-              variant="filled"
-              type="number"
-              sx={{ width: "55%", margin: "10px", backgroundColor: "white" }}
-            />
-          </div>
-          <div className="birthInfo">
-            <h2 className="modalInfo">
-              Tu cumpleaños : {dayjs(info?.birthDate).format("DD/MM/YYYY")}
-            </h2>
-            <h4>¿Pusiste mal tu cumpleaños? 🤔</h4>
-            <TextField
-              onChange={(e) => setBirthDate(e.target.value)}
-              variant="filled"
-              type="date"
-              fullWidth={true}
-              sx={{ width: "55%", margin: "10px", marginBottom: "25px", backgroundColor: "white" }}
-            />
-          </div>
+          <TextField
+            onChange={(e) => setFirstName(e.target.value)}
+            label="¿Quieres que te llamemos de otra manera?"
+            variant="filled"
+            fullWidth={true}
+            defaultValue={info?.firstName}
+            sx={{
+              width: "80%",
+              margin: "10px",
+              marginBottom: "25px",
+              backgroundColor: "white",
+            }}
+          />
+          <TextField
+            onChange={(e) => setLastName(e.target.value)}
+            label="¿Han cambiado tus apellidos?"
+            variant="filled"
+            fullWidth={true}
+            defaultValue={info?.lastName}
+            sx={{
+              width: "80%",
+              margin: "10px",
+              marginBottom: "25px",
+              backgroundColor: "white",
+            }}
+          />
+          <TextField
+            onChange={(e) => setTelephone(e.target.value)}
+            label="Escribe aquí tu nuevo número de teléfono"
+            variant="filled"
+            type="number"
+            defaultValue={info?.telephone}
+            sx={{ width: "80%", margin: "10px", backgroundColor: "white" }}
+          />
+          <TextField
+            onChange={(e) => setBirthDate(e.target.value)}
+            variant="filled"
+            label="¿Pusiste mal tu cumpleaños? 🤔"
+            type="date"
+            fullWidth={true}
+            defaultValue={dayjs(info?.birthDate).format("YYYY-MM-DD")}
+            sx={{
+              width: "80%",
+              margin: "10px",
+              marginBottom: "25px",
+              backgroundColor: "white",
+            }}
+          />
           <TextField
             onChange={(e) => setPassword(e.target.value)}
             label="Actualizar Contraseña"
             variant="filled"
             type="password"
             fullWidth={true}
-            sx={{ backgroundColor: "white", marginTop:'17px', marginBottom:'17px' }}
+            sx={{
+              width: "80%",
+              backgroundColor: "white",
+              marginTop: "17px",
+              marginBottom: "17px",
+            }}
           />
           <UploadWidget setUrl={setPhoto} updatePhoto={updatePhoto} />
           <Button
@@ -282,9 +281,9 @@ const Header = () => {
               border: "2px solid white",
               width: "10vw",
               position: "absolute",
-              bottom: "10px",
-              right: "40%",
-              ":hover": { backgroundColor: "yellow", color: "black" },
+              bottom: "48px",
+              right: "33%",
+              ":hover": { backgroundColor: blue[300], color: "black" },
             }}
             onClick={() => updateUserProfile()}
           >
@@ -316,7 +315,8 @@ const Header = () => {
             height: "80%",
             display: "flex",
             alignContent: "center",
-            justifyContent: "center",
+            alignItems: "center",
+            justifyContent: "space-around",
             flexDirection: "column",
             borderRadius: "12px",
             background:
@@ -325,53 +325,60 @@ const Header = () => {
             backdropFilter: "blur(800px)",
             zIndex: "2",
             position: "absolute",
-            right:'5vw'
+            right: "4.5vw",
           }}
         >
           <h2>Actualizar Compañía</h2>
-          <div className="modalClubInfo">
-            <h3>
-              Nombre de la empresa : <br></br>
-              {info?.companyName}
-            </h3>
-            <TextField
-              onChange={(e) => setCompanyName(e.target.value)}
-              label="¿Has cambiado el nombre de tu compañía?"
-              variant="filled"
-              fullWidth={true}
-              sx={{ width: "55%", marginBottom: "25px" }}
-            />
-          </div>
-          <div className="modalClubInfo">
-            <h3>
-              Tu teléfono : <br></br>
-              {info?.telephone}
-            </h3>
-            <TextField
-              onChange={(e) => setTelephone(e.target.value)}
-              label="¿Has actualizado tu telefono?"
-              variant="filled"
-              fullWidth={true}
-              sx={{ width: "55%", marginBottom: "25px" }}
-            />{" "}
-          </div>
-          <h3>Tu correo electrónico : {info?.email}</h3>
-          <div className="modalClubInfo">
-            {" "}
-            <TextField
-              onChange={(e) => setAddress(e.target.value)}
-              label="Actualiza tu dirección física si la has cambiado"
-              variant="filled"
-              fullWidth={true}
-              sx={{ marginBottom: "25px" }}
-            />
-          </div>
+
+          <TextField
+            onChange={(e) => setCompanyName(e.target.value)}
+            label="¿Has cambiado el nombre de tu compañía?"
+            variant="filled"
+            fullWidth={true}
+            defaultValue={info?.companyName}
+            sx={{
+              width: "80%",
+              marginBottom: "25px",
+              backgroundColor: "#ffc7ff",
+            }}
+          />
+
+          <TextField
+            onChange={(e) => setTelephone(e.target.value)}
+            label="¿Has actualizado tu telefono?"
+            variant="filled"
+            fullWidth={true}
+            defaultValue={info?.telephone}
+            sx={{
+              width: "80%",
+              marginBottom: "25px",
+              backgroundColor: "#ffc7ff",
+            }}
+          />
+
+          <TextField
+            onChange={(e) => setAddress(e.target.value)}
+            label="Actualiza tu dirección física si la has cambiado"
+            variant="filled"
+            defaultValue={info?.address}
+            fullWidth={true}
+            sx={{
+              width: "80%",
+              marginBottom: "25px",
+              backgroundColor: "#ffc7ff",
+            }}
+          />
+
           <TextField
             onChange={(e) => setPassword(e.target.value)}
             label="Aquí puedes cambiar tu contraseña"
             variant="filled"
             fullWidth={true}
-            sx={{ marginBottom: "25px" }}
+            sx={{
+              width: "80%",
+              marginBottom: "25px",
+              backgroundColor: "#ffc7ff",
+            }}
           />
           <p>Recomendamos cerrar sesión en caso de cambiar la contraseña</p>
 
@@ -381,14 +388,12 @@ const Header = () => {
               color: "white",
               border: "2px solid white",
               width: "10vw",
-              position: "absolute",
-              bottom: "8vh",
-              right: "35%",
-              ":hover": { backgroundColor: "yellow", color: "black" },
+
+              ":hover": { color: "black", backgroundColor: "#ffc7ff" },
             }}
             onClick={() => updateClubProfile()}
           >
-            Update
+            Actualizar perfil
           </Button>
         </Box>
       </Modal>
@@ -430,68 +435,84 @@ const Header = () => {
         >
           <h1>No puedes actualizar tu usuario porque no has iniciado sesión</h1>
           <Button
-          sx={{
-            backgroundColor: "#cccccc",
-            margin: "1vw",
-            ':hover' : {
-              backgroundColor: 'white',
-              color: 'black'
-            }
-          }}
-          onClick={() => navigate("/login")}>Iniciar sesión</Button>
+            sx={{
+              backgroundColor: "#cccccc",
+              margin: "1vw",
+              ":hover": {
+                backgroundColor: "white",
+                color: "black",
+              },
+            }}
+            onClick={() => navigate("/login")}
+          >
+            Iniciar sesión
+          </Button>
         </Box>
       </Modal>
       <div className="headerItemsContainer">
-      <img
-        onClick={
-          window.location.pathname === "/"
-            ? () => window.location.reload()
-            : () => navigate("/")
-        }
-        className="logo"
-        src="https://res.cloudinary.com/djpdopxfy/image/upload/v1700734298/QueHago_logo_1_dlxtrk.png"
-      ></img>
-
-      <Button
-        onClick={() => navigate("/login")}
-        sx={{
-          margin: "20px",
-          backgroundColor: "#792350",
-          color: "green",
-          display: localStorage.getItem("token") ? "none" : "initial",
-        }}
-      >
-        Soy Usuario
-      </Button>
-      <Button
-        onClick={() => navigate("/bussiness/login")}
-        sx={{
-          display: localStorage.getItem("token") ? "none" : "initial",
-          margin: "20px",
-          backgroundColor: green[600],
-          color: "white",
-        }}
-        color="success"
-      >
-        Soy Empresa
-      </Button>
-      <Button
-        color="warning"
-        sx={{ display: localStorage.getItem("token") ? "initial" : "none" }}
-        onClick={() => onLogout()}
-      >
-        Logout
-      </Button>
-      <div>
         <img
-          onClick={() => handleOpen()}
-          className="profilePhoto"
-          src={
-            localStorage.getItem("token") === null
-              ? "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg"
-              : photo
+          onClick={
+            window.location.pathname === "/"
+              ? () => window.location.reload()
+              : () => navigate("/")
           }
-        ></img></div>
+          className="logo"
+          src="https://res.cloudinary.com/djpdopxfy/image/upload/v1700734298/QueHago_logo_1_dlxtrk.png"
+        ></img>
+
+        <Button
+          onClick={() => navigate("/login")}
+          sx={{
+            margin: "20px",
+            backgroundColor: blue[600],
+            color: "white",
+            display: localStorage.getItem("token") ? "none" : "initial",
+            position: "absolute",
+            right: "32vw",
+            width: "250px",
+            ":hover": {
+              backgroundColor: blue[900],
+            },
+          }}
+        >
+          Soy Usuario
+        </Button>
+        <Button
+          onClick={() => navigate("/bussiness/login")}
+          sx={{
+            display: localStorage.getItem("token") ? "none" : "initial",
+            margin: "20px",
+            backgroundColor: purple[600],
+            color: "white",
+            position: "absolute",
+            right: "15vw",
+            width: "250px",
+            ":hover": {
+              backgroundColor: purple[900],
+            },
+          }}
+          color="success"
+        >
+          Soy Empresa
+        </Button>
+        <Button
+          color="warning"
+          sx={{ display: localStorage.getItem("token") ? "initial" : "none" }}
+          onClick={() => onLogout()}
+        >
+          Logout
+        </Button>
+        <div>
+          <img
+            onClick={() => handleOpen()}
+            className="profilePhoto"
+            src={
+              localStorage.getItem("token") === null
+                ? "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg"
+                : photo
+            }
+          ></img>
+        </div>
       </div>
     </Box>
   )

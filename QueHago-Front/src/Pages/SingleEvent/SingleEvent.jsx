@@ -35,8 +35,7 @@ const SingleEvent = () => {
     <div className="singleEventContainer">
       <Card
         sx={{
-          background:' linear-gradient(133deg, rgba(32,32,33,1) 11%, rgba(51,35,111,1) 32%, rgba(17,15,105,0.9738270308123249) 57%, rgba(28,36,114,1) 75%, rgba(70,81,84,1) 100%)',
-          border:'2px solid white',
+          backgroundColor: "transparent",
           width: "80vw",
           height: "80vh",
           marginTop : '5vh',
@@ -44,10 +43,8 @@ const SingleEvent = () => {
           justifyContent: "space-between",
           display: "flex",
           flexDirection: "row",
-          borderRadius: "12px",
           textAlign: "center",
           overflow: "hidden",
-          color:'white'
         }}
       > 
       <div className="titleImg">
@@ -55,15 +52,15 @@ const SingleEvent = () => {
         <img className="singleEventImage" src={event && event.image === null ? "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg" : event.image}></img>
       </div>
       <div className= {event.latitude === null || event.longitude === null ? "infoContainer" : "infoContainerWithMap"}>
-      <h2>¿Dónde es la fiesta? : {event.address}</h2>
-      <h2>¿Cuántas salas tiene? : {event.rooms}</h2>
-      <h2>¿Cuál es la edad mínima? : {event.minimumAge}</h2>
-      <h2> ¿Cuando podré ir a partir la pana? : <br></br><br></br> {capitalize(date.format("dddd , D [de] MMMM [de] YYYY", event.date))}</h2>
-      <h2>¿Qué generos de música escucharé? : <br></br><br></br>{event.genre}</h2>
+      <h2>¿Dónde es la fiesta? :  </h2> <h1>{event.address}</h1>
+      <h2>¿Cuántas salas tiene? : </h2> <h1> {event.rooms}</h1>
+      <h2>¿Cuál es la edad mínima? :  </h2> <h1>{event.minimumAge}</h1>
+      <h2> ¿Cuando podré ir a partir la pana? :  <br></br><br></br> </h2> <h1>{capitalize(date.format("dddd , D [de] MMMM [de] YYYY", event.date))}</h1>
+      <h2>¿Qué generos de música escucharé? :  <br></br><br></br></h2> <h1>{event.genre}</h1>
       </div>
       
-      <div className={event.latitude ? "map" : "none"}>{event?.latitude && <EventMap pos={{lat:event.latitude, lng:event.longitude}}/>}</div>
-      </Card>
+      </Card> 
+           <div className={event.latitude ? "map" : "none"}>{event?.latitude && <EventMap pos={{lat:event.latitude, lng:event.longitude}}/>}</div>
     </div>
   )
 }

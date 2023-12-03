@@ -4,3 +4,10 @@
     width: 80vw;
     height: 100vh;
 }
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

@@ -46,7 +46,7 @@ const SignUp = () => {
       })
       localStorage.setItem("token", signupResponse.data.token)
       localStorage.setItem("role", "user")
-     // REVISAR 
+      // REVISAR
       navigate("/")
     } catch (error) {
       console.error("Error al crear cuenta:", error)
@@ -63,9 +63,9 @@ const SignUp = () => {
       ></img>
 
       <Card
-  
         sx={{
-          background: 'linear-gradient(69deg, rgba(97,2,96,1) 40%, rgba(127,2,144,1) 82%)',
+          background:
+            "linear-gradient(69deg, rgba(97,2,96,1) 40%, rgba(127,2,144,1) 82%)",
           opacity: "98.5%",
           position: "fixed",
           right: "0",
@@ -78,18 +78,23 @@ const SignUp = () => {
           borderRadius: "12px",
           textAlign: "center",
           overflow: "auto",
-          color:'white'
+          color: "white",
         }}
       >
         <CardHeader title="signup" />
-        <CardContent sx={{marginTop:'8vh'}}>
+        <CardContent sx={{ marginTop: "8vh" }}>
           <TextField
             onChange={(e) => setFirstName(e.target.value)}
             color="secondary"
             label="Nombre"
             variant="filled"
             fullWidth={true}
-            sx={{ width:'80%' ,backgroundColor: '#BBA7BD', marginBottom: "20px", color: "white" }}
+            sx={{
+              width: "80%",
+              backgroundColor: "#BBA7BD",
+              marginBottom: "20px",
+              color: "white",
+            }}
           />
           <TextField
             onChange={(e) => setLastName(e.target.value)}
@@ -97,7 +102,11 @@ const SignUp = () => {
             label="Apellidos"
             variant="filled"
             fullWidth={true}
-            sx={{ width:'80%' ,backgroundColor: '#BBA7BD', marginBottom: "20px" }}
+            sx={{
+              width: "80%",
+              backgroundColor: "#BBA7BD",
+              marginBottom: "20px",
+            }}
           />
           <TextField
             onChange={(e) => setEmail(e.target.value)}
@@ -105,7 +114,12 @@ const SignUp = () => {
             label="Tu mejor email"
             variant="filled"
             fullWidth={true}
-            sx={{ width:'80%' ,backgroundColor: '#BBA7BD', marginBottom: "20px", color: '#500041' }}
+            sx={{
+              width: "80%",
+              backgroundColor: "#BBA7BD",
+              marginBottom: "20px",
+              color: "#500041",
+            }}
           />
           <TextField
             onChange={(e) => setTelephone(e.target.value)}
@@ -114,7 +128,11 @@ const SignUp = () => {
             variant="filled"
             fullWidth={true}
             type="number"
-            sx={{ width:'80%' ,backgroundColor: '#BBA7BD', marginBottom: "20px" }}
+            sx={{
+              width: "80%",
+              backgroundColor: "#BBA7BD",
+              marginBottom: "20px",
+            }}
           />
           <p>Fecha de nacimiento :</p>
           <TextField
@@ -123,7 +141,11 @@ const SignUp = () => {
             variant="filled"
             type="date"
             fullWidth={true}
-            sx={{ width:'80%' ,backgroundColor: '#BBA7BD', marginBottom: "20px" }}
+            sx={{
+              width: "80%",
+              backgroundColor: "#BBA7BD",
+              marginBottom: "20px",
+            }}
           />
           <TextField
             onChange={(e) => setPassword(e.target.value)}
@@ -132,21 +154,42 @@ const SignUp = () => {
             variant="filled"
             type="password"
             fullWidth={true}
-            sx={{ width:'80%' ,backgroundColor: '#BBA7BD', marginBottom: "20px" }}
+            sx={{
+              width: "80%",
+              backgroundColor: "#BBA7BD",
+              marginBottom: "20px",
+            }}
           />
         </CardContent>
         <Divider />
         <CardActions>
-          <Button
-            sx={{
-              backgroundColor: blue[300], marginBottom: '10vh', width:'10vw',
-              "&:hover": { backgroundColor: "white" },
-            }}
-            onClick={() => onSignup()}
-            color="secondary"
-          >
-            signup
-          </Button>
+          <div className="buttonContainer">
+            <Button
+              sx={{
+                backgroundColor: blue[300],
+                marginBottom: "10vh",
+                width: "10vw",
+                "&:hover": { backgroundColor: "white" },
+              }}
+              onClick={() => onSignup()}
+              color="secondary"
+            >
+              REGISTRARSE
+            </Button>
+
+            <Button
+              sx={{
+                backgroundColor: blue[300],
+                marginBottom: "10vh",
+                width: "10vw",
+                "&:hover": { backgroundColor: "white" },
+              }}
+              onClick={() => onSignup()}
+              color="secondary"
+            >
+              iniciar sesión
+            </Button>
+          </div>
         </CardActions>
       </Card>
     </>

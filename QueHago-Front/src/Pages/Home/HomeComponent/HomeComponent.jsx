@@ -123,8 +123,6 @@ const HomeComponent = ({event, dayWeek}) => {
        justifyContent:'space-evenly',
        boxSizing:'border-box',
        position:'relative',
-       paddingLeft:'0.3rem',
-       paddingRight:'0.3rem',
    
        '@media (min-width: 600px) and (max-width: 1080px)': {
          width: '18vw',
@@ -150,7 +148,7 @@ const HomeComponent = ({event, dayWeek}) => {
             onClick={sames.includes(em.id) ? () => deleteFav(em.id) : () => setUsersFavorite(em.id)}
             ></FavoriteBorder>
            
-          <div className='noHeaderCard' onClick={localStorage.getItem('token') ? () => window.open(`/event/${em.id}`) : handleOpen} >
+          <div className='noHeaderCard' onClick={localStorage.getItem('token') ? () => navigation(`/event/${em.id}`) : handleOpen} >
           <h1 className='eventTitle' key={em.id}>{em.title}</h1>
           <img className='event' key={i} 
           src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}>
