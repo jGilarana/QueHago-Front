@@ -62,7 +62,7 @@ const ClubsEventsComponent = ({
           sx={{
             overflow: "auto",
             width: "60vw",
-            height: "98%",
+            height: "80%",
             display: "flex",
             flexWrap:'wrap',
             alignContent: "center",
@@ -81,42 +81,42 @@ const ClubsEventsComponent = ({
             label="¿Cómo se llamará el evento?"
             variant="filled"
             color="success"
-            sx={{ backgroundColor: blue[100] ,marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ backgroundColor: blue[100] ,marginBottom: "35px", width: "40%", alignSelf: "center" }}
           ></TextField>
           <TextField
             onChange={(e) => setGenre(e.target.value)}
             label="¿Qué género/s de música se reproducirá?"
             variant="filled"
             color="success"
-            sx={{ backgroundColor: blue[100] ,marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ backgroundColor: blue[100] ,marginBottom: "35px", width: "40%", alignSelf: "center" }}
           ></TextField>
           <TextField
             onChange={(e) => setAddress(e.target.value)}
             label="¿Cuál es su dirección?"
             variant="filled"
             color="success"
-            sx={{ backgroundColor: blue[100] ,marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ backgroundColor: blue[100] ,marginBottom: "35px", width: "40%", alignSelf: "center" }}
           ></TextField>
           <TextField
             onChange={(e) => setLatitude(e.target.value)}
             label="En caso de querer situarla en el mapa, indica su latitud"
             variant="filled"
             color="success"
-            sx={{ backgroundColor: blue[100] ,marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ backgroundColor: blue[100] ,marginBottom: "35px", width: "40%", alignSelf: "center" }}
           ></TextField>
           <TextField
             onChange={(e) => setLongitude(e.target.value)}
             label="En caso de querer situarla en el mapa, indica su longitud"
             variant="filled"
             color="success"
-            sx={{ backgroundColor: blue[100] ,marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ backgroundColor: blue[100] ,marginBottom: "35px", width: "40%", alignSelf: "center" }}
           ></TextField>
           <TextField
             onChange={(e) => setDate(e.target.value)}
             variant='outlined'
             type="date"
             color="success"
-            sx={{ backgroundColor: blue[100] ,marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ backgroundColor: blue[100] ,marginBottom: "35px", width: "40%", alignSelf: "center" }}
           ></TextField>
             <TextField
             onChange={(e) => setOpenTime(e.target.value)}
@@ -124,7 +124,7 @@ const ClubsEventsComponent = ({
             variant="filled"
             color="success"
             type="time"
-            sx={{ backgroundColor: blue[100] ,marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ backgroundColor: blue[100] ,marginBottom: "35px", width: "40%", alignSelf: "center" }}
           ></TextField>
            <TextField
             onChange={(e) => setCloseTime(e.target.value)}
@@ -132,7 +132,7 @@ const ClubsEventsComponent = ({
             variant="filled"
             color="success"
             type="time"
-            sx={{ backgroundColor: blue[100] ,marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ backgroundColor: blue[100] ,marginBottom: "35px", width: "40%", alignSelf: "center" }}
           ></TextField>
           <TextField
             onChange={(e) => setRooms(e.target.value)}
@@ -140,7 +140,7 @@ const ClubsEventsComponent = ({
             variant="filled"
             color="success"
             type="number"
-            sx={{ backgroundColor: blue[100] ,marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ backgroundColor: blue[100] ,marginBottom: "35px", width: "40%", alignSelf: "center" }}
           ></TextField>
           <TextField
             onChange={(e) => setMinimumAge(e.target.value)}
@@ -148,14 +148,15 @@ const ClubsEventsComponent = ({
             variant="filled"
             color="success"
             type="number"
-            sx={{ backgroundColor: blue[100] ,marginBottom: "20px", width: "80%", alignSelf: "center" }}
+            sx={{ backgroundColor: blue[100] ,marginBottom: "35px", width: "40%", alignSelf: "center" }}
           ></TextField>
+          
           <TextField
             onChange={(e) => setImage(e.target.value)}
             label="¿Quieres actualizar la imagen del evento?"
             variant="filled"
             color="success"
-            sx={{ backgroundColor: blue[100] ,marginBottom: "20px", width: "58%", alignSelf: "center" }}
+            sx={{ backgroundColor: blue[100] ,marginBottom: "35px", width: "60%", alignSelf: "left" }}
           ></TextField>
           <UploadWidget setUrl={setImage}></UploadWidget>
           <Button

@@ -81,7 +81,7 @@ const SignUp = () => {
           color: "white",
         }}
       >
-        <CardHeader title="signup" />
+        <CardHeader sx={{ color: "white" }} title="signup" />
         <CardContent sx={{ marginTop: "8vh" }}>
           <TextField
             onChange={(e) => setFirstName(e.target.value)}
@@ -166,9 +166,10 @@ const SignUp = () => {
           <div className="buttonContainer">
             <Button
               sx={{
-                backgroundColor: blue[300],
+                backgroundColor: green[300],
+                color:'black',
                 marginBottom: "10vh",
-                width: "10vw",
+                width: "22vw",
                 "&:hover": { backgroundColor: "white" },
               }}
               onClick={() => onSignup()}
@@ -180,6 +181,7 @@ const SignUp = () => {
             <Button
               sx={{
                 backgroundColor: blue[300],
+                color:'black',
                 marginBottom: "10vh",
                 width: "10vw",
                 "&:hover": { backgroundColor: "white" },

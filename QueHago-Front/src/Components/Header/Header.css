@@ -63,6 +63,12 @@
     margin-left: 30px;
 }
 
+.notAuth {
+    color: white;
+    text-align: center;
+}
+
+
 .birthInfo {
  color: white;
  right: 0;
@@ -101,6 +107,9 @@
     width: 7vh;
     height: 7vh;
     border-radius: 100%;
+    position: absolute;
+    top: 1vh;
+    left: 3vw;
 }
 
 .logo:hover{

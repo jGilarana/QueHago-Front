@@ -447,20 +447,9 @@ const Header = () => {
             zIndex: "2",
           }}
         >
-          <h1>No puedes actualizar tu usuario porque no has iniciado sesión</h1>
-          <Button
-            sx={{
-              backgroundColor: "white",
-              margin: "1vw",
-              ":hover": {
-                backgroundColor: "white",
-                color: "black",
-              },
-            }}
-            onClick={() => navigate("/login")}
-          >
-            Iniciar sesión
-          </Button>
+          <h1 className="notAuth">No puedes actualizar tu usuario porque no has iniciado sesión</h1>
+          <Button sx={{backgroundColor:'white', margin:'1vw', ':hover' : {backgroundColor: '#587FCC', color:'white'}}} onClick={() => navigate('/login')}>Iniciar sesión</Button>
+          <Button sx={{backgroundColor:'white', margin:'1vw', ':hover' : {backgroundColor: '#587FCC', color:'white'}}} onClick={() => navigate('/signup')}>Crear cuenta</Button>
         </Box>
       </Modal>
       <div className="headerItemsContainer">
@@ -478,7 +467,7 @@ const Header = () => {
           onClick={() => navigate("/login")}
           sx={{
             margin: "20px",
-            backgroundColor: blue[600],
+            backgroundColor: blue[700],
             color: "white",
             display: localStorage.getItem("token") ? "none" : "initial",
             position: "absolute",
@@ -496,7 +485,7 @@ const Header = () => {
           sx={{
             display: localStorage.getItem("token") ? "none" : "initial",
             margin: "20px",
-            backgroundColor: purple[600],
+            backgroundColor: purple[800],
             color: "white",
             position: "absolute",
             right: "15vw",
