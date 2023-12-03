@@ -68,15 +68,16 @@ const Login = () => {
             type='password'
             color='success'
             fullWidth={true}
-          />   
+          />     
+          <Button sx={{position:'absolute', backgroundColor: blue[800], top:'45%', right:'5vw', color:'white', marginTop:'20px', ':hover' : { backgroundColor: blue[600]}}} onClick={() => onLogin()}>
+              Login
+            </Button>
           <div className='loginActions'>
           <div>
           <p>He olvidado mi contraseña</p>
           <p>Recordarme</p>
           </div>
-          <Button sx={{backgroundColor: blue[600], color:'white', marginTop:'30px'}} onClick={() => onLogin()}>
-              Login
-            </Button>
+        
           </div>
           </CardContent>
           <Divider/>

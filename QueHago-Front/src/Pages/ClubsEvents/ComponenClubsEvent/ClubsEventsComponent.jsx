@@ -62,14 +62,14 @@ const ClubsEventsComponent = ({
           sx={{
             overflow: "auto",
             width: "60vw",
-            height: "100%",
+            height: "98%",
             display: "flex",
             flexWrap:'wrap',
             alignContent: "center",
             justifyContent: "space-evenly",
             flexDirection: "row",
             borderRadius: "12px",
-            backgroundColor: "#726EFF",
+            backgroundColor: "#1E1E5D",
             backdropFilter: "blur(800px)",
             zIndex: "2",
             position:'relative'
@@ -164,8 +164,10 @@ const ClubsEventsComponent = ({
               position:'absolute',
               bottom:'10px',
               alignSelf: "center",
-              backgroundColor: blue[300],
+              color:'black',
+              backgroundColor: 'white',
               "&:hover": { backgroundColor: blue[500] },
+           
             }}
           >
             CREAR EVENTO
@@ -383,7 +385,7 @@ const ClubsEventsComponent = ({
           }}
         >
           <div>
-          {em?.openTime && <p className='eventHour' >{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</p>}
+          {em?.openTime && <h4 className='eventHour' >{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</h4>}
           <ModeEditIcon sx={{position:'absolute', left:'20px', bottom: '10px', color:'grey', width:'40px', ':hover' : {color:'white'}}}></ModeEditIcon>
           </div>
           <h2 className="clubEventTitle" key={em.id}>{em.title}</h2>

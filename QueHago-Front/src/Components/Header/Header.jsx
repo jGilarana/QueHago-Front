@@ -274,9 +274,23 @@ const Header = () => {
               marginBottom: "17px",
             }}
           />
+           <TextField
+            onChange={(e) => setPhoto(e.target.value)}
+            label="(Insertar URL) o Sube tu foto dando click al botón" 
+            variant="filled"
+            type="password"
+            fullWidth={true}
+            sx={{
+              width: "80%",
+              backgroundColor: "white",
+              marginTop: "17px",
+              marginBottom: "17px",
+            }}
+          />
           <UploadWidget setUrl={setPhoto} updatePhoto={updatePhoto} />
           <Button
             sx={{
+              color:'black',
               backgroundColor: "white",
               border: "2px solid white",
               width: "10vw",
@@ -436,7 +450,7 @@ const Header = () => {
           <h1>No puedes actualizar tu usuario porque no has iniciado sesión</h1>
           <Button
             sx={{
-              backgroundColor: "#cccccc",
+              backgroundColor: "white",
               margin: "1vw",
               ":hover": {
                 backgroundColor: "white",
@@ -457,7 +471,7 @@ const Header = () => {
               : () => navigate("/")
           }
           className="logo"
-          src="https://res.cloudinary.com/djpdopxfy/image/upload/v1700734298/QueHago_logo_1_dlxtrk.png"
+          src="https://res.cloudinary.com/djpdopxfy/image/upload/v1701631652/1700748592781_ptrmbr.jpg"
         ></img>
 
         <Button
@@ -496,15 +510,17 @@ const Header = () => {
           Soy Empresa
         </Button>   
          <Button
-          color="secondary"
-          sx={{ display: localStorage.getItem("subscriptionStatus") && window.location.pathname !== "/bussiness" ? "initial" : "none" }}
+          sx={{ display: localStorage.getItem("subscriptionStatus") && window.location.pathname !== "/bussiness" ? "initial" : "none", position:'absolute',
+           right:'15vw',
+           color:'white'
+           }}
           onClick={() => navigate('/bussiness')}
         >
           Acceder A tus Eventos
         </Button>
         <Button
           color="warning"
-          sx={{ display: localStorage.getItem("token") ? "initial" : "none" }}
+          sx={{ display: localStorage.getItem("token") ? "initial" : "none", position:'absolute', right:'40px' }}
           onClick={() => onLogout()}
         >
           Logout
@@ -517,7 +533,7 @@ const Header = () => {
             className="profilePhoto"
             src={
               localStorage.getItem("token") === null
-                ? "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg"
+                ? "https://static-00.iconduck.com/assets.00/user-icon-1024x1024-dtzturco.png"
                 : photo
             }
           ></img>

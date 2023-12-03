@@ -37,7 +37,7 @@ const UploadWidget = ({updatePhoto, setUrl}) => {
     
     return (  
         <div>
-         <Button sx={{backgroundColor:'#4d425f', margin:'1vw'}} onClick={() => widgetRef.current.open()}>SUBIR FOTO</Button>       
+         <Button sx={{backgroundColor:'#4d425f', color:'white', margin:'1vw', ':hover' : {backgroundColor: '#587FCC', color:'white'}}} onClick={() => widgetRef.current.open()}>SUBIR FOTO</Button>       
         </div>
     )
 }

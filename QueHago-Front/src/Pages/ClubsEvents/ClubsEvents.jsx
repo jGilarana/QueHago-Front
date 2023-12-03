@@ -83,7 +83,7 @@ const ClubsEvents = () => {
   };
 
   useEffect(() => {
-    seeEvents();
+    seeEvents(); window.scrollTo(0, 0);
   }, [refresh]);
 
   return (

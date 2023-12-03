@@ -26,6 +26,11 @@
    align-items: center;
 }
 
+.titleImg h1 {
+   width: 50%;
+   margin-top: 4vh;
+}
+
 .infoContainerWithMap {
    margin: 2vw;
    width: 35vw;
@@ -33,7 +38,6 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   background-color: rgba(72, 0, 255, 0.15);
    align-items: center;
 
 }
@@ -66,11 +70,8 @@
    height: 70vh;
    display: flex;
    flex-direction: column;
-   justify-content: space-between;
-   background-color: rgba(72, 0, 255, 0.15);
+   justify-content: space-around;
    align-items: center;
-   border: 2px solid white;
-   border-radius: 12px;
    overflow: auto;
 }
 
@@ -97,11 +98,16 @@
 .infoText {
    width: 100%;
    background-color: #131313;
+   border-radius: 18px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   height: 10%;
    
 }
 
 
-.infoText h2 {
+.infoText h4 {
    text-align: right;
    color: #FFCA00;
    margin-right: 30px;

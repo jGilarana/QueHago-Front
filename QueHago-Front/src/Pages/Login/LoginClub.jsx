@@ -36,14 +36,14 @@ const LoginClub = () => {
     
       return (
         <>
-          <img className="loginBackground" src='https://res.cloudinary.com/djpdopxfy/image/upload/v1700858217/QueHago/bfzuyqcodp9gigxxp0ay.jpg'>
+          <img className="loginBackground" src='https://res.cloudinary.com/djpdopxfy/image/upload/v1701634561/1700748592781_yue2bq.jpg'>
           </img>
         <Card sx={{
           backgroundColor: '#1e1e5d',
           position: 'fixed',
           top: '0',
           right: '0',
-          width: '30vw',
+          width: '37vw',
           height: '100vh',         
           borderRadius: '12px',
           display: 'flex',
@@ -75,7 +75,8 @@ const LoginClub = () => {
           <p>He olvidado mi contraseña</p>
           <p>Recordarme</p>
           </div>
-          <Button sx={{backgroundColor: '#a3baf1', color:'white', marginTop:'30px', ':hover' : {backgroundColor: 'green'}}} onClick={() => onLogin()}>
+          <Button sx={{position:'absolute', backgroundColor: blue[800], top:'45%', right:'8vw', color:'white', marginTop:'20px', ':hover' : { backgroundColor: blue[600]}}} 
+          onClick={() => onLogin()}>
               Login
             </Button>
           </div>
@@ -84,7 +85,7 @@ const LoginClub = () => {
           <CardActions sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             
             <p>¿Aún no te has registrado?</p>
-            <Button sx={{backgroundColor: blue[600], color:'white'}} onClick={() => navigate('/bussiness/signup')}> Registrarse</Button>
+            <Button sx={{backgroundColor: 'green', color:'white'}} onClick={() => navigate('/bussiness/signup')}> Registrarse</Button>
           </CardActions>
         </Card>
         </>

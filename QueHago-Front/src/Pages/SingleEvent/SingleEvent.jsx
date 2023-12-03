@@ -28,7 +28,7 @@ const SingleEvent = () => {
   }
 
   useEffect(() => {
-    getEvent()
+    getEvent(), window.scrollTo(0, 0);
   }, [])    
 
   return (
@@ -36,7 +36,7 @@ const SingleEvent = () => {
       <Card
         sx={{
           background : 'linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(6,6,201,1) 34%)',
-          width: "80vw",
+          width: "90vw",
           height: "80vh",
           marginTop : '5vh',
           alignItems: "center",
@@ -57,15 +57,15 @@ const SingleEvent = () => {
         <img className="singleEventImage" src={event && event.image === null ? "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg" : event.image}></img>
       </div>
       <div className= {event.latitude === null || event.longitude === null ? "infoContainer" : "infoContainerWithMap"}>
-      <div className="infoText"><h3>¿Dónde es la fiesta? :  </h3> <h2>{event.address}</h2></div>
-      <div className="infoText"><h3>¿Cuántas salas tiene? : </h3> <h2> {event.rooms}</h2></div>
-      <div className="infoText"><h3>¿Cuál es la edad mínima? :  </h3> <h2>{event.minimumAge}</h2></div>
-      <div className="infoText"><h3> ¿Cuando podré ir a partir la pana? :  <br></br><br></br> </h3> <h2>{capitalize(date.format("dddd , D [de] MMMM [de] YYYY", event.date))}</h2></div>
-      <div className="infoText"><h3>¿Qué generos de música escucharé? :  <br></br><br></br></h3> <h2>{event.genre}</h2></div>
+      <div className="infoText"><h3>¿Dónde es la fiesta?  </h3> <h4>{event.address}</h4></div>
+      <div className="infoText"><h3>¿Cuántas salas tiene? </h3> <h4> {event.rooms}</h4></div>
+      <div className="infoText"><h3>¿Cuál es la edad mínima?  </h3> <h4>{event.minimumAge}</h4></div>
+      <div className="infoText"><h3> ¿Cuando podré ir a partir la pana?  <br></br><br></br> </h3> <h4>{capitalize(date.format("dddd , D [de] MMMM [de] YYYY", event.date))}</h4></div>
+      <div className="infoText"><h3>¿Qué generos de música escucharé?  <br></br><br></br></h3> <h4>{event.genre}</h4></div>
       </div>
-      
+       <div className={event.latitude ? "map" : "none"}>{event?.latitude && <EventMap pos={{lat:event.latitude, lng:event.longitude}}/>}</div>
       </Card> 
-           <div className={event.latitude ? "map" : "none"}>{event?.latitude && <EventMap pos={{lat:event.latitude, lng:event.longitude}}/>}</div>
+          
     </div>
   )
 }

@@ -97,9 +97,13 @@ const HomeComponent = ({event, dayWeek}) => {
             zIndex: "2",
           }}
         >
+          <div className='noTokenInfo'> 
            <h1>No podemos mostrarte la información adicional de este evento porque no has iniciado sesión</h1>
-          <Button sx={{backgroundColor:'#4d425f', margin:'1vw'}} onClick={() => navigation('/login')}>Iniciar sesión</Button>
-          <Button sx={{backgroundColor:'#4d425f', margin:'1vw'}} onClick={() => navigation('/signup')}>Crear cuenta</Button>
+           <div className='noTokenInfoButtons'> 
+          <Button sx={{backgroundColor:'white', margin:'1vw', ':hover' : {backgroundColor: '#587FCC', color:'white'}}} onClick={() => navigation('/login')}>Iniciar sesión</Button>
+          <Button sx={{backgroundColor:'white', margin:'1vw', ':hover' : {backgroundColor: '#587FCC', color:'white'}}} onClick={() => navigation('/signup')}>Crear cuenta</Button>
+          </div>
+          </div>
         </Box>
       </Modal>
      
@@ -110,10 +114,10 @@ const HomeComponent = ({event, dayWeek}) => {
      key={em.id}
      sx={{
        background:'linear-gradient(13deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 39%, rgba(53,0,255,1) 100%)',
-       opacity:'80%',
+  
        margin: '2vw',
        width: '13vw',
-       height: '48vh', 
+       height: '50vh', 
        alignItems: 'center',
        display: 'flex',
        flexDirection: 'column',
@@ -123,6 +127,7 @@ const HomeComponent = ({event, dayWeek}) => {
        justifyContent:'space-evenly',
        boxSizing:'border-box',
        position:'relative',
+       
    
        '@media (min-width: 600px) and (max-width: 1080px)': {
          width: '18vw',
@@ -134,16 +139,17 @@ const HomeComponent = ({event, dayWeek}) => {
          height: '40vh', 
        }, 
        ':hover': {
-         opacity:'100%',
+         opacity:'80%',
          cursor: 'pointer',
-         border:'2px solid'
+         border:'2px solid',
+        
          
        },
      }}
    >
 
         
-            {em?.openTime && <p className={localStorage.getItem('token') ? 'hour' : 'hourNoToken' }>{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</p>}
+            {em?.openTime && <h4 className={localStorage.getItem('token') ? 'hour' : 'hourNoToken' }>{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</h4>}
            <FavoriteBorder color='transparent' sx={{display: localStorage.getItem('role') ? 'flex' : 'none', width:'3vw', height : '3vh'}} className= {sames.includes(em.id) ? 'favIcon' : 'noFavIcon'}
             onClick={sames.includes(em.id) ? () => deleteFav(em.id) : () => setUsersFavorite(em.id)}
             ></FavoriteBorder>
@@ -153,7 +159,7 @@ const HomeComponent = ({event, dayWeek}) => {
           <img className='event' key={i} 
           src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}>
           </img>
-          <h4>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY")}</h4>
+          <h5>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY")}</h5>
           <p className='address'>Click para ver más</p>
           </div>
      </Card>

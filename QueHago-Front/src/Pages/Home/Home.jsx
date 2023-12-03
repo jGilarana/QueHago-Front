@@ -2,7 +2,7 @@ import "./Home.css"
 import { React, useEffect, useState } from "react"
 import { getAllEvents } from "../../Services/eventService"
 import { Box, Button } from "@mui/material"
-import { blue, green, red, yellow } from "@mui/material/colors"
+import { blue, green, grey, red, yellow } from "@mui/material/colors"
 import { Link, useNavigate } from "react-router-dom"
 import { getProfile, postPhoto } from "../../Services/accountService"
 import UploadWidget from "../../Components/UploadWidget/UploadWidget.jsx"
@@ -77,7 +77,9 @@ const Home = () => {
       <Button
         sx={{
           display: localStorage.getItem("token") ? "initial" : "none",
-          backgroundColor: hideButton === 2 ? "yellow" : "transparent",
+          color:'white',
+          backgroundColor: hideButton === 1 ? 'transparent' : grey[800] ,
+          color: 'white',
           border: "2px solid white",
           borderRadius: "12px",
           height: "5vh",
@@ -85,20 +87,17 @@ const Home = () => {
           fontSize: "11px",
           position: "absolute",
           top: "11vh",
-          right: "32vw",
-          ":hover": {
-            backgroundColor: yellow[600],
-            color: "black",
-          },
+          right: "32vw"
         }}
         onClick={() => getEvents() && setOpenDay(false)}
       >
-        MOSTRAR EVENTOS NO OCURRIDOS
+      PRÓXIMOS EVENTOS
       </Button>
       <Button
         sx={{
           display: localStorage.getItem("token") ? "initial" : "none",
-          backgroundColor: hideButton === 1 ? "yellow" : "transparent",
+          backgroundColor: hideButton === 1 ? grey[800] : "transparent",
+          color: 'white',
           border: "2px solid white",
           borderRadius: "12px",
           height: "5vh",
@@ -108,36 +107,38 @@ const Home = () => {
           top: "11vh",
           right: "19vw",
           ":hover": {
-            backgroundColor: yellow[600],
-            color: "black",
+
           },
         }}
         onClick={() => getAllTheEvents() && setOpenDay(false)}
       >
-        MOSTRAR TODOS LOS EVENTOS
+      TODOS LOS EVENTOS
       </Button>
       <Button
         sx={{
+          color:'white',
           display: localStorage.getItem("role") ? "initial" : "none",
           border: "2px solid red",
           borderRadius: "12px",
           height: "5vh",
-          width: "10vw",
+          width: "8vw",
           position: "absolute",
           top: "11vh",
-          right: "6vw",
+          right: "3vw",
           fontSize: "11px",
-          ":hover": {
-            backgroundColor: "red",
-            color: "white",
-          },
+
+          ':hover' : {
+            backgroundColor: red[900],
+            color: 'white'
+          }
         }}
         onClick={() => navigate("/favorites")}
       >
-        IR A FAVORITOS
+        IR A FAVORITOS ❤️
       </Button>
       <Button
         sx={{
+          color:'white',
           display: localStorage.getItem("token") ? "initial" : "none",
           border: "2px solid grey",
           borderRadius: "12px",
@@ -145,7 +146,7 @@ const Home = () => {
           width: "10vw",
           position: "absolute",
           top: "11vh",
-          left: "2vw",
+          left: "3vw",
           fontSize: "11px",
           ":hover": {
             backgroundColor: "white",
@@ -158,6 +159,7 @@ const Home = () => {
       </Button>
       <Button
         sx={{
+          color:'white',
           display: localStorage.getItem("token") ? "initial" : "none",
           border: "2px solid grey",
           borderRadius: "12px",
@@ -174,10 +176,11 @@ const Home = () => {
         }}
         onClick={() => resetToday()}
       >
-        MOSTRAR LOS EVENTOS DE HOY
+          EVENTOS DE HOY
       </Button>
       <Button
         sx={{
+          color:'white',
           display: localStorage.getItem("token") ? "initial" : "none",
           border: "2px solid grey",
           borderRadius: "12px",
@@ -185,7 +188,7 @@ const Home = () => {
           width: "10vw",
           position: "absolute",
           top: "11vh",
-          left: "30vw",
+          left: "29vw",
           fontSize: "11px",
           ":hover": {
             backgroundColor: "white",
