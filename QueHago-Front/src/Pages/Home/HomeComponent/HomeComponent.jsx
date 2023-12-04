@@ -83,6 +83,8 @@ const HomeComponent = ({event, dayWeek}) => {
       >
         <Box
           sx={{
+            color:'white',
+            textAlign:'center',
             overflow: "auto",
             width: "30vw",
             height: "80%",

@@ -79,7 +79,6 @@ const Home = () => {
           display: localStorage.getItem("token") ? "initial" : "none",
           color:'white',
           backgroundColor: hideButton === 1 ? 'transparent' : grey[800] ,
-          color: 'white',
           border: "2px solid white",
           borderRadius: "12px",
           height: "5vh",

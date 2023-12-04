@@ -207,7 +207,7 @@ const Header = () => {
             opacity: "95%",
             backdropFilter: "blur(800px)",
             zIndex: "2",
-            position: "relative",
+            
             position: "absolute",
             right: "5vw",
           }}
