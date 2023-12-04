@@ -98,6 +98,8 @@ const ComponentFavorites = ({ fav, eventOpenTime, eventCloseTime }) => {
                   display: localStorage.getItem("role") ? "flex" : "none",
                   width: "3vw",
                   height: "3vh",
+                  position:'absolute',
+                  top:'10px'
                 }}
                 className={sames.includes(em.id) ? "favIcon" : "noFavIcon"}
                 onClick={
