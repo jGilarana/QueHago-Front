@@ -154,11 +154,11 @@ const HomeComponent = ({event, dayWeek}) => {
             ></FavoriteBorder>
            
           <div className='noHeaderCard' onClick={localStorage.getItem('token') ? () => navigation(`/event/${em.id}`) : handleOpen} >
-          <h2 className='eventTitle' key={em.id}>{em.title}</h2>
+          <h2 style={{fontSize:'1.3rem'}} className='eventTitle' key={em.id}>{em.title}</h2>
           <img className='event' key={i} 
           src={(em.image === null) ? 'https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg' : (em.image)}>
           </img>
-          <h5>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY")}</h5> 
+          <h3 style={{fontSize:'0.8rem'}}>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY")}</h3> 
           {em?.openTime && <h4>{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</h4>}
           <p className='address'>Click para ver más</p>
           </div></div>

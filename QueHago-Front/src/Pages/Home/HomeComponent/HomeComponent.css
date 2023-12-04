@@ -49,8 +49,13 @@
 
 
 .noHeaderCard {
-  top: 6vh;
+  top: 7vh;
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 40vh;
 }
 
 /* //HACER DISPLAY FLEX, FLEX ROW PARA CORAZON DE LIKE CON HORA */
@@ -87,6 +92,7 @@
   color: #131313;
   background-color:#ffffff;
   border-radius: 12px;
+  width: 8vw;
 }
 
 
@@ -100,8 +106,8 @@
 }
 
 .event {
-  width: 8vw;
-  height: 20vh;
+  width: 7vw;
+  height: 17vh;
   border-radius: 12px;
   object-fit: cover;
   }
