@@ -1,6 +1,6 @@
 .singleEventContainer {
    width: 100vw;
-   height: 100vh;
+   height: 100%;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -9,7 +9,6 @@
 
 .description {
    color: white;
-   bottom: 10px;
    width: 91vw;
 }
 

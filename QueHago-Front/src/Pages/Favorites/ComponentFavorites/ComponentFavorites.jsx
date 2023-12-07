@@ -41,7 +41,7 @@ const navigation = useNavigate()
   }
 
   return (
-    <div className="pageContainer">
+    <div className="favPageContainer">
       <div className="favContainer">
         {fav.map((em, i) => {
           return (

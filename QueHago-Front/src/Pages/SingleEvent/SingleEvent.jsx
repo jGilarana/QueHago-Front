@@ -38,6 +38,8 @@ const SingleEvent = () => {
           background : 'linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(6,6,201,1) 34%)',
           width: "90vw",
           height: "80vh",
+          minHeight:'70vh',
+          maxHeight:'80vh',
           marginTop : '12vh',
           alignItems: "center",
           justifyContent: "space-between",

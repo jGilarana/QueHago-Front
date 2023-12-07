@@ -60,24 +60,6 @@
 
 /* //HACER DISPLAY FLEX, FLEX ROW PARA CORAZON DE LIKE CON HORA */
 
-.eventTitle {
-  
-  margin-top: 0;
-}
-.genre {
-
-  margin-bottom: 30px;
-
-}
-
-.hour {   
-  top: 0;
-  color: #131313;
-  background-color:#ffffff;
-  width: 6vw;
-  border-radius: 12px;
-}
-
 .cardInfo {
   display: flex;
   flex-direction: column;
@@ -94,7 +76,6 @@
   border-radius: 12px;
   width: 8vw;
 }
-
 
 .hourNoToken {
   top: 0;
@@ -120,12 +101,10 @@
 
   .favIcon {
     color: red;
-    
   }
 
   .noFavIcon {
     color: rgba(239, 239, 239, 0.482);
- 
   }
 
 
@@ -134,14 +113,13 @@
   }
 
   
-
-  
 @media screen and (min-width: 600px) and (max-width: 1080px) {
 
   .events-container {
     width: 100%;
     height: 100%;
   }
+
   .noHeaderCard {
     top: 8vh;
     position: absolute;
@@ -199,6 +177,7 @@
     border-radius: 12px;
     object-fit: cover;
   }
+  
   .hour {
     width: 40vw;
     top: 0;
