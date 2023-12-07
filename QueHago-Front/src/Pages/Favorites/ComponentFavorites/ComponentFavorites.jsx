@@ -77,6 +77,7 @@ const navigation = useNavigate()
                   width: "40vw",
                   height: "40vh",
                 },
+                
                 ":hover": {
                   opacity: "100%",
                   cursor: "pointer",

@@ -9,10 +9,11 @@
 }
 
 .map {
+    top: 40vh;
     margin: 1.5vw;
     margin-right:2vw;
     width: 24vw;
-    height: 65vh;
+    height: 55vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

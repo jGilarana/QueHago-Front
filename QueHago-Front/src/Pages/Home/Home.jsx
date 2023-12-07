@@ -1,7 +1,7 @@
 import "./Home.css"
 import { React, useEffect, useState } from "react"
 import { getAllEvents } from "../../Services/eventService"
-import { Box, Button } from "@mui/material"
+import { Box, Button, Checkbox, FormControlLabel, FormGroup } from "@mui/material"
 import { blue, green, grey, red, yellow } from "@mui/material/colors"
 import { Link, useNavigate } from "react-router-dom"
 import { getProfile, postPhoto } from "../../Services/accountService"
@@ -203,6 +203,19 @@ const Home = () => {
       </Button>
 
       <Map />
+      <div className="selector">
+      <FormGroup>
+        <FormControlLabel control={<Checkbox  />} label="Reggaeton" />
+        <FormControlLabel control={<Checkbox  />} label="Tech House" />
+        <FormControlLabel control={<Checkbox  />} label="R&B" />
+        <FormControlLabel control={<Checkbox  />} label="Jazz" />
+        <FormControlLabel control={<Checkbox  />} label="Rock" />
+        <FormControlLabel control={<Checkbox  />} label="DanceHall" />
+        <FormControlLabel control={<Checkbox  />} label="Trap" />
+
+      </FormGroup>
+
+      </div>
       <HomeComponent
         event={event}
         dayWeek={openDay === true ? today.format("dddd, DD/MM/YYYY") : null}

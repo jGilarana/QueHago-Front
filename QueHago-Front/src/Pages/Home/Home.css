@@ -28,6 +28,18 @@
     background-color: aliceblue;
   }
   
+  .selector {
+    position: absolute;
+    top: 20vh;
+    width: 13vw;
+    height: 32vh;
+    left: 93px;
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px;
+  }
 
 @media screen and (max-width: 600px) {
     .events-container {
