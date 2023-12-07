@@ -31,12 +31,12 @@
   .selector {
     position: absolute;
     top: 20vh;
-    width: 13vw;
+    width: 20vw;
     height: 32vh;
     left: 93px;
     background-color: red;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     margin: 10px;
   }

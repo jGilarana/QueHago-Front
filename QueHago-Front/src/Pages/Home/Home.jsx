@@ -204,7 +204,7 @@ const Home = () => {
 
       <Map />
       <div className="selector">
-      <FormGroup>
+      <FormGroup sx={{ display: "flex", flexDirection: "row", justifyContent: "space-between", color: "white" }}>
         <FormControlLabel control={<Checkbox  />} label="Reggaeton" />
         <FormControlLabel control={<Checkbox  />} label="Tech House" />
         <FormControlLabel control={<Checkbox  />} label="R&B" />
