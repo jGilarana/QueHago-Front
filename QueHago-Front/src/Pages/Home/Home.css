@@ -23,12 +23,11 @@
    
   }
 
-
   .hide {
     display: none;
     background-color: aliceblue;
   }
-
+  
 
 @media screen and (max-width: 600px) {
     .events-container {
@@ -39,10 +38,7 @@
     }
   }
   
-  @media screen and (min-width: 768px) and (max-width: 1080px) {
-    .events-container {
-    }
-  }
+
   
 
   

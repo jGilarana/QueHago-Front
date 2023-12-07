@@ -9,7 +9,6 @@ const Favorites = () => {
 
     const getFavorites = async() =>  {
         const data = await getUsersFavorites()
-        console.log(data)
         setFavorite(data.sort((a, b) => dayjs(b.date).diff(dayjs(a.date))))
     }
     

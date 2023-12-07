@@ -4,7 +4,6 @@ import "./ClubsEventsComponent.css"
 import { Box, Card, Modal, Button, TextField } from "@mui/material"
 import { blue } from "@mui/material/colors"
 import UploadWidget from "../../../Components/UploadWidget/UploadWidget"
-import { updateClubsEvent } from "../../../Services/eventService"
 import dayjs from "dayjs"
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import { DeleteOutline } from "@mui/icons-material"
@@ -200,7 +199,6 @@ const ClubsEventsComponent = ({
             backdropFilter: "blur(800px)",
             zIndex: "2",
             position:'relative'
-
           }}
         >
           <TextField
@@ -376,7 +374,6 @@ const ClubsEventsComponent = ({
             },
             ":hover": {
               backgroundColor: "#000000",
-            
               border: "2px solid",
             },
           }}

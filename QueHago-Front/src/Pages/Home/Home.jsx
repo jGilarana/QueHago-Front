@@ -26,10 +26,6 @@ const Home = () => {
     setHideButton(1)
   }
 
-  const handleChangeGenre = (e) => {
-    setGenre(e.target.value)
-  }
-
   const getEvents = async () => {
     const data = await getAllEvents()
     const filteredData = data
@@ -73,7 +69,9 @@ const Home = () => {
   }, [])
 
   return (
+
     <div className="home">
+
       <Button
         sx={{
           display: localStorage.getItem("token") ? "initial" : "none",
@@ -92,6 +90,7 @@ const Home = () => {
       >
       PRÓXIMOS EVENTOS
       </Button>
+
       <Button
         sx={{
           display: localStorage.getItem("token") ? "initial" : "none",
@@ -113,6 +112,7 @@ const Home = () => {
       >
       TODOS LOS EVENTOS
       </Button>
+      
       <Button
         sx={{
           color:'white',
@@ -135,6 +135,7 @@ const Home = () => {
       >
         IR A FAVORITOS ❤️
       </Button>
+
       <Button
         sx={{
           color:'white',
@@ -156,6 +157,7 @@ const Home = () => {
       >
         DIA ANTERIOR
       </Button>
+
       <Button
         sx={{
           color:'white',
@@ -177,6 +179,7 @@ const Home = () => {
       >
           EVENTOS DE HOY
       </Button>
+      
       <Button
         sx={{
           color:'white',

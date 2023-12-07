@@ -57,11 +57,13 @@ const SingleEvent = () => {
         <img className="singleEventImage" src={event && event.image === null ? "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg" : event.image}></img>
       </div>
       <div className={event.latitude === null || event.longitude === null ? "infoContainer" : "infoContainerWithMap"}>
+
       <div className={event.latitude === null || event.longitude === null ? 'infoText' : 'infoTextWithMap'}><h3>¿Dónde es la fiesta?  </h3> <h4>{event.address}</h4></div>
       <div className={event.latitude === null || event.longitude === null ? 'infoText' : 'infoTextWithMap'}><h3>¿Cuántas salas tiene? </h3> <h4> {event.rooms}</h4></div>
       <div className={event.latitude === null || event.longitude === null ? 'infoText' : 'infoTextWithMap'}><h3>¿Cuál es la edad mínima?  </h3> <h4>{event.minimumAge}</h4></div>
       <div className={event.latitude === null || event.longitude === null ? 'infoText' : 'infoTextWithMap'}><h3> ¿Cuando podré ir a partir la pana?  <br></br><br></br> </h3> <h4>{capitalize(date.format("dddd , D [de] MMMM [de] YYYY", event.date))}</h4></div>
       <div className={event.latitude === null || event.longitude === null ? 'infoText' : 'infoTextWithMap'}><h3>¿Qué generos de música escucharé?  <br></br><br></br></h3> <h4>{event.genre}</h4></div>
+      
       </div>
        <div className={event.latitude ? "map" : "none"}>{event?.latitude && <EventMap pos={{lat:event.latitude, lng:event.longitude}}/>}</div>
       </Card> 

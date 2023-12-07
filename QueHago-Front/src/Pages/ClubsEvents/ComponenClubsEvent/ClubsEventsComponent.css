@@ -23,8 +23,8 @@
     border-radius: 12px;
     cursor: pointer;
 }
-/* ///////////////////////////HACER DISPLAY GRID Y AÑADIR DESCRIPCION AL MODAL //////////////////////////// */
 
+/* ///////////////////////////HACER DISPLAY GRID Y AÑADIR DESCRIPCION AL MODAL //////////////////////////// */
 
 .eventHour {
     color: #131313;
@@ -81,7 +81,6 @@
     object-fit: cover;
     cursor: pointer;
 }
-
 
 .clubsEventImg:hover {
     opacity: 80%;

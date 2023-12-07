@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom'
 
 const LoginClub = () => {
 
-
     const clubData = {
         email : 'kalimaevents@gmail.com',
         password : 'Rebooting!'
@@ -19,10 +18,6 @@ const LoginClub = () => {
     const [password, setPassword] = useState(clubData.password)
     const [email, setEmail] = useState(clubData.email)
     
-    
-
-
-
      async function onLogin() {
         try {
           const loginResponse = await login({email, password})

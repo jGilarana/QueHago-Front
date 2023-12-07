@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
 
-
   const userData = {
     firstName: "Jorge",
     lastName: "Gil de Arana",
@@ -22,7 +21,6 @@ const Login = () => {
     const navigate = useNavigate()
     const [password, setPassword] = useState(userData.password)
     const [email, setEmail] = useState(userData.email)
-    
     
      async function onLogin() {
         try {

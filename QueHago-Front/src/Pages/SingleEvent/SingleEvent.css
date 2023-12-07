@@ -37,7 +37,6 @@
    flex-direction: column;
    justify-content: space-between;
    align-items: center;
-
 }
 
 .infoContainerWithMap::-webkit-scrollbar {
@@ -87,7 +86,6 @@
    background-color: rgb(194, 185, 185);
    border-radius: 12px;
  }
-
 
 .none {
    display: none;

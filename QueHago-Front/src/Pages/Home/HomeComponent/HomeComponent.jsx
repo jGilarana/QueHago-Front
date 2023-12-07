@@ -115,8 +115,7 @@ const HomeComponent = ({event, dayWeek}) => {
      onClick={localStorage.getItem('token') ? null : () => handleOpen()}
      key={em.id}
      sx={{
-       background:'linear-gradient(13deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 39%, rgba(53,0,255,1) 100%)',
-  
+       background:'linear-gradient(13deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 39%, rgba(53,0,255,1) 100%)', 
        margin: '2vw',
        width: '13vw',
        height: '50vh', 
@@ -149,12 +148,10 @@ const HomeComponent = ({event, dayWeek}) => {
        },
      }}
    >
-          <div className='cardInfo'>
-       
+          <div className='cardInfo'>    
            <FavoriteBorder color='transparent' sx={{ position:'absolute', top:'10px', right:'42%', display: localStorage.getItem('role') ? 'flex' : 'none'}} className= {sames.includes(em.id) ? 'favIcon' : 'noFavIcon'}
             onClick={sames.includes(em.id) ? () => deleteFav(em.id) : () => setUsersFavorite(em.id)}
-            ></FavoriteBorder>
-           
+            ></FavoriteBorder>          
           <div className='noHeaderCard' onClick={localStorage.getItem('token') ? () => navigation(`/event/${em.id}`) : handleOpen} >
           <h2 style={{fontSize:'1.3rem'}} className='eventTitle' key={em.id}>{em.title}</h2>
           <img className='event' key={i} 

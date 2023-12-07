@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react"
 import "./ComponentFavorite.css"
 import { Card } from "@mui/material"
-import { width } from "@mui/system"
-import FavoriteIcon from "@mui/icons-material/Favorite"
-import { Link } from "react-router-dom"
 import {
   getUsersFavorites,
   userDeletesFav,
@@ -12,7 +9,7 @@ import {
 import { FavoriteBorder } from "@mui/icons-material"
 import dayjs from "dayjs"
 
-const ComponentFavorites = ({ fav, eventOpenTime, eventCloseTime }) => {
+const ComponentFavorites = ({ fav }) => {
   const [favorite, setFavorite] = useState([])
   const [refresh, setRefresh] = useState(false)
 

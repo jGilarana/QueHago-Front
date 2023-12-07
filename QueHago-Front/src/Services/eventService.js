@@ -30,7 +30,6 @@ export const updateClubsEvent = async(id, eventData) => {
     console.log(response)
 }
 
-
 export const deleteEvents = async (id) => {
 
         const response = await api.delete(`/events/${id}`, {
