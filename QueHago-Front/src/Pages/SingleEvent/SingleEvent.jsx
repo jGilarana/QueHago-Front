@@ -1,4 +1,4 @@
-import { Card } from "@mui/material"
+import { Card, Divider } from "@mui/material"
 import { React, useEffect, useState } from "react"
 import "./SingleEvent.css"
 import { useParams } from "react-router-dom"
@@ -38,7 +38,7 @@ const SingleEvent = () => {
           background : 'linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(6,6,201,1) 34%)',
           width: "90vw",
           height: "80vh",
-          marginTop : '5vh',
+          marginTop : '7vh',
           alignItems: "center",
           justifyContent: "space-between",
           display: "flex",
@@ -67,6 +67,8 @@ const SingleEvent = () => {
       </div>
        <div className={event.latitude ? "map" : "none"}>{event?.latitude && <EventMap pos={{lat:event.latitude, lng:event.longitude}}/>}</div>
       </Card> 
+      <Divider></Divider>
+      <h2 className="description">{event.description}</h2>
           
     </div>
   )

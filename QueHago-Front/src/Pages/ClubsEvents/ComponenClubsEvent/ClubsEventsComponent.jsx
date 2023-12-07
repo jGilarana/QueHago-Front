@@ -28,7 +28,8 @@ const ClubsEventsComponent = ({
   handleCloseUpdate,
   setOpenTime,
   setCloseTime,
-  clubDeletesEvent
+  clubDeletesEvent,
+  setDescription
 }) => {
 
   const navigate = useNavigate()
@@ -159,6 +160,14 @@ const ClubsEventsComponent = ({
             sx={{ backgroundColor: 'white' ,marginBottom: "35px", width: "60%", alignSelf: "left" }}
           ></TextField>
           <UploadWidget setUrl={setImage}></UploadWidget>
+          <TextField
+             sx={{ backgroundColor: 'white' ,marginBottom: "35px", width: "90%", alignSelf: "left" }}  
+              label="Descripción"
+              multiline
+              rows={4} // Puedes ajustar la altura según tus necesidades
+              variant="outlined"
+              onChange={(e) => setDescription(e.target.value)}
+      />
           <Button
             onClick={createEvent}
             sx={{
@@ -385,7 +394,7 @@ const ClubsEventsComponent = ({
           }}
            sx={{position:'absolute', left:'10px', bottom: '10px', color:'grey', width:'40px', ':hover' : {color:'white', cursor:'pointer'}}}></ModeEditIcon>
           <h2 className="clubEventTitle" key={em.id}>{em.title}</h2>
-          <h4>{em.genre}</h4>
+          <h3>{em.genre}</h3>
           <img
             onClick={() => navigate(`/event/${em.id}`)}  
             className="clubsEventImg"
@@ -396,9 +405,10 @@ const ClubsEventsComponent = ({
                 : em.image
             }
           ></img>
+          <p>Click en la imagen para ver más</p>
           <DeleteOutline onClick={() => clubDeletesEvent(em.id)} sx={{position:'absolute', right:'10px', top: '10px', color:'white', width:'40px', ':hover' : {cursor:'pointer',color:'red'}}} ></DeleteOutline>
-          <h4>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY", em.date)}</h4>
-          <h4>{em.address}</h4>
+          <h3>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY", em.date)}</h3>
+          <h3>{em.address}</h3>
         </Card>
       ))}
     </div>

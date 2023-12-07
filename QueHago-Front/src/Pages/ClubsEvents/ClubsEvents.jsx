@@ -24,6 +24,7 @@ const ClubsEvents = () => {
   const [refresh,  setRefresh] = useState(false);
   const [openTime, setOpenTime] =   useState();
   const [closeTime, setCloseTime] = useState();
+  const [description, setDescription] = useState()
 
   const handleOpen = () => {
     setOpen(true);
@@ -75,7 +76,8 @@ const ClubsEvents = () => {
       minimumAge,
       image,
       openTime,
-      closeTime
+      closeTime,
+      description
     });
     handleClose();
     setRefresh(!refresh)
@@ -117,7 +119,8 @@ const ClubsEvents = () => {
         events={events && events}
         setOpenTime = {setOpenTime}
         setCloseTime={setCloseTime}
-        clubDeletesEvent={clubDeletesEvents}      
+        clubDeletesEvent={clubDeletesEvents}    
+        setDescription={setDescription}  
       />
     </>
   );
