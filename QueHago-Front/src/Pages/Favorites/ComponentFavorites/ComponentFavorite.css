@@ -18,6 +18,8 @@
     border: 2px solid red;
 }
 
+
+
     .hoverBorder:hover {
     border: 2px;
     cursor: pointer;

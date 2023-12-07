@@ -8,8 +8,12 @@ import {
 } from "../../../Services/favoriteService"
 import { FavoriteBorder } from "@mui/icons-material"
 import dayjs from "dayjs"
+import { useNavigate } from "react-router-dom"
 
 const ComponentFavorites = ({ fav }) => {
+
+const navigation = useNavigate()
+
   const [favorite, setFavorite] = useState([])
   const [refresh, setRefresh] = useState(false)
 

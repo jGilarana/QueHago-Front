@@ -388,11 +388,7 @@ const ClubsEventsComponent = ({
             "@media (max-width: 600px)": {
               width: "40vw",
               height: "40vh",
-            },
-            ":hover": {
-              backgroundColor: "#000000",
-              border: "2px solid",
-            },
+            }
           }}
         >
           {em?.openTime && <h4 className='eventHour' >{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</h4>}
