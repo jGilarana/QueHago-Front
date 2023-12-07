@@ -49,13 +49,13 @@
 
 
 .noHeaderCard {
-  top: 7vh;
+  top: 5.5vh;
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  height: 40vh;
+  height: 45vh;
 }
 
 /* //HACER DISPLAY FLEX, FLEX ROW PARA CORAZON DE LIKE CON HORA */

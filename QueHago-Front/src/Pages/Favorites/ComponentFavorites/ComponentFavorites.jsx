@@ -56,7 +56,7 @@ const navigation = useNavigate()
                   "linear-gradient(13deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 39%, rgba(53,0,255,1) 100%)",
                 margin: "2vw",
                 width: "13vw",
-                height: "48vh",
+                height: "50vh",
                 alignItems: "center",
                 display: sames.includes(em.id) ? "flex" : "none",
                 flexDirection: "column",

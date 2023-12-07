@@ -154,7 +154,7 @@ const ClubsEventsComponent = ({
           ></TextField>         
           <TextField
             onChange={(e) => setImage(e.target.value)}
-            label="¿Quieres actualizar la imagen del evento?"
+            label="¿Quieres subir una imagen para el evento?"
             variant="filled"
             color="primary"
             sx={{ backgroundColor: 'white' ,marginBottom: "35px", width: "60%", alignSelf: "left" }}
@@ -197,7 +197,7 @@ const ClubsEventsComponent = ({
           sx={{
             overflow: "auto",
             width: "60vw",
-            height: "100%",
+            height: "80vh",
             display: "flex",
             flexWrap:'wrap',
             alignContent: "center",
@@ -411,7 +411,6 @@ const ClubsEventsComponent = ({
           ></img>
           <p>Click en la imagen para ver más</p>
           <DeleteOutline onClick={() => clubDeletesEvent(em.id)} sx={{position:'absolute', right:'10px', top: '10px', color:'white', width:'40px', ':hover' : {cursor:'pointer',color:'red'}}} ></DeleteOutline>
-          <h3>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY", em.date)}</h3>
           <h3>{em.address}</h3>
         </Card>       
       ))}
