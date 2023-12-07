@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import "./ClubsEventsComponent.css"
 import { Box, Card, Modal, Button, TextField } from "@mui/material"
 import { blue } from "@mui/material/colors"
@@ -7,6 +7,7 @@ import UploadWidget from "../../../Components/UploadWidget/UploadWidget"
 import { updateClubsEvent } from "../../../Services/eventService"
 import dayjs from "dayjs"
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
+import { DeleteOutline } from "@mui/icons-material"
 const ClubsEventsComponent = ({
   setTitle,
   setGenre,
@@ -27,11 +28,12 @@ const ClubsEventsComponent = ({
   handleOpenUpdate,
   handleCloseUpdate,
   setOpenTime,
-  setCloseTime
+  setCloseTime,
+  clubDeletesEvent
 }) => {
 
- 
- 
+  const navigate = useNavigate()
+  
   const [eventImg, setEventImg] = useState(
     "https://res.cloudinary.com/djpdopxfy/image/upload/v1700755834/QueHago/grmqnv1mruknyknoyf5d.jpg"
   )
@@ -149,8 +151,7 @@ const ClubsEventsComponent = ({
             color="primary"
             type="number"
             sx={{ backgroundColor: 'white' ,marginBottom: "35px", width: "40%", alignSelf: "center" }}
-          ></TextField>
-          
+          ></TextField>         
           <TextField
             onChange={(e) => setImage(e.target.value)}
             label="¿Quieres actualizar la imagen del evento?"
@@ -346,10 +347,7 @@ const ClubsEventsComponent = ({
       </Card>
       {events.sort((a, b) => dayjs(a.date).diff(dayjs(b.date))).map((em, i) => (
         <Card
-          onClick={() => {
-            handleOpenUpdate()
-            setEventId(em.id)
-          }}
+          
           key={em.id}
           sx={{
             background:'linear-gradient(13deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 39%, rgba(53,0,255,1) 100%)',
@@ -380,17 +378,22 @@ const ClubsEventsComponent = ({
             },
             ":hover": {
               backgroundColor: "#000000",
-              cursor: "pointer",
+            
               border: "2px solid",
             },
           }}
         >
           {em?.openTime && <h4 className='eventHour' >{em.openTime.slice(0, -3)} - {em.closeTime.slice(0, -3)}</h4>}
-          <ModeEditIcon sx={{position:'absolute', left:'10px', bottom: '10px', color:'grey', width:'40px', ':hover' : {color:'white'}}}></ModeEditIcon>
+          <ModeEditIcon onClick={() => {
+            handleOpenUpdate()
+            setEventId(em.id)
+          }}
+           sx={{position:'absolute', left:'10px', bottom: '10px', color:'grey', width:'40px', ':hover' : {color:'white', cursor:'pointer'}}}></ModeEditIcon>
           <h2 className="clubEventTitle" key={em.id}>{em.title}</h2>
           <h4>{em.genre}</h4>
           <img
-            className="event"
+            onClick={() => navigate(`/event/${em.id}`)}  
+            className="clubsEventImg"
             key={i}
             src={
               em.image === null
@@ -398,7 +401,7 @@ const ClubsEventsComponent = ({
                 : em.image
             }
           ></img>
-          
+          <DeleteOutline onClick={() => clubDeletesEvent(em.id)} sx={{position:'absolute', right:'10px', top: '10px', color:'white', width:'40px', ':hover' : {cursor:'pointer',color:'red'}}} ></DeleteOutline>
           <h4>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY", em.date)}</h4>
           <h4>{em.address}</h4>
         </Card>

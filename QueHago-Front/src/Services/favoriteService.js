@@ -8,8 +8,9 @@ export const getUsersFavorites = async() => {
             'Authorization' : localStorage.getItem('token')
         }
     })
-    console.log(data)
+
     return data
+    
 }
 
 export const userSetsFavorite = async(id) => {

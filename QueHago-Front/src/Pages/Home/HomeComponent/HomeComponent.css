@@ -112,26 +112,7 @@
   object-fit: cover;
   }
 
-@media screen and (max-width: 600px) {
-  .events-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  } 
 
-  .noHeaderCard {
-    top: 6vh;
-    position: absolute;
-  }
-  .event {  
-    width: 60%;
-    height: 50%;
-    border-radius: 12px;
-    object-fit: cover;
-  }
-}
 
 .moreInfo {
     color: #0000ff;
@@ -154,6 +135,9 @@
     color: white;
   }
 
+  
+
+  
 @media screen and (min-width: 600px) and (max-width: 1080px) {
 
   .events-container {

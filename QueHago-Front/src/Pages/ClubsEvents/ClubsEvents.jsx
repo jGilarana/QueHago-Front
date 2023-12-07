@@ -4,10 +4,11 @@ import {
   createClubsEvents,
   getClubsEvents,
 } from "../../Services/clubService.js";
-import { updateClubsEvent } from "../../Services/eventService.js";
+import { deleteEvents, updateClubsEvent } from "../../Services/eventService.js";
 import dayjs from "dayjs";
 
 const ClubsEvents = () => {
+
   const [open, setOpen] = useState(false);
   const [openUpdate, setOpenUpdate] = useState(false);
   const [events, setEvents] = useState([]);
@@ -58,7 +59,6 @@ const ClubsEvents = () => {
       return null;
     } else {
       const events = await getClubsEvents();
-      console.log(events)
       setEvents(events.sort((a, b) => dayjs(b.date).diff(dayjs(a.date))))
     }
   };
@@ -79,6 +79,12 @@ const ClubsEvents = () => {
     });
     console.log(data);
     handleClose();
+    setRefresh(!refresh)
+  };
+
+  const clubDeletesEvents = async (id) => {
+    const response = await deleteEvents(id);
+    console.log(response);
     setRefresh(!refresh)
   };
 
@@ -112,8 +118,7 @@ const ClubsEvents = () => {
         events={events && events}
         setOpenTime = {setOpenTime}
         setCloseTime={setCloseTime}
-        
-       
+        clubDeletesEvent={clubDeletesEvents}      
       />
     </>
   );
