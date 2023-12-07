@@ -49,6 +49,7 @@ const ClubsEvents = () => {
       closeTime,
       minimumAge,
       image,
+      description
     });
     console.log(response);
     handleCloseUpdate();

@@ -167,7 +167,7 @@ const ClubsEventsComponent = ({
               rows={4} // Puedes ajustar la altura según tus necesidades
               variant="outlined"
               onChange={(e) => setDescription(e.target.value)}
-      />
+          />
           <Button
             onClick={createEvent}
             sx={{
@@ -293,6 +293,14 @@ const ClubsEventsComponent = ({
             sx={{ marginBottom: "20px", width: "80%", alignSelf: "center" }}
           ></TextField>
           <UploadWidget setUrl={setImage}></UploadWidget>
+          <TextField
+             sx={{ backgroundColor: 'white' ,marginBottom: "35px", width: "95%", alignSelf: "left" }}  
+              label="Descripción"
+              multiline
+              rows={4} // Puedes ajustar la altura según tus necesidades
+              variant="outlined"
+              onChange={(e) => setDescription(e.target.value)}
+          />
           <Button
             onClick={() => updateEvent(eventId)}
             sx={{
@@ -409,7 +417,7 @@ const ClubsEventsComponent = ({
           <DeleteOutline onClick={() => clubDeletesEvent(em.id)} sx={{position:'absolute', right:'10px', top: '10px', color:'white', width:'40px', ':hover' : {cursor:'pointer',color:'red'}}} ></DeleteOutline>
           <h3>{dayjs(em.date).format("dddd , D [de] MMMM [de] YYYY", em.date)}</h3>
           <h3>{em.address}</h3>
-        </Card>
+        </Card>       
       ))}
     </div>
   )
