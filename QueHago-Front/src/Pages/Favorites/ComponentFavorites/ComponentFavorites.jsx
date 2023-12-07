@@ -108,7 +108,6 @@ const ComponentFavorites = ({ fav, eventOpenTime, eventCloseTime }) => {
                     : () => setUsersFavorite(em.id)
                 }
               ></FavoriteBorder>
-
             <div className='noHeaderCard' onClick={localStorage.getItem('token') ? () => navigation(`/event/${em.id}`) : handleOpen} >
           <h2 style={{fontSize:'1.3rem'}} className='eventTitle' key={em.id}>{em.title}</h2>
           <img className='event' key={i} 

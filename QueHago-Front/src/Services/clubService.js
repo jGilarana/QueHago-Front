@@ -74,7 +74,4 @@ export async function postClubPhoto(image) {
   }
 }
 
-
-
-
-// NO OLVIDARSE DEL CHECK ROLE
+// NO OLVIDARSE DEL CHECK ROLES

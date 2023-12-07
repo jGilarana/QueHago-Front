@@ -432,24 +432,29 @@ const Header = () => {
       >
         <Box
           sx={{
+            color:'white',
+            textAlign:'center',
             overflow: "auto",
             width: "30vw",
             height: "80%",
             display: "flex",
             alignContent: "center",
-            justifyContent: "space-around",
+            justifyContent: "center",
             flexDirection: "column",
             borderRadius: "12px",
-            background:
-              "linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(6,6,201,1) 34%)",
+            background : 'linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(6,6,201,1) 34%)',
             opacity: "90%",
             backdropFilter: "blur(800px)",
             zIndex: "2",
           }}
         >
-          <h1 className="notAuth">No puedes actualizar tu usuario porque no has iniciado sesión</h1>
-          <Button sx={{backgroundColor:'white', margin:'1vw', ':hover' : {backgroundColor: '#587FCC', color:'white'}}} onClick={() => navigate('/login')}>Iniciar sesión</Button>
-          <Button sx={{backgroundColor:'white', margin:'1vw', ':hover' : {backgroundColor: '#587FCC', color:'white'}}} onClick={() => navigate('/signup')}>Crear cuenta</Button>
+         <div className='noTokenInfo'> 
+           <h1>No puedes actualizar tu usuario porque no has iniciado sesión</h1>
+           <div className='noTokenInfoButtons'> 
+          <Button sx={{backgroundColor:'white', margin:'1vw', ':hover' : {backgroundColor: '#587FCC', color:'white'}}} onClick={() => navigation('/login')}>Iniciar sesión</Button>
+          <Button sx={{backgroundColor:'white', margin:'1vw', ':hover' : {backgroundColor: '#587FCC', color:'white'}}} onClick={() => navigation('/signup')}>Crear cuenta</Button>
+          </div>
+          </div>
         </Box>
       </Modal>
       <div className="headerItemsContainer">
@@ -514,9 +519,7 @@ const Header = () => {
         >
           Logout
         </Button>
-    
-
-        <div>
+          <div>
           <img
             onClick={() => handleOpen()}
             className="profilePhoto"

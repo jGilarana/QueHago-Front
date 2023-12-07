@@ -8,11 +8,6 @@
     z-index: 0;
 }
 
-@media screen and (min-width: 600px) and (max-width: 1080px) {
-
-    
-}
-
 .map {
     margin: 1.5vw;
     margin-right:2vw;

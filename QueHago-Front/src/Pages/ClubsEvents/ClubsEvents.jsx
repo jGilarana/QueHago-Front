@@ -77,7 +77,6 @@ const ClubsEvents = () => {
       openTime,
       closeTime
     });
-    console.log(data);
     handleClose();
     setRefresh(!refresh)
   };

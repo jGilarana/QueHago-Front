@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react"
 import "./Map.css"
 import "leaflet/dist/leaflet.css"
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
-import { Box } from "@mui/material"
-import { blue } from "@mui/material/colors"
 
 const Map = () => {
   const [myPos, setMyPos] = useState([28.141401524287414, -15.43008879603786])

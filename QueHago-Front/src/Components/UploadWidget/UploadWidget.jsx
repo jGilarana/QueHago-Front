@@ -27,7 +27,7 @@ const UploadWidget = ({updatePhoto, setUrl}) => {
                         console.log(result)
                       updatePhoto(result.info.url);
                     } else {
-                      console.log('Ya puedes ir creando la función');
+                      console.log("You are not logger in or there's an error");
                     }
                 }
             }

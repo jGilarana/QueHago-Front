@@ -347,13 +347,12 @@ const ClubsEventsComponent = ({
       </Card>
       {events.sort((a, b) => dayjs(a.date).diff(dayjs(b.date))).map((em, i) => (
         <Card
-          
           key={em.id}
           sx={{
             background:'linear-gradient(13deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 39%, rgba(53,0,255,1) 100%)',
             margin: "2vw",
             width: "14vw",
-            height: "60vh",
+            height: "55vh",
             alignItems: "center",
             display: "flex",
             flexDirection: "column",
@@ -371,7 +370,6 @@ const ClubsEventsComponent = ({
               width: "18vw",
               height: "40vh",
             },
-
             "@media (max-width: 600px)": {
               width: "40vw",
               height: "40vh",
