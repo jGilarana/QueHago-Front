@@ -6,7 +6,6 @@
    align-items: center;
 }
 
-
 .singleEventImage {
    width: 70%;
    height: 65%;
@@ -14,7 +13,6 @@
    margin-bottom: 2vh;
    background-size: cover;
 }
-
 
 .titleImg {
    margin-left: 2vw;
@@ -95,10 +93,10 @@
    display: none;
 }
 
-.infoText {
+.infoTextWithMap {
    width: 110%;
    background-color: #131313;
-   border-radius: 18px;
+   border-radius: 40px;
    display: flex;
    flex-direction: row;
    justify-content: space-between;
@@ -106,6 +104,29 @@
    margin-right: 20px;
 }
 
+.infoTextWithMap h4 {
+   text-align: right;
+   color: #FFCA00;
+   margin-right: 30px;
+}
+
+.infoTextWithMap h3 {
+   margin-left: 30px;
+   text-align: left;
+   color: #ffffff;
+}
+
+
+.infoText {
+   width: 95%;
+   background-color: #131313;
+   border-radius: 40px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   height: 12%;
+   margin-right: 20px;
+}
 
 .infoText h4 {
    text-align: right;
