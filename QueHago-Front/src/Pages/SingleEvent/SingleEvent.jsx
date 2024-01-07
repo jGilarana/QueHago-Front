@@ -23,7 +23,7 @@ const SingleEvent = () => {
 
 
   const getEvent = async () => {
-    const data = await getOneEvent(eventId)
+    const data = await getOneEvent(eventId)  
     setEvent(data)
   }
 

@@ -203,7 +203,7 @@ const Home = () => {
       </Button>
 
       <Map />
-      <div className="selector">
+      {/* <div className="selector">
       <FormGroup sx={{ display: "flex", flexDirection: "row", justifyContent: "space-between", color: "white" }}>
         <FormControlLabel control={<Checkbox  />} label="Reggaeton" />
         <FormControlLabel control={<Checkbox  />} label="Tech House" />
@@ -215,7 +215,7 @@ const Home = () => {
 
       </FormGroup>
 
-      </div>
+      </div> */}
       <HomeComponent
         event={event}
         dayWeek={openDay === true ? today.format("dddd, DD/MM/YYYY") : null}

@@ -9,14 +9,11 @@ import { useNavigate } from 'react-router-dom'
 
 const LoginClub = () => {
 
-    const clubData = {
-        email : 'kalimaevents@gmail.com',
-        password : 'Rebooting!'
-    }
+   
 
     const navigate = useNavigate()
-    const [password, setPassword] = useState(clubData.password)
-    const [email, setEmail] = useState(clubData.email)
+    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('')
     
      async function onLogin() {
         try {
